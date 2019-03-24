@@ -17,10 +17,10 @@ interface Detail4x4 {
 class EvaluationTable implements Mat4x4 {
     constructor(public source_rank: SourceEvaluation = "N", public info_rank: InfoEvaluation = 0, private lang: Language = "EN") {}
 
-    detail_source = (): Array < string > => {
+    detail_source = (source_rank: SourceEvaluation): Array < string > => {
         switch (this.lang) {
             case "EN":
-                switch (this.source_rank) {
+                switch (source_rank) {
                     case "N":
                         const det_n0: string = "Not evaluated yet.";
                         return [det_n0]
@@ -41,10 +41,10 @@ class EvaluationTable implements Mat4x4 {
         }
     }
 
-    detail_info = (): Array < string > => {
+    detail_info = (info_rank: InfoEvaluation): Array < string > => {
         switch (this.lang) {
             case "EN":
-                switch (this.info_rank) {
+                switch (info_rank) {
                     case 0:
                         const det_00: string = "Not evaluated yet.";
                         return [det_00]
@@ -68,9 +68,12 @@ class EvaluationTable implements Mat4x4 {
 
     detail = (): Detail4x4 => {
         const det4x4 = {
-            source_detail: this.detail_source(),
-            info_detail: this.detail_info()
+            source_detail: this.detail_source(this.source_rank),
+            info_detail: this.detail_info(this.info_rank)
         }
         return det4x4
     }
 }
+
+let et = new EvaluationTable("A", 1);
+console.log(et.detail())
