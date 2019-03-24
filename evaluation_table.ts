@@ -2,7 +2,8 @@ type SourceEvaluation = "N" | "A" | "B" | "C" | "X";
 type InfoEvaluation = 0 | 1 | 2 | 3 | 4;
 type SourceReliability = "N" | "A" | "B" | "C" | "D" | "E" | "F";
 type DataValidity = 0 | 1 | 2 | 3 | 4 | 5 | 6;
-type Language = "EN" | "JP";
+
+import { Language } from "./language";
 
 interface Mat5x5 {
     source_rank: SourceEvaluation;
