@@ -4,17 +4,17 @@ type SourceReliability = "N" | "A" | "B" | "C" | "D" | "E" | "F";
 type DataValidity = 0 | 1 | 2 | 3 | 4 | 5 | 6;
 type Language = "EN" | "JP";
 
-interface Mat4x4 {
+interface Mat5x5 {
     source_rank: SourceEvaluation;
     info_rank: InfoEvaluation;
 }
 
-interface Detail4x4 {
+interface Detail5x5 {
     source_detail: Array < string > ;
     info_detail: Array < string > ;
 }
 
-class EvaluationTable implements Mat4x4 {
+class EvaluationTable implements Mat5x5 {
     constructor(public source_rank: SourceEvaluation = "N", public info_rank: InfoEvaluation = 0, private lang: Language = "EN") {}
 
     detail_source = (source_rank: SourceEvaluation): Array < string > => {
@@ -66,12 +66,12 @@ class EvaluationTable implements Mat4x4 {
         }
     }
 
-    detail = (): Detail4x4 => {
-        const det4x4 = {
+    detail = (): Detail5x5 => {
+        const det5x5 = {
             source_detail: this.detail_source(this.source_rank),
             info_detail: this.detail_info(this.info_rank)
         }
-        return det4x4
+        return det5x5
     }
 }
 
