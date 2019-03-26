@@ -1,9 +1,7 @@
+import { Language } from "./language";
+
 type SourceEvaluation = "N" | "A" | "B" | "C" | "X";
 type InfoEvaluation = 0 | 1 | 2 | 3 | 4;
-type SourceReliability = "N" | "A" | "B" | "C" | "D" | "E" | "F";
-type DataValidity = 0 | 1 | 2 | 3 | 4 | 5 | 6;
-
-import { Language } from "./language";
 
 interface Mat5x5 {
     source_rank: SourceEvaluation;
@@ -15,7 +13,7 @@ interface Detail5x5 {
     info_detail: Array < string > ;
 }
 
-class EvaluationTable implements Mat5x5 {
+export class EvaluationTable implements Mat5x5 {
     constructor(public source_rank: SourceEvaluation = "N", public info_rank: InfoEvaluation = 0, private lang: Language = "EN") {}
 
     detail_source = (source_rank: SourceEvaluation): Array < string > => {
@@ -75,6 +73,3 @@ class EvaluationTable implements Mat5x5 {
         return det5x5
     }
 }
-
-let et = new EvaluationTable("A", 1);
-console.log(et.detail())
