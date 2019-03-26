@@ -13,7 +13,7 @@ interface Detail5x5 {
     info_detail: Array < string > ;
 }
 
-export class EvaluationTable implements Mat5x5 {
+export class EvaluationTable5x5 implements Mat5x5 {
     constructor(public source_rank: SourceEvaluation = "N", public info_rank: InfoEvaluation = 0, private lang: Language = "EN") {}
 
     detail_source = (source_rank: SourceEvaluation): Array < string > => {
