@@ -1,0 +1,22 @@
+{
+  "name": "room-service",
+  "version": "1.0.0",
+  "description": "**WIP** A tool for Fact Check or OSINT.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kozmof/room-service.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kozmof/room-service/issues"
+  },
+  "homepage": "https://github.com/kozmof/room-service#readme",
+  "dependencies": {
+    "uuid": "^3.3.2"
+  }
+}
