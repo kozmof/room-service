@@ -1,20 +1,11 @@
-import { Language } from "./language";
+import { Language } from "./language"
+import { Detail, Mat } from "./evaluation_table_base"
 
 type SourceEvaluation = "N" | "A" | "B" | "C" | "X";
 type InfoEvaluation = 0 | 1 | 2 | 3 | 4;
 
-interface Mat5x5 {
-    source_rank: SourceEvaluation;
-    info_rank: InfoEvaluation;
-}
-
-interface Detail5x5 {
-    source_detail: Array < string > ;
-    info_detail: Array < string > ;
-}
-
-export class EvaluationTable5x5 implements Mat5x5 {
-    constructor(public source_rank: SourceEvaluation = "N", public info_rank: InfoEvaluation = 0, private lang: Language = "EN") {}
+export class EvaluationTable5x5 implements Mat<SourceEvaluation, InfoEvaluation>{
+    constructor(public source_rank: SourceEvaluation = "N", public info_rank : InfoEvaluation = 0, private lang: Language = "EN") {}
 
     detail_source = (source_rank: SourceEvaluation): Array < string > => {
         switch (this.lang) {
@@ -65,7 +56,7 @@ export class EvaluationTable5x5 implements Mat5x5 {
         }
     }
 
-    detail = (): Detail5x5 => {
+    detail = (): Detail => {
         const det5x5 = {
             source_detail: this.detail_source(this.source_rank),
             info_detail: this.detail_info(this.info_rank)
