@@ -50,7 +50,7 @@ export class EvaluationTable5x5 implements Mat<SourceEvaluation, InfoEvaluation>
                         const det_30: string = "Information not known personally to the source but corroborated by other information already recorded.";
                         return [det_30]
                     case 4:
-                        const det_40: string = "nformation which is not known personally to the source and can not be independently corroborated.";
+                        const det_40: string = "Information which is not known personally to the source and can not be independently corroborated.";
                         return [det_40]
                 }
         }
