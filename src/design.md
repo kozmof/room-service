@@ -1,6 +1,6 @@
 ## Concepts
 - Clear conditions
-- Accrssible after forgetting
+- Accessible after forgetting
 - Record all actions
 - Collaborative
 
