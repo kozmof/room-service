@@ -9,7 +9,7 @@ interface Tag {
         validity(info_rank: DataValidity): string;
 }
 
-export class EvaluationTable7x7 implements Mat<SourceReliability, DataValidity>, Tag{
+export class EvaluationTable7x7 implements Mat<SourceReliability, DataValidity>, Tag {
     constructor(public source_rank: SourceReliability = "N", public info_rank: DataValidity = 0, private lang: Language = "EN"){}
 
     detail_source = (source_rank: SourceReliability): Array < string > => {
