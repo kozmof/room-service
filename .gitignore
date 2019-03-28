@@ -1,4 +1,4 @@
 /node_modules/
-/src/*.js
-/src/*.swp
+/src/evaluation_table/*.js
+/src/evaluation_table/*.swp
 *swp
