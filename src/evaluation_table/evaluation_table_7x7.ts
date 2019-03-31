@@ -4,12 +4,17 @@ import { Detail, Mat } from "./evaluation_table_base"
 type SourceReliability = "N" | "A" | "B" | "C" | "D" | "E" | "F";
 type DataValidity = 0 | 1 | 2 | 3 | 4 | 5 | 6;
 
-interface Tag {
-        reliability(source_rank: SourceReliability): string;
-        validity(info_rank: DataValidity): string;
+export interface Rank7x7 {
+   source_rank: SourceReliability;
+   info_rank: DataValidity;
 }
 
-export class EvaluationTable7x7 implements Mat<SourceReliability, DataValidity>, Tag {
+interface Tag {
+    reliability(source_rank: SourceReliability): string;
+    validity(info_rank: DataValidity): string;
+}
+
+export class EvaluationTable7x7 implements Mat<SourceReliability, DataValidity>, Rank7x7, Tag {
     constructor(public source_rank: SourceReliability = "N", public info_rank: DataValidity = 0, private lang: Language = "EN"){}
 
     detail_source = (source_rank: SourceReliability): Array < string > => {

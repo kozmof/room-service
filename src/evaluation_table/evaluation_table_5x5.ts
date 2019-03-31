@@ -4,7 +4,12 @@ import { Detail, Mat } from "./evaluation_table_base"
 type SourceEvaluation = "N" | "A" | "B" | "C" | "X";
 type InfoEvaluation = 0 | 1 | 2 | 3 | 4;
 
-export class EvaluationTable5x5 implements Mat<SourceEvaluation, InfoEvaluation>{
+export interface Rank5x5 {
+    source_rank: SourceEvaluation;
+    info_rank: InfoEvaluation;
+}
+
+export class EvaluationTable5x5 implements Mat<SourceEvaluation, InfoEvaluation>, Rank5x5 {
     constructor(public source_rank: SourceEvaluation = "N", public info_rank : InfoEvaluation = 0, private lang: Language = "EN") {}
 
     detail_source = (source_rank: SourceEvaluation): Array < string > => {
