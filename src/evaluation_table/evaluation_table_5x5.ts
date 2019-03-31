@@ -1,8 +1,8 @@
 import { Language } from "./language"
 import { Detail, Mat } from "./evaluation_table_base"
 
-type SourceEvaluation = "N" | "A" | "B" | "C" | "X";
-type InfoEvaluation = 0 | 1 | 2 | 3 | 4;
+export type SourceEvaluation = "N" | "A" | "B" | "C" | "X";
+export type InfoEvaluation = 0 | 1 | 2 | 3 | 4;
 
 export interface Rank5x5 {
     source_rank: SourceEvaluation;

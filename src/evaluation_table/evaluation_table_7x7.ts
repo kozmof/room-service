@@ -1,8 +1,8 @@
 import { Language } from "./language";
 import { Detail, Mat } from "./evaluation_table_base"
 
-type SourceReliability = "N" | "A" | "B" | "C" | "D" | "E" | "F";
-type DataValidity = 0 | 1 | 2 | 3 | 4 | 5 | 6;
+export type SourceReliability = "N" | "A" | "B" | "C" | "D" | "E" | "F";
+export type DataValidity = 0 | 1 | 2 | 3 | 4 | 5 | 6;
 
 export interface Rank7x7 {
    source_rank: SourceReliability;
