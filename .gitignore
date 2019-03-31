@@ -1,5 +1,7 @@
 /node_modules/
 /src/evaluation_table/*.js
 /src/evaluation_table/*.swp
+/src/diagram/*.js
+/src/diagram/*.swp
 *swp
 *.js
