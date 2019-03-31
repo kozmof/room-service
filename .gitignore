@@ -2,3 +2,4 @@
 /src/evaluation_table/*.js
 /src/evaluation_table/*.swp
 *swp
+*.js
