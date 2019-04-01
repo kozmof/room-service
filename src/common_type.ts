@@ -1,3 +1,6 @@
+import { SubjectData, ObjectData } from "./medium_arrow/medium_arrow"
+
 export type DataID = string;
 export type UserID = string;
-export type Data = unknown;
+export type Data = SubjectData | ObjectData | unknown;
+export type DataType = "subject" | "object" | "link5x5" | "link7x7";
