@@ -18,9 +18,26 @@ export interface SubjectData {
     time: Time;
 }
 
+interface SubjectData5x5 extends Rank5x5 {
+    data: SubjectData;
+}
+
+interface SubjectData7x7 extends Rank7x7 {
+    data: SubjectData;
+}
+
 export interface ObjectData {
     readonly object_id: DataID;
+    time: Time;
 }
+
+interface ObjectData5x5 extends Rank5x5 {
+    data: ObjectData;
+} 
+
+interface ObjectData7x7 extends Rank7x7 {
+    data: ObjectData;
+} 
 
 export interface LinkData {
     readonly link_id: DataID;
