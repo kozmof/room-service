@@ -1,4 +1,4 @@
-import { Data, DataID } from "../common_type"
+import { Data, DataID, Time } from "../common_type"
 import { Rank5x5, SourceEvaluation, InfoEvaluation } from "../evaluation_table/evaluation_table_5x5"
 import { Rank7x7, SourceReliability, DataValidity } from "../evaluation_table/evaluation_table_7x7"
 
@@ -14,16 +14,17 @@ interface MediumArrow {
 }
 
 export interface SubjectData {
-    readonly subject_id: DataID
+    readonly subject_id: DataID;
+    time: Time;
 }
 
 export interface ObjectData {
-    readonly object_id: DataID
+    readonly object_id: DataID;
 }
 
-interface LinkData {
-    link_id: DataID;
-    date: Date;
+export interface LinkData {
+    readonly link_id: DataID;
+    time: Time;
 }
 
 interface LinkData5x5 extends Rank5x5 {
