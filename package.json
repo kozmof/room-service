@@ -1,22 +1,26 @@
 {
-  "name": "room-service",
-  "version": "1.0.0",
-  "description": "**WIP** A tool for Fact Check or OSINT.",
+  "name": "react-stack",
+  "version": "0.1.0",
+  "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/kozmof/room-service.git"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --config webpack.config.js --progress --profile --colors"
   },
   "author": "",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/kozmof/room-service/issues"
-  },
-  "homepage": "https://github.com/kozmof/room-service#readme",
   "dependencies": {
-    "uuid": "^3.3.2"
+    "@types/react": "^16.8.12",
+    "@types/react-dom": "^16.8.3",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "webpack": "^4.29.6"
+  },
+  "devDependencies": {
+    "@types/node": "^11.13.0",
+    "source-map-loader": "^0.2.4",
+    "ts-loader": "^5.3.3",
+    "typescript": "^3.4.1",
+    "webpack-cli": "^3.3.0"
   }
 }
