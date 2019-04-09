@@ -16,11 +16,20 @@ export interface Time {
 export interface CoreDataSurface {
   data_id: DataID;
   source: string;
-  MD5: string;
   author_name: string;
   author_id: UserID;
   editor_name: string;
   editor_id: UserID;
+  MD5: string;
+}
+
+export interface TopicText {
+  topic: string;
+  text: string;
+}
+
+export interface TopicTime extends TopicText {
+  time: Date;
 }
 
 export interface LogDataSurface extends CoreDataSurface {
@@ -30,9 +39,9 @@ export interface LogDataSurface extends CoreDataSurface {
 }
 
 export interface CommonDataSurface extends CoreDataSurface {
-  memo: string;
+  topic_text: Array<TopicText>
+  history: Array<LogDataSurface>;
   category: Array<string>;
-  change_log: Array<LogDataSurface>;
   tag: Array<string>
 }
 
