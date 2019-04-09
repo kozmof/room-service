@@ -5,13 +5,10 @@ export type UserID = string;
 export type Data = SubjectData | ObjectData | LinkData | unknown;
 export type DataType = "subject" | "object" | "link5x5" | "link7x7";
 export type UserAction = "created" | "modified" | "deleted";
+export type BasicTopic = "";
+export type BasicTimeTopic = "Published" | "Date";
+export type DefinedTopic = string;
 export type ModifiedDataType = string;
-
-export interface Time {
-  readonly created;
-  readonly updated;
-  readonly deleted;
-}
 
 export interface CoreDataSurface {
   data_id: DataID;
@@ -24,7 +21,7 @@ export interface CoreDataSurface {
 }
 
 export interface TopicText {
-  topic: string;
+  topic: BasicTopic | BasicTimeTopic | DefinedTopic;
   text: string;
 }
 
