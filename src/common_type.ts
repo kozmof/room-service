@@ -22,7 +22,7 @@ export interface CoreDataSurface {
 }
 
 export interface TopicEntity {
-  topic: BasicTopic | BasicTimeTopic | DefinedTopic;
+  topic: Topic | TimeTopic | DefinedTopic;
   entity: TopicEntityType;
 }
 
