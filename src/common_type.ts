@@ -7,8 +7,8 @@ export type DataType = "subject" | "object" | "link5x5" | "link7x7";
 export type UserAction = "created" | "modified" | "deleted";
 export type Topic = "memo";
 export type TimeTopic = "published" | "date";
-export type TopicEntityType = string | number | Date;
-export type DefinedTopic = string;
+export type TopicEntityType = string | number | Date | URL;
+export type UserTopic = string;
 export type ModifiedDataType = string;
 
 export interface CoreDataSurface {
@@ -22,7 +22,7 @@ export interface CoreDataSurface {
 }
 
 export interface TopicEntity {
-  topic: Topic | TimeTopic | DefinedTopic;
+  topic: Topic | TimeTopic | UserTopic;
   entity: TopicEntityType;
 }
 
