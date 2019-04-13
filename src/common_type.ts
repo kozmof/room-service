@@ -1,29 +1,14 @@
+import { TopicEntity, BuiltInTopic, CustomTopic } from "./topic"
 import { SubjectData, ObjectData, LinkData } from "./medium_arrow/medium_arrow"
 
 export type DataID = string;
 export type PersonID = string;
+
 export type Data = SubjectData | ObjectData | LinkData | unknown;
 export type DataType = "subject" | "object" | "link5x5" | "link7x7";
+
 export type UserAction = "created" | "modified" | "deleted";
-export type Topic = "memo";
-export type NumberTopic = "money";
-export type URLTopic = "link";
-export type TimeTopic = "published" | "date";
 
-export type TopicEntityType<T> = T extends Topic ? string :
-                                 T extends NumberTopic ? number :
-                                 T extends URLTopic ? URL:
-                                 T extends TimeTopic ? Date : 
-                                 T extends UserTopic ? string : 
-                                 T extends UserNumberTopic ? number | URL : 
-                                 T extends UserURLTopic ? URL : 
-                                 T extends UserTimeTopic ? Date :
-                                 never;
-
-export type UserTopic = string;
-export type UserTimeTopic = string;
-export type UserNumberTopic = string;
-export type UserURLTopic = string;
 export type ModifiedDataType = string;
 
 export interface CoreDataSurface {
@@ -36,19 +21,15 @@ export interface CoreDataSurface {
   MD5: string;
 }
 
-export interface TopicEntity<T extends Topic | TimeTopic | UserTopic | UserTimeTopic> {
-  topic: T;
-  entity: TopicEntityType<T>;
-}
-
 export interface LogDataSurface extends CoreDataSurface {
   user_action: UserAction;
   modified_data: ModifiedDataType;
   time: Date;
 }
 
-export interface CommonDataSurface extends CoreDataSurface {
-  topics: Array<Topic>
+export interface CommonDataSurface<T> extends CoreDataSurface {
+  buit_in_topics: Array<TopicEntity<BuiltInTopic>>
+  custom_topics: Array<TopicEntity<CustomTopic>>
   history: Array<LogDataSurface>;
   category: Array<string>;
   tag: Array<string>
