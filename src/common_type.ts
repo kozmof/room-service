@@ -6,14 +6,24 @@ export type Data = SubjectData | ObjectData | LinkData | unknown;
 export type DataType = "subject" | "object" | "link5x5" | "link7x7";
 export type UserAction = "created" | "modified" | "deleted";
 export type Topic = "memo";
+export type NumberTopic = "money";
+export type URLTopic = "link";
 export type TimeTopic = "published" | "date";
-export type TopicEntityType<T> = T extends Topic ? string | number | URL :
+
+export type TopicEntityType<T> = T extends Topic ? string :
+                                 T extends NumberTopic ? number :
+                                 T extends URLTopic ? URL:
                                  T extends TimeTopic ? Date : 
-                                 T extends UserTopic ? string | number | URL : 
+                                 T extends UserTopic ? string : 
+                                 T extends UserNumberTopic ? number | URL : 
+                                 T extends UserURLTopic ? URL : 
                                  T extends UserTimeTopic ? Date :
                                  never;
+
 export type UserTopic = string;
 export type UserTimeTopic = string;
+export type UserNumberTopic = string;
+export type UserURLTopic = string;
 export type ModifiedDataType = string;
 
 export interface CoreDataSurface {
