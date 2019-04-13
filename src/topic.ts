@@ -12,10 +12,10 @@ export type CustomTopic = UserTopic | UserTimeTopic | UserNumberTopic | UserURLT
 
 export type TopicEntityType<T> = T extends Topic ? string :
                                  T extends NumberTopic ? number :
-                                 T extends URLTopic ? URL:
+                                 T extends URLTopic ? URL :
                                  T extends TimeTopic ? Date : 
                                  T extends UserTopic ? string : 
-                                 T extends UserNumberTopic ? number | URL : 
+                                 T extends UserNumberTopic ? number : 
                                  T extends UserURLTopic ? URL : 
                                  T extends UserTimeTopic ? Date :
                                  never;
