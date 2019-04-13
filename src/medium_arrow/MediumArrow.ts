@@ -1,4 +1,4 @@
-import { Data, DataID } from "../CommonType"
+import { Data, DataID } from "../common/CommonType"
 import { Rank5x5, SourceEvaluation, InfoEvaluation } from "../evaluation_table/EvaluationTable5x5"
 import { Rank7x7, SourceReliability, DataValidity } from "../evaluation_table/EvaluationTable7x7"
 
