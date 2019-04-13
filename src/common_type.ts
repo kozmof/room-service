@@ -7,7 +7,9 @@ export type DataType = "subject" | "object" | "link5x5" | "link7x7";
 export type UserAction = "created" | "modified" | "deleted";
 export type Topic = "memo";
 export type TimeTopic = "published" | "date";
-export type TopicEntityType = string | number | Date | URL;
+export type TopicEntityType<T> = T extends "memo" ? string | number | URL:
+                                 T extends TimeTopic ? Date : 
+                                 T extends UserTopic ? string | number | Date | URL : never;
 export type UserTopic = string;
 export type ModifiedDataType = string;
 
@@ -21,9 +23,9 @@ export interface CoreDataSurface {
   MD5: string;
 }
 
-export interface TopicEntity {
-  topic: Topic | TimeTopic | UserTopic;
-  entity: TopicEntityType;
+export interface TopicEntity<T extends Topic | TimeTopic | UserTopic> {
+  topic: T;
+  entity: TopicEntityType<T>;
 }
 
 export interface LogDataSurface extends CoreDataSurface {
