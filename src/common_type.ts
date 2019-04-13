@@ -7,10 +7,13 @@ export type DataType = "subject" | "object" | "link5x5" | "link7x7";
 export type UserAction = "created" | "modified" | "deleted";
 export type Topic = "memo";
 export type TimeTopic = "published" | "date";
-export type TopicEntityType<T> = T extends "memo" ? string | number | URL:
+export type TopicEntityType<T> = T extends Topic ? string | number | URL :
                                  T extends TimeTopic ? Date : 
-                                 T extends UserTopic ? string | number | Date | URL : never;
+                                 T extends UserTopic ? string | number | URL : 
+                                 T extends UserTimeTopic ? Date :
+                                 never;
 export type UserTopic = string;
+export type UserTimeTopic = string;
 export type ModifiedDataType = string;
 
 export interface CoreDataSurface {
