@@ -26,7 +26,7 @@ export interface CoreDataSurface {
   MD5: string;
 }
 
-export interface TopicEntity<T extends Topic | TimeTopic | UserTopic> {
+export interface TopicEntity<T extends Topic | TimeTopic | UserTopic | UserTimeTopic> {
   topic: T;
   entity: TopicEntityType<T>;
 }
