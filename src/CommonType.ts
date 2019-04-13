@@ -1,5 +1,5 @@
-import { TopicEntity, BuiltInTopic, CustomTopic } from "./topic"
-import { SubjectData, ObjectData, LinkData } from "./medium_arrow/medium_arrow"
+import { TopicEntity, BuiltInTopic, CustomTopic } from "./Topic"
+import { SubjectData, ObjectData, LinkData } from "./medium_arrow/MediumArrow"
 
 export type DataID = string;
 export type PersonID = string;

@@ -1,5 +1,5 @@
-import { Language } from "./language";
-import { Detail, Mat } from "./evaluation_table_base"
+import { Language } from "./Language";
+import { Detail, Mat } from "./EvaluationTableBase"
 
 export type SourceReliability = "N" | "A" | "B" | "C" | "D" | "E" | "F";
 export type DataValidity = 0 | 1 | 2 | 3 | 4 | 5 | 6;

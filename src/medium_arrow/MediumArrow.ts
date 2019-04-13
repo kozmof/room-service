@@ -1,6 +1,6 @@
-import { Data, DataID } from "../common_type"
-import { Rank5x5, SourceEvaluation, InfoEvaluation } from "../evaluation_table/evaluation_table_5x5"
-import { Rank7x7, SourceReliability, DataValidity } from "../evaluation_table/evaluation_table_7x7"
+import { Data, DataID } from "../CommonType"
+import { Rank5x5, SourceEvaluation, InfoEvaluation } from "../evaluation_table/EvaluationTable5x5"
+import { Rank7x7, SourceReliability, DataValidity } from "../evaluation_table/EvaluationTable7x7"
 
 // Ex: A => B (A phoned B)
 
