@@ -1,8 +1,11 @@
 /node_modules/
-/src/evaluation_table/*.js
-/src/evaluation_table/*.swp
-/src/diagram/*.js
-/src/diagram/*.swp
 *swp
 *swo
-*.js
+/src/*.js
+/src/common/*.js
+/src/editor/*.js
+/src/evaluation_table/*.js
+/src/topic/*.js
+/src/marker/*.js
+/src/medium_arrow/*.js
+/src/ui/*.js
