@@ -4,8 +4,8 @@
 /src/*.js
 /src/common/*.js
 /src/editor/*.js
+/src/editor/marker/*.js
 /src/evaluation_table/*.js
 /src/topic/*.js
-/src/marker/*.js
 /src/medium_arrow/*.js
 /src/ui/*.js
