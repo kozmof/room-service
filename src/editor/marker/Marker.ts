@@ -8,7 +8,7 @@ export class Marker {
               public text: string, 
               public condition: JudgeCondition){}
 
-  color() : ColorPalette {
+  color = () : ColorPalette => {
     switch(this.condition){
       case "clean": 
         return "#2BDBFE"
