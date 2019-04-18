@@ -51,16 +51,16 @@ interface LinkData7x7 extends Rank7x7 {
 
 class Link implements SubjectData, ObjectData, MediumArrow {
   constructor (
-                public link_id: DataID, 
-                public subject_id: DataID,
-                public object_id: DataID,
-                public arrow_id: DataID, 
-                public core_sentence: string, 
-                public src_x: number,
-                public src_y: number,
-                public dst_x: number, 
-                public dst_y: number
-               ) {}
+    public link_id: DataID, 
+    public subject_id: DataID,
+    public object_id: DataID,
+    public arrow_id: DataID, 
+    public core_sentence: string, 
+    public src_x: number,
+    public src_y: number,
+    public dst_x: number, 
+    public dst_y: number
+  ) {}
 
   subject_data = (): Data => {
     return    
