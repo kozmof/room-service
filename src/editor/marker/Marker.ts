@@ -1,11 +1,11 @@
-import { ClipData } from "../../clip/Clip";
-
 type JudgeCondition = "clean" | "suspect" | "hold";
 type ColorPalette = "#2BDBFE" | "#FE2B2B" | "#778899";
 
 export class Marker {
   constructor(public anchorKey: string, 
-              public clip_data: ClipData,
+              public start: number,
+              public end: number,
+              public text: string,
               public condition: JudgeCondition
               ) {}
 
