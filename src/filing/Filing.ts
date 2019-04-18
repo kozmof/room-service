@@ -2,7 +2,11 @@ import { DataID } from "../common/CommonType";
 
 type FilingDataType = "entity" | "branch";
 
-class EntityData {
+interface FilingSurface {
+  id: () => DataID;
+}
+
+class EntityData implements FilingSurface {
   data_type: FilingDataType = "entity";
 
   constructor(
@@ -14,7 +18,7 @@ class EntityData {
   }
 }
 
-class BranchData {
+class BranchData implements FilingSurface {
   data_type: FilingDataType = "branch";
 
   constructor(
