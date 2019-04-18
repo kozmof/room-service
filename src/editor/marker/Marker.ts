@@ -1,12 +1,13 @@
+import { ClipData } from "../../clip/Clip";
+
 type JudgeCondition = "clean" | "suspect" | "hold";
 type ColorPalette = "#2BDBFE" | "#FE2B2B" | "#778899";
 
 export class Marker {
   constructor(public anchorKey: string, 
-              public start: number, 
-              public end: number, 
-              public text: string, 
-              public condition: JudgeCondition){}
+              public clip_data: ClipData,
+              public condition: JudgeCondition
+              ) {}
 
   color = () : ColorPalette => {
     switch(this.condition){
