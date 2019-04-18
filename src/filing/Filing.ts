@@ -1,9 +1,13 @@
 import { DataID } from "../common/CommonType";
 
-type FilingDataType = "top" | "branch";
+type FilingDataType = "entity" | "branch";
 
-class TopData {
-  data_type: FilingDataType = "top";
+class EntityData {
+  data_type: FilingDataType = "entity";
+
+  constructor(
+    private entity_id: DataID
+  ) {}
 }
 
 class BranchData {
@@ -11,7 +15,7 @@ class BranchData {
 
   constructor(
     private node_id: DataID,
-    private top_array: Array<TopData>,
+    private entity_array: Array<EntityData>,
     private branch_array: Array<BranchData>
   ) {}
 }
