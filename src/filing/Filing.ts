@@ -14,7 +14,7 @@ class BranchData {
   data_type: FilingDataType = "branch";
 
   constructor(
-    private node_id: DataID,
+    private branch_id: DataID,
     private entity_array: Array<EntityData>,
     private branch_array: Array<BranchData>
   ) {}
