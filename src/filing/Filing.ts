@@ -4,14 +4,20 @@ type FilingDataType = "entity" | "branch";
 
 interface FilingSurface {
   id: () => DataID;
+  dtype: () => FilingDataType; 
 }
 
 class EntityData implements FilingSurface {
-  data_type: FilingDataType = "entity";
+  private data_type: FilingDataType = "entity";
 
   constructor(
     private entity_id: DataID
-  ) {}
+  ) {
+  }
+
+  dtype = () : FilingDataType => {
+    return this.data_type 
+  }
 
   id = () : DataID => {
     return this.entity_id 
@@ -19,13 +25,17 @@ class EntityData implements FilingSurface {
 }
 
 class BranchData implements FilingSurface {
-  data_type: FilingDataType = "branch";
+  private data_type: FilingDataType = "branch";
 
   constructor(
     private branch_id: DataID,
     private entity_array: Array<EntityData>,
     private branch_array: Array<BranchData>
   ) {}
+
+  dtype = () : FilingDataType => {
+    return this.data_type 
+  }
 
   id = () : DataID => {
     return this.branch_id 
