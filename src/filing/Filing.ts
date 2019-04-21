@@ -1,6 +1,6 @@
 import { DataID } from "../common/CommonType";
 
-type FilingDataType = "entity" | "branch";
+type FilingDataType = "entity" | "branch" | "root";
 
 interface FilingSurface {
   id: () => DataID;
