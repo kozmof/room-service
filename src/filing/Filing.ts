@@ -1,5 +1,7 @@
 import { DataID } from "../common/CommonType";
 
+const uuid = require("uuid/v4");
+
 type FilingDataType = "entity" | "branch" | "root";
 
 interface FilingSurface {
@@ -64,6 +66,12 @@ class BranchData implements FilingSurface {
         return
       } 
     } 
+  }
+}
+
+class FilingController {
+  genID = () : DataID => {
+    return uuid()
   }
 }
 
