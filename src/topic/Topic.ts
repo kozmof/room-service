@@ -20,7 +20,7 @@ export type TopicEntityType<T> = T extends Topic ? string :
                                  T extends UserTimeTopic ? Date :
                                  never;
 
-export interface TopicEntity<T extends Topic | TimeTopic | UserTopic | UserTimeTopic> {
+export interface TopicEntity<T extends BuiltInTopic | CustomTopic> {
   topic: T;
   entity: TopicEntityType<T>;
 }
