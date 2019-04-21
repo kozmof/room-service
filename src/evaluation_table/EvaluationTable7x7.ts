@@ -17,7 +17,7 @@ interface Tag {
 export class EvaluationTable7x7 implements Mat<SourceReliability, DataValidity>, Rank7x7, Tag {
   constructor(public source_rank: SourceReliability = "N", public info_rank: DataValidity = 0, private lang: Language = "EN"){}
 
-  detail_source = (source_rank: SourceReliability): Array < string > => {
+  detailSource = (source_rank: SourceReliability): Array < string > => {
     switch(this.lang){
       case "EN": 
         switch(source_rank){
@@ -73,7 +73,7 @@ export class EvaluationTable7x7 implements Mat<SourceReliability, DataValidity>,
     } 
   }
 
-  detail_info = (info_rank: DataValidity): Array < string > => {
+  detailInfo = (info_rank: DataValidity): Array < string > => {
     switch(this.lang){
       case "EN": 
         switch(info_rank){

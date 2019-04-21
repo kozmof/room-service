@@ -12,7 +12,7 @@ export interface Rank5x5 {
 export class EvaluationTable5x5 implements Mat<SourceEvaluation, InfoEvaluation>, Rank5x5 {
   constructor(public source_rank: SourceEvaluation = "N", public info_rank : InfoEvaluation = 0, private lang: Language = "EN") {}
 
-  detail_source = (source_rank: SourceEvaluation): Array < string > => {
+  detailSource = (source_rank: SourceEvaluation): Array < string > => {
     switch (this.lang) {
       case "EN":
         switch (source_rank) {
@@ -36,7 +36,7 @@ export class EvaluationTable5x5 implements Mat<SourceEvaluation, InfoEvaluation>
     }
   }
 
-  detail_info = (info_rank: InfoEvaluation): Array < string > => {
+  detailInfo = (info_rank: InfoEvaluation): Array < string > => {
     switch (this.lang) {
       case "EN":
         switch (info_rank) {

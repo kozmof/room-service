@@ -62,11 +62,11 @@ class Link implements SubjectData, ObjectData, MediumArrow {
     public dst_y: number
   ) {}
 
-  subject_data = (): Data => {
+  subjectData = (): Data => {
     return    
   }
 
-  object_data = (): Data => {
+  objectData = (): Data => {
     return    
   }
 }

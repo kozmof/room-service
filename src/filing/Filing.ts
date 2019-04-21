@@ -12,8 +12,7 @@ class EntityData implements FilingSurface {
 
   constructor(
     private entity_id: DataID
-  ) {
-  }
+  ) {}
 
   dtype = () : FilingDataType => {
     return this.data_type 
@@ -41,11 +40,11 @@ class BranchData implements FilingSurface {
     return this.branch_id 
   }
 
-  add_entity = (en: EntityData) => {
-    this.entity_array.push(en)
+  addEntity = (entity: EntityData) => {
+    this.entity_array.push(entity)
   }
 
-  remove_entity = (entity_id: DataID) => {
+  removeEntity = (entity_id: DataID) => {
     for (let n = 0; n < this.entity_array.length; n++) {
       if (this.entity_array[n].id() === entity_id) {
         this.entity_array.slice(n, 1); 
@@ -54,11 +53,11 @@ class BranchData implements FilingSurface {
     }
   }
 
-  add_branch = (br: BranchData) => {
-    this.branch_array.push(br) 
+  addBranch = (branch: BranchData) => {
+    this.branch_array.push(branch) 
   }
 
-  remove_branch = (branch_id: DataID) => {
+  removeBranch = (branch_id: DataID) => {
     for (let n = 0; n < this.branch_array.length; n++) {
       if(this.branch_array[n].id() === branch_id) {
         this.branch_id.slice(n, 1); 
@@ -66,6 +65,5 @@ class BranchData implements FilingSurface {
       } 
     } 
   }
-
 }
 
