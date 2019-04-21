@@ -63,8 +63,8 @@ export class EvaluationTable5x5 implements Mat<SourceEvaluation, InfoEvaluation>
 
   detail = (): Detail => {
     const det5x5 = {
-      source_detail: this.detail_source(this.source_rank),
-      info_detail: this.detail_info(this.info_rank)
+      source_detail: this.detailSource(this.source_rank),
+      info_detail: this.detailInfo(this.info_rank)
     }
     return det5x5
   }

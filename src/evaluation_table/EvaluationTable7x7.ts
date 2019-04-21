@@ -135,8 +135,8 @@ export class EvaluationTable7x7 implements Mat<SourceReliability, DataValidity>,
 
   detail = (): Detail => {
     const det7x7 = {
-      source_detail: this.detail_source(this.source_rank), 
-      info_detail: this.detail_info(this.info_rank)
+      source_detail: this.detailSource(this.source_rank), 
+      info_detail: this.detailInfo(this.info_rank)
     } 
 
     return det7x7
