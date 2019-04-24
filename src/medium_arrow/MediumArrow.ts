@@ -5,16 +5,16 @@ import { Rank7x7, SourceReliability, DataValidity } from "../evaluation_table/Ev
 // Ex: A => B (A phoned B)
 
 interface MediumArrow {
-  readonly arrow_id: DataID;
-  readonly core_sentence: string;
-  src_x: number;
-  src_y: number;
-  dst_x: number;
-  dst_y: number;
+  readonly arrowID: DataID;
+  readonly coreSentence: string;
+  srcX: number;
+  srcY: number;
+  dstX: number;
+  dstY: number;
 }
 
 export interface SubjectData {
-  readonly subject_id: DataID;
+  readonly subjectID: DataID;
 }
 
 interface SubjectData5x5 extends Rank5x5 {
@@ -26,7 +26,7 @@ interface SubjectData7x7 extends Rank7x7 {
 }
 
 export interface ObjectData {
-  readonly object_id: DataID;
+  readonly objectID: DataID;
 }
 
 interface ObjectData5x5 extends Rank5x5 {
@@ -38,7 +38,7 @@ interface ObjectData7x7 extends Rank7x7 {
 } 
 
 export interface LinkData {
-  readonly link_id: DataID;
+  readonly linkID: DataID;
 }
 
 interface LinkData5x5 extends Rank5x5 {
@@ -51,15 +51,15 @@ interface LinkData7x7 extends Rank7x7 {
 
 class Link implements SubjectData, ObjectData, MediumArrow {
   constructor (
-    public link_id: DataID, 
-    public subject_id: DataID,
-    public object_id: DataID,
-    public arrow_id: DataID, 
-    public core_sentence: string, 
-    public src_x: number,
-    public src_y: number,
-    public dst_x: number, 
-    public dst_y: number
+    public linkID: DataID, 
+    public subjectID: DataID,
+    public objectID: DataID,
+    public arrowID: DataID, 
+    public coreSentence: string, 
+    public srcX: number,
+    public srcY: number,
+    public dstX: number, 
+    public dstY: number
   ) {}
 
   subjectData = (): Data => {

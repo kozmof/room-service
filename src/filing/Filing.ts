@@ -10,7 +10,7 @@ interface RootFilingSurface {
 }
 
 interface NonRootFilingSUrface extends RootFilingSurface {
-  parentID: () => DataID;
+  pid: () => DataID;
 }
 
 interface EntityFilingSurface extends NonRootFilingSUrface {
@@ -23,31 +23,31 @@ interface BranchFilingSurface extends NonRootFilingSUrface {
 
 class ContentManager {
   constructor(
-    private entity_array: Array<EntityData>,
-    private branch_array: Array<BranchData>
+    private entitis: Array<EntityData>,
+    private branches: Array<BranchData>
   ) {}
 
   addEntity = (entity: EntityData) => {
-    this.entity_array.push(entity)
+    this.entitis.push(entity)
   }
 
-  removeEntity = (entity_id: DataID) => {
-    for (let n = 0; n < this.entity_array.length; n++) {
-      if (this.entity_array[n].id() === entity_id) {
-        this.entity_array.slice(n, 1); 
+  removeEntity = (entityID: DataID) => {
+    for (let n = 0; n < this.entities.length; n++) {
+      if (this.entities[n].id() === entityID) {
+        this.entities.slice(n, 1); 
         return 
       }
     }
   }
 
   addBranch = (branch: BranchData) => {
-    this.branch_array.push(branch) 
+    this.branches.push(branch) 
   }
 
-  removeBranch = (branch_id: DataID) => {
-    for (let n = 0; n < this.branch_array.length; n++) {
-      if(this.branch_array[n].id() === branch_id) {
-        this.branch_array.slice(n, 1); 
+  removeBranch = (branchID: DataID) => {
+    for (let n = 0; n < this.branches.length; n++) {
+      if(this.branches[n].id() === branchID) {
+        this.branches.slice(n, 1); 
         return
       } 
     } 
@@ -55,68 +55,68 @@ class ContentManager {
 }
 
 class RootData extends ContentManager implements RootFilingSurface {
-  private data_type: FilingDataType  = "root";
+  private dataType: FilingDataType  = "root";
 
   constructor(
-    private entity_id: DataID,
-    entity_array: Array<EntityData> = [],
-    branch_array: Array<BranchData> = []
+    private entityID: DataID,
+    entities: Array<EntityData> = [],
+    branches: Array<BranchData> = []
   ) {
-    super(entity_array, branch_array);
+    super(entities, branches);
   }
 
   id = () : DataID => {
-    return this.entity_id 
+    return this.entityID
   }
 
   dtype = () : FilingDataType => {
-    return this.data_type 
+    return this.dataType
   }
 }
 
 class EntityData implements EntityFilingSurface {
-  private data_type: FilingDataType = "entity";
+  private dataType: FilingDataType = "entity";
 
   constructor(
-    private entity_id: DataID,
-    private parent_id: DataID
+    private entityID: DataID,
+    private parentID: DataID
   ) {}
 
   dtype = () : FilingDataType => {
-    return this.data_type 
+    return this.dataType
   }
 
   id = () : DataID => {
-    return this.entity_id 
+    return this.entityID
   }
 
-  parentID = () : DataID => {
-    return this.parent_id 
+  pid = () : DataID => {
+    return this.parentID
   }
 }
 
 class BranchData extends ContentManager implements BranchFilingSurface {
-  private data_type: FilingDataType = "branch";
+  private dataType: FilingDataType = "branch";
 
   constructor(
-    private branch_id: DataID,
-    private parent_id: DataID,
-    entity_array: Array<EntityData> = [],
-    branch_array: Array<BranchData> = []
+    private branchID: DataID,
+    private parentID: DataID,
+    entities: Array<EntityData> = [],
+    branches: Array<BranchData> = []
   ) {
-    super(entity_array, branch_array);
+    super(entities, branches);
   }
 
   dtype = () : FilingDataType => {
-    return this.data_type 
+    return this.dataType
   }
 
   id = () : DataID => {
-    return this.branch_id 
+    return this.branchID
   }
 
-  parentID = () : DataID => {
-    return this.parent_id
+  pid = () : DataID => {
+    return this.parentID
   }
 
 }

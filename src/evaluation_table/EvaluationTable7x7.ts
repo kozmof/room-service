@@ -5,56 +5,59 @@ export type SourceReliability = "N" | "A" | "B" | "C" | "D" | "E" | "F";
 export type DataValidity = 0 | 1 | 2 | 3 | 4 | 5 | 6;
 
 export interface Rank7x7 {
-  source_rank: SourceReliability;
-  info_rank: DataValidity;
+  sourceRank: SourceReliability;
+  infoRank: DataValidity;
 }
 
 interface Tag {
-  reliability(source_rank: SourceReliability): string;
-  validity(info_rank: DataValidity): string;
+  reliability(sourceRank: SourceReliability): string;
+  validity(infoRank: DataValidity): string;
 }
 
 export class EvaluationTable7x7 implements Mat<SourceReliability, DataValidity>, Rank7x7, Tag {
-  constructor(public source_rank: SourceReliability = "N", public info_rank: DataValidity = 0, private lang: Language = "EN"){}
+  constructor(
+    public sourceRank: SourceReliability = "N", 
+    public infoRank: DataValidity = 0, 
+    private lang: Language = "EN") {}
 
-  detailSource = (source_rank: SourceReliability): Array < string > => {
+  detailSource = (sourceRank: SourceReliability): Array < string > => {
     switch(this.lang){
       case "EN": 
-        switch(source_rank){
+        switch(sourceRank){
           case "N":
-            const det_n0: string = "Not yet evaluated yet.";
-            return [det_n0]
+            const detN0: string = "Not yet evaluated yet.";
+            return [detN0]
           case "A":
-            const det_a0: string = "No doubt regarding authenticity, trustworthiness, integrity, competence.";
-            const det_a1: string = "History of complete reliability.";
-            return [det_a0, det_a1]
+            const detA0: string = "No doubt regarding authenticity, trustworthiness, integrity, competence.";
+            const detA1: string = "History of complete reliability.";
+            return [detA0, detA1]
           case "B":
-            const det_b0: string = "Some doubt regarding authenticity or trustworthiness or integrity or competence (one count).";
-            const det_b1: string = "History of general reliability.";
-            return [det_b0, det_b1]
+            const detB0: string = "Some doubt regarding authenticity or trustworthiness or integrity or competence (one count).";
+            const detB1: string = "History of general reliability.";
+            return [detB0, detB1]
           case "C":
-            const det_c0: string = "Doubt regarding authenticity, trustworthiness, integrity, competence (two counts and more).";
-            const det_c1: string = "History of periodic reliability.";
-            return [det_c0, det_c1]
+            const detC0: string = "Doubt regarding authenticity, trustworthiness, integrity, competence (two counts and more).";
+            const detC1: string = "History of periodic reliability.";
+            return [detC0, detC1]
           case "D":
-            const det_d0: string = "Definite doubt regarding authenticity, trustworthiness, integrity, competence.";
-            const det_d1: string = "History of occasional reliability.";
-            return [det_d0, det_d1]
+            const detD0: string = "Definite doubt regarding authenticity, trustworthiness, integrity, competence.";
+            const detD1: string = "History of occasional reliability.";
+            return [detD0, detD1]
           case "E":
-            const det_e0: string = "Certainty about lack of authenticity, trustworthiness, integrity, competence.";
-            const det_e1: string = "History of unreliability.";
-            return [det_e0, det_e1]
+            const detE0: string = "Certainty about lack of authenticity, trustworthiness, integrity, competence.";
+            const detE1: string = "History of unreliability.";
+            return [detE0, detE1]
           case "F":
-            const det_f0: string = "Cannot be judged.";
-            return [det_f0]
+            const detF0: string = "Cannot be judged.";
+            return [detF0]
         }
     } 
   }
 
-  reliability = (source_rank: SourceReliability): string => {
+  reliability = (sourceRank: SourceReliability): string => {
     switch(this.lang){
       case "EN":
-        switch(source_rank){
+        switch(sourceRank){
           case "N":
             return "NOT EVALUATED YET"
           case "A": 
@@ -73,48 +76,48 @@ export class EvaluationTable7x7 implements Mat<SourceReliability, DataValidity>,
     } 
   }
 
-  detailInfo = (info_rank: DataValidity): Array < string > => {
+  detailInfo = (infoRank: DataValidity): Array < string > => {
     switch(this.lang){
       case "EN": 
-        switch(info_rank){
+        switch(infoRank){
           case 0: 
-            const det_00: string = "Not yet evaluated yet.";
-            return [det_00]
+            const det00: string = "Not yet evaluated yet.";
+            return [det00]
           case 1:
-            const det_10: string = "Confirmed by other independent sources.";
-            const det_11: string = "Logical in itself.";
-            const det_12: string = "Agrees with other information on the subject.";
-            return [det_10, det_11, det_12]
+            const det10: string = "Confirmed by other independent sources.";
+            const det11: string = "Logical in itself.";
+            const det12: string = "Agrees with other information on the subject.";
+            return [det10, det11, det12]
           case 2:
-            const det_20: string = "Not confirmed independently.";
-            const det_21: string = "Logical in itself.";
-            const det_22: string = "Agrees with other information on the subject.";
-            return [det_20, det_21, det_22]
+            const det20: string = "Not confirmed independently.";
+            const det21: string = "Logical in itself.";
+            const det22: string = "Agrees with other information on the subject.";
+            return [det20, det21, det22]
           case 3:
             const det_30: string = "Not confirmed.";
             const det_31: string = "Logical in itself.";
             const det_32: string = "Agrees somewhat with other information on the subject.";
-            return [det_30, det_31, det_32]
+            return [det30, det31, det32]
           case 4:
-            const det_40: string = "Not confirmed.";
-            const det_41: string = "Not illogical.";
-            const det_42: string = "Not believed at time of receipt although possible.";
-            return [det_40, det_41, det_42]
+            const det40: string = "Not confirmed.";
+            const det41: string = "Not illogical.";
+            const det42: string = "Not believed at time of receipt although possible.";
+            return [det40, det41, det42]
           case 5:
-            const det_50: string = "Confirmation available of the contrary.";
-            const det_51: string = "Illogical in itself.";
-            const det_52: string = "ontradicted by other information on the subject.";
-            return [det_50, det_51, det_52]
+            const det50: string = "Confirmation available of the contrary.";
+            const det51: string = "Illogical in itself.";
+            const det52: string = "ontradicted by other information on the subject.";
+            return [det50, det51, det52]
           case 6:
-            const det_60: string = "Cannot be judged.";
+            const det60: string = "Cannot be judged.";
         }
     } 
   }
 
-  validity = (info_rank: DataValidity): string => {
+  validity = (infoRank: DataValidity): string => {
     switch(this.lang){
       case "EN":
-        switch(info_rank){
+        switch(infoRank){
           case 0: 
             return "NOT EVALUATED YET"
           case 1:
@@ -135,8 +138,8 @@ export class EvaluationTable7x7 implements Mat<SourceReliability, DataValidity>,
 
   detail = (): Detail => {
     const det7x7 = {
-      source_detail: this.detailSource(this.source_rank), 
-      info_detail: this.detailInfo(this.info_rank)
+      sourceDetail: this.detailSource(this.sourceRank), 
+      infoDetail: this.detailInfo(this.infoRank)
     } 
 
     return det7x7
