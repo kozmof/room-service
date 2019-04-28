@@ -29,11 +29,11 @@ export type TopicEntity<T> =
 
 export interface BuiltInTopicEntity<T extends BuiltInTopic> {
   topic: T;
-  entity: TopicEntityType<T>;
+  entity: Array<TopicEntityType<T>>;
 }
 
 export interface CustomTopicEntity<T extends CustomTopic> {
   topic: T;
   customDetail: string;
-  entity: TopicEntityType<T>;
+  entity: Array<TopicEntityType<T>>;
 }
