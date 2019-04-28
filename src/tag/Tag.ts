@@ -3,12 +3,12 @@ class Tag {
     public name: string,
     ) {}
 
-  private IDs: Array<string>;
+  private entityIDs: Array<string>;
 
   and = (tag : Tag) : Array<string> => {
     const result : Array<string> = []
-    for (let id1 of this.IDs) {
-      for (let id2 of tag.IDs) {
+    for (let id1 of this.entityIDs) {
+      for (let id2 of tag.entityIDs) {
         if (id1 === id2) {
           result.push(id1);
         } 
@@ -20,8 +20,8 @@ class Tag {
 
   or = (tag : Tag) : Array<string> => {
     const result: Array<string> = [];
-    result.concat(this.IDs);
-    result.concat(tag.IDs);
+    result.concat(this.entityIDs);
+    result.concat(tag.entityIDs);
     return result
   }
 }
