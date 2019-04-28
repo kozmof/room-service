@@ -22,14 +22,13 @@ class Tag {
         } 
       } 
     }
-     
-    return result
+    return Array.from(new Set(result))
   }
 
   or = (tag : Tag) : Array<string> => {
     const result: Array<string> = [];
     result.concat(this.entityIDs);
     result.concat(tag.entityIDs);
-    return result
+    return Array.from(new Set(result))
   }
 }
