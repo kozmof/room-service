@@ -8,6 +8,7 @@
 /src/evaluation_table/*.js
 /src/topic/*.js
 /src/medium_arrow/*.js
+/src/tag/*.js
 /src/ui/*.js
 /src/clip/*.js
 /src/filing/*.js
