@@ -2,6 +2,7 @@
 *swp
 *swo
 /src/*.js
+/src/action/*.js
 /src/common/*.js
 /src/editor/*.js
 /src/editor/marker/*.js
