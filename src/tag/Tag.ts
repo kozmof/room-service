@@ -1,5 +1,7 @@
-class TagAction {
+import { ActionType } from "../action/Action"
 
+class TagAction {
+  private readonly atype = "tag";
 }
 
 class Tag {
