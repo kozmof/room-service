@@ -1,9 +1,15 @@
+class TagAction {
+
+}
+
 class Tag {
   constructor(
+    private tagID: string,
     public name: string,
     ) {}
 
   private entityIDs: Array<string>;
+  private actions: Array<TagAction>;
 
   and = (tag : Tag) : Array<string> => {
     const result : Array<string> = []
