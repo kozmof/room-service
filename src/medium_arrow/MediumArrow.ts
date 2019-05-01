@@ -6,9 +6,9 @@ import { Rank7x7, SourceReliability, DataValidity } from "../evaluation_table/Ev
 // Ex: A => B (A phoned B)
 
 class MediumAction implements ActionSurface {
-  readonly actionType = "predicator";
+  readonly actionType : ActionType = "predicator";
   constructor(
-   public verb: string  
+    public verb: string  
   ) {}
 }
 
