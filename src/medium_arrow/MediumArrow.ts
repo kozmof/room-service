@@ -1,12 +1,17 @@
+import { ActionType, ActionSurface } from "../action/Action"
 import { Data, DataID } from "../common/CommonType"
 import { Rank5x5, SourceEvaluation, InfoEvaluation } from "../evaluation_table/EvaluationTable5x5"
 import { Rank7x7, SourceReliability, DataValidity } from "../evaluation_table/EvaluationTable7x7"
 
 // Ex: A => B (A phoned B)
 
+class MediumAction implements ActionSurface {
+  readonly actionType = "predicator";
+}
+
 interface MediumArrow {
   readonly arrowID: DataID;
-  readonly coreSentence: string;
+  readonly mediumAction: string;
   srcX: number;
   srcY: number;
   dstX: number;
@@ -55,7 +60,7 @@ class Link implements SubjectData, ObjectData, MediumArrow {
     public subjectID: DataID,
     public objectID: DataID,
     public arrowID: DataID, 
-    public coreSentence: string, 
+    public mediumAction: string, 
     public srcX: number,
     public srcY: number,
     public dstX: number, 
