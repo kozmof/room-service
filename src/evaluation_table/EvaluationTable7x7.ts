@@ -94,9 +94,9 @@ export class EvaluationTable7x7 implements Mat<SourceReliability, DataValidity>,
             const det22: string = "Agrees with other information on the subject.";
             return [det20, det21, det22]
           case 3:
-            const det_30: string = "Not confirmed.";
-            const det_31: string = "Logical in itself.";
-            const det_32: string = "Agrees somewhat with other information on the subject.";
+            const det30: string = "Not confirmed.";
+            const det31: string = "Logical in itself.";
+            const det32: string = "Agrees somewhat with other information on the subject.";
             return [det30, det31, det32]
           case 4:
             const det40: string = "Not confirmed.";
