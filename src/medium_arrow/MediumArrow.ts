@@ -7,11 +7,14 @@ import { Rank7x7, SourceReliability, DataValidity } from "../evaluation_table/Ev
 
 class MediumAction implements ActionSurface {
   readonly actionType = "predicator";
+  constructor(
+   public verb: string  
+  ) {}
 }
 
 interface MediumArrow {
   readonly arrowID: DataID;
-  readonly mediumAction: string;
+  readonly mediumAction: MediumAction;
   srcX: number;
   srcY: number;
   dstX: number;
@@ -60,7 +63,7 @@ class Link implements SubjectData, ObjectData, MediumArrow {
     public subjectID: DataID,
     public objectID: DataID,
     public arrowID: DataID, 
-    public mediumAction: string, 
+    public mediumAction: MediumAction, 
     public srcX: number,
     public srcY: number,
     public dstX: number, 
