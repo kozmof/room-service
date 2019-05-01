@@ -23,6 +23,15 @@
 - Data for programs
 - Links of data
 
+#### Structurizing Pattern
+##### Element
+###### Tag
+###### MediumArrow
+###### EvaluationTable
+###### Topic
+###### Filing
+###### Clip
+
 ## References
 - Criminal Intelligence Manual for Analysts, 2011 https://www.unodc.org/unodc/en/drug-trafficking/crimjust/tools-and-publications.html 
 - Fake news. It’s complicated. https://firstdraftnews.org/fake-news-complicated/
