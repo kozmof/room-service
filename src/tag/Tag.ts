@@ -1,14 +1,14 @@
 import { ActionType, ActionSurface } from "../action/Action"
 
 class TagAction implements ActionSurface {
-  readonly actionType = "tag";
+  readonly actionType: ActionType = "tag";
 }
 
 class Tag {
   constructor(
     private tagID: string,
     public name: string,
-    ) {}
+  ) {}
 
   private entityIDs: Array<string>;
   private actions: Array<TagAction>;
