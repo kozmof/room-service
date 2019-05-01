@@ -1,1 +1,5 @@
-export type ActionType = "tag";
+export type ActionType = "tag" | "predicator";
+
+export interface ActionSurface {
+  readonly actionType: ActionType;
+}
