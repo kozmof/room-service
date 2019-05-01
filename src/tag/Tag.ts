@@ -1,7 +1,7 @@
-import { ActionType } from "../action/Action"
+import { ActionType, ActionSurface } from "../action/Action"
 
-class TagAction {
-  private readonly actionType = "tag";
+class TagAction implements ActionSurface {
+  readonly actionType = "tag";
 }
 
 class Tag {
