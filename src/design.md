@@ -5,6 +5,7 @@
 - Collaborative
 
 ## Data Structure
+- Data has its ID
 ### Data Types
 #### Specific Types
 - People
