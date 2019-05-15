@@ -27,8 +27,10 @@
 #### General Type
 - File
 
-#### Data Pattern
-##### Element
+#### Structure
+
+##### Functions
+Specific processing of data
 ###### Tag
 Named set. It has AND and OR operators.
 ###### MediumArrow
@@ -43,6 +45,9 @@ File System.
 A data pattern of combination of raw data and its clips. Clips also have markers.
 ###### Box
 Temporary-filing System
+
+##### Lens
+Specific view of data
 
 ## References
 - Criminal Intelligence Manual for Analysts, 2011 https://www.unodc.org/unodc/en/drug-trafficking/crimjust/tools-and-publications.html 
