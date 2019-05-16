@@ -1,5 +1,3 @@
-type table_type = "5x5" | "7x7";
-
 export interface Detail {
   sourceDetail: Array < string >;
   infoDetail: Array < string >;
