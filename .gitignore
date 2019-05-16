@@ -5,6 +5,7 @@
 /src/action/*.js
 /src/box/*.js
 /src/common/*.js
+/src/data/*.js
 /src/editor/*.js
 /src/editor/marker/*.js
 /src/evaluation_table/*.js
