@@ -32,10 +32,10 @@
 
 |        | Manipulation |
 |--------|--------------|
-| Colset | Mutable      |
+| Corset | Mutable      |
 | Lens   | Immutable    |
 
-##### Colset
+##### Corset
 Specific processing of data
 
 ###### Tag
