@@ -23,12 +23,12 @@ interface BranchFilingSurface extends NonRootFilingSUrface {
 
 class ContentManager {
   constructor(
-    private entitis: Array<EntityData>,
+    private entities: Array<EntityData>,
     private branches: Array<BranchData>
   ) {}
 
   addEntity = (entity: EntityData) => {
-    this.entitis.push(entity)
+    this.entities.push(entity)
   }
 
   removeEntity = (entityID: DataID) => {
