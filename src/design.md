@@ -30,32 +30,32 @@
 
 #### Structure
 
-|        | Manipulation |
-|--------|--------------|
-| Corset | Mutable      |
-| Lens   | Immutable    |
+|        | Manipulation  |
+|--------|---------------|
+| Corset | Formatter     |
+| Lens   | Viewer        |
 
 ##### Corset
 Specific processing of data
+
+###### EvaluationTable
+5x5 and 7x7 evaluation schemes based on `Criminal Intelligence Manual for Analysts, 2011`.
+###### Topic
+A data pattern of subject and details.
+###### Clip
+A data pattern of combination of raw data and its clips. Clips also have markers.
+
+##### Lens
+Specific view of data
 
 ###### Tag
 Named set. It has AND and OR operators.
 ###### MediumArrow
 A data pattern of A do B. ex.) Tom phoned Jerry.
-###### EvaluationTable
-5x5 and 7x7 evaluation schemes based on `Criminal Intelligence Manual for Analysts, 2011`.
-###### Topic
-A data pattern of subject and details.
 ###### Filing
 File System. 
-###### Clip
-A data pattern of combination of raw data and its clips. Clips also have markers.
 ###### Box
 Temporary-filing System
-
-##### Lens
-Specific view of data
-
 
 ## References
 - Criminal Intelligence Manual for Analysts, 2011 https://www.unodc.org/unodc/en/drug-trafficking/crimjust/tools-and-publications.html 
