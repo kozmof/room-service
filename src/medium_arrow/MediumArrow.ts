@@ -11,13 +11,15 @@ class MediumAction implements ActionSurface {
   ) {}
 }
 
-interface MediumArrow {
-  readonly arrowID: DataID;
-  readonly mediumAction: MediumAction;
-  srcX: number;
-  srcY: number;
-  dstX: number;
-  dstY: number;
+class MediumArrow {
+  constructor(
+    public readonly arrowID: DataID,
+    public readonly mediumAction: MediumAction,
+    private srcX: number,
+    private srcY: number,
+    private dstX: number,
+    private dstY: number
+  ) {}
 }
 
 interface LinkSurface {
