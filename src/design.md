@@ -39,7 +39,7 @@
 Specific processing of data
 
 ###### EvaluationTable
-3x3 evaluation schemes based on `Fake news. It’s complicated.`\n
+3x3 evaluation schemes based on `Fake news. It’s complicated.`
 5x5 and 7x7 evaluation schemes based on `Criminal Intelligence Manual for Analysts, 2011`.
 ###### Topic
 A data pattern of subject and details.
@@ -52,7 +52,7 @@ Specific view of data
 ###### Tag
 Named set. It has AND and OR operators.
 ###### MediumArrow
-A data pattern of A do B. ex.) Tom phoned Jerry.
+A data pattern of A do B. e.g. Tom phoned Jerry.
 ###### Filing
 File System. 
 ###### Box
