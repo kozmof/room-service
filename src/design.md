@@ -39,7 +39,7 @@
 Specific processing of data
 
 ###### EvaluationTable
-3x3 evaluation schemes based on `Fake news. It’s complicated.`
+A 3x3 evaluation scheme based on `Fake news. It’s complicated.`
 5x5 and 7x7 evaluation schemes based on `Criminal Intelligence Manual for Analysts, 2011`.
 ###### Topic
 A data pattern of subject and details.
