@@ -3,7 +3,7 @@ import { Detail, Mat } from "./EvaluationTableBase"
 
 export type SourceTransparency = "N" | "A" | "B";
 export type InfoValidity = 0 | 1 | 2; 
-export type MalformType = 3 | 5 | 7 | 11 | 13 | 17 | 19;
+export type MalformType = 3 | 5 | 7 | 11 | 13 | 17 | 19 | 23;
 
 export interface Rank3x3 {
   sourceRank: SourceTransparency;
@@ -69,34 +69,38 @@ export class EvaluationTable3x3 implements Mat<SourceTransparency, InfoValidity>
       case "EN":
         for(let maltype of malformTypes){
           switch(maltype) {
-            case 3:
-              const data100: string = "SATIRE OR PARODY";
-              const data101: string = "No intention to cause harm but has potential to fool.";
-              result.push(new Explanation(data100, data101));
+            case 3: 
+              const data30: string = "NOT EVALUATED YET";
+              const data31: string = "";
+              result.push(new Explanation(data30, data31));
             case 5:
-              const data200: string = "MISLEADING CONTENT";
-              const data201: string = "Misleading use of information to frame an issue or individual.";
-              result.push(new Explanation(data200, data201));
+              const data50: string = "SATIRE OR PARODY";
+              const data51: string = "No intention to cause harm but has potential to fool.";
+              result.push(new Explanation(data50, data51));
             case 7:
-              const data300: string = "IMPOSTER CONTENT";
-              const data301: string = "When genuine sources are impersonated.";
-              result.push(new Explanation(data300, data301));
+              const data70: string = "MISLEADING CONTENT";
+              const data71: string = "Misleading use of information to frame an issue or individual.";
+              result.push(new Explanation(data70, data71));
             case 11:
-              const data400: string = "FABRICATED CONTENT";
-              const data401: string = "New content is 100% false, designed to deceive and do harm.";
-              result.push(new Explanation(data400, data401));
+              const data110: string = "IMPOSTER CONTENT";
+              const data111: string = "When genuine sources are impersonated.";
+              result.push(new Explanation(data110, data111));
             case 13:
-              const data500: string = "FALSE CONNECTION";
-              const data501: string = "When headlines, visuals or captions don't support the content.";
-              result.push(new Explanation(data500, data501));
+              const data130: string = "FABRICATED CONTENT";
+              const data131: string = "New content is 100% false, designed to deceive and do harm.";
+              result.push(new Explanation(data130, data131));
             case 17:
-              const data600: string = "FALSE CONTEXT";
-              const data601: string = "When genuine content is shared with false contextual information.";
-              result.push(new Explanation(data600, data601));
+              const data170: string = "FALSE CONNECTION";
+              const data171: string = "When headlines, visuals or captions don't support the content.";
+              result.push(new Explanation(data170, data171));
             case 19:
-              const data700: string = "MANIPULATED CONTENT";
-              const data701: string = "When genuine information or imagery is manipulated to deceive.";
-              result.push(new Explanation(data700, data701));
+              const data190: string = "FALSE CONTEXT";
+              const data191: string = "When genuine content is shared with false contextual information.";
+              result.push(new Explanation(data190, data191));
+            case 23:
+              const data230: string = "MANIPULATED CONTENT";
+              const data231: string = "When genuine information or imagery is manipulated to deceive.";
+              result.push(new Explanation(data230, data231));
           }
         }
 
