@@ -8,8 +8,8 @@ type FlipState<R> = {
 type RexFlipState<R, S extends FlipState<R>> = Readonly<Exclude<S, "isMutable" | "refs">>;
 
 interface JSXFactory<R, S extends FlipState<R>, RES extends RexFlipState<R, S>> {
-  mutableJSX(refs: R) : JSX.Element;
-  immutableJSX(rexState: RES) : JSX.Element;
+  mutableJSX(refs: R): JSX.Element;
+  immutableJSX(rexState: RES): JSX.Element;
   toRES(s: S): RES;
 }
 
