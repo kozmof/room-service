@@ -5,15 +5,16 @@ export type FlipState<R> = {
   refs: R;
 }
 
-export type RexFlipState<R, S extends FlipState<R>> = Readonly<Exclude<S, "isMutable" | "refs">>;
+export type Omit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>
+export type ROMFlipState<R, S extends FlipState<R>> = Readonly<Omit<S, "isMutable" | "refs">>;
 
-interface JSXFactory<R, S extends FlipState<R>, RES extends RexFlipState<R, S>> {
+interface JSXFactory<R, S extends FlipState<R>, RES extends ROMFlipState<R, S>> {
   mutableJSX(refs: R): JSX.Element;
   immutableJSX(rexState: RES): JSX.Element;
   toRES(s: S): RES;
 }
 
-export abstract class Flipper <R, P, S extends FlipState<R>, RES extends RexFlipState<R, S>> extends React.Component<P, S> implements JSXFactory<R, S, RES>{
+export abstract class Flipper <R, P, S extends FlipState<R>, RES extends ROMFlipState<R, S>> extends React.Component<P, S> implements JSXFactory<R, S, RES>{
   constructor(props: P, initState: S) {
     super(props);
 
