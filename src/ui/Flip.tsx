@@ -1,11 +1,11 @@
 import * as React from "react"; 
 
-type FlipState<R> = {
+export type FlipState<R> = {
   isMutable: boolean;
   refs: R;
 }
 
-type RexFlipState<R, S extends FlipState<R>> = Readonly<Exclude<S, "isMutable" | "refs">>;
+export type RexFlipState<R, S extends FlipState<R>> = Readonly<Exclude<S, "isMutable" | "refs">>;
 
 interface JSXFactory<R, S extends FlipState<R>, RES extends RexFlipState<R, S>> {
   mutableJSX(refs: R): JSX.Element;
