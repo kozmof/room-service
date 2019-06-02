@@ -17,20 +17,8 @@ interface JSXFactory<R, S extends FlipState<R>, RES extends ROMFlipState<R, S>> 
 export abstract class Flipper <R, P, S extends FlipState<R>, RES extends ROMFlipState<R, S>> extends React.Component<P, S> implements JSXFactory<R, S, RES>{
   constructor(props: P, initState: S) {
     super(props);
-
-    Object.keys(initState.refs).forEach(
-      (key) => {
-        initState.refs[key] = React.createRef<HTMLDivElement>();
-      } 
-    )
-
     this.state = initState;
-
     this.flip.bind(this);
-    this.mutableJSX.bind(this);
-    this.immutableJSX.bind(this);
-    this.toRES.bind(this);
-
   }
 
   abstract mutableJSX(refs: R) : JSX.Element;
