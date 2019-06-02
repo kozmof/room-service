@@ -1,11 +1,11 @@
 import * as React from "react"; 
+import { Omit } from "../common/CommonType";
 
 export type FlipState<R> = {
   isMutable: boolean;
   refs: R;
 }
 
-export type Omit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>
 export type ROMFlipState<R, S extends FlipState<R>> = Readonly<Omit<S, "isMutable" | "refs">>;
 
 interface JSXFactory<R, S extends FlipState<R>, RES extends ROMFlipState<R, S>> {
