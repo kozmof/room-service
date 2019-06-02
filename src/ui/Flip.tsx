@@ -19,7 +19,7 @@ export abstract class Flipper <R, P, S extends FlipState<R>, RES extends RexFlip
 
     Object.keys(initState.refs).forEach(
       (key) => {
-        initState.refs[key] = React.createRef();
+        initState.refs[key] = React.createRef<HTMLDivElement>();
       } 
     )
 
