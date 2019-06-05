@@ -6,15 +6,15 @@ export type FlipState<R> = {
   refs: R;
 }
 
-export type ROMFlipState<R, S extends FlipState<R>> = Readonly<Omit<S, "isMutable" | "refs">>;
+export type ROFlipState<R, S extends FlipState<R>> = Readonly<Omit<S, "isMutable" | "refs">>;
 
-interface JSXFactory<R, S extends FlipState<R>, RES extends ROMFlipState<R, S>> {
+interface JSXFactory<R, S extends FlipState<R>, ROS extends ROFlipState<R, S>> {
   mutableJSX(refs: R): JSX.Element;
-  immutableJSX(rexState: RES): JSX.Element;
-  toRES(s: S): RES;
+  immutableJSX(rexState: ROS): JSX.Element;
+  toROS(s: S): ROS;
 }
 
-export abstract class Flipper <R, P, S extends FlipState<R>, RES extends ROMFlipState<R, S>> extends React.Component<P, S> implements JSXFactory<R, S, RES>{
+export abstract class Flip <R, P, S extends FlipState<R>, ROS extends ROFlipState<R, S>> extends React.Component<P, S> implements JSXFactory<R, S, ROS>{
   constructor(props: P, initState: S) {
     super(props);
     this.state = initState;
@@ -22,10 +22,10 @@ export abstract class Flipper <R, P, S extends FlipState<R>, RES extends ROMFlip
   }
 
   abstract mutableJSX(refs: R) : JSX.Element;
-  abstract immutableJSX(rexState: RES) : JSX.Element;
-  abstract toRES(s: S): RES;
+  abstract immutableJSX(rexState: ROS) : JSX.Element;
+  abstract toROS(s: S): ROS;
 
-  flip () {
+  flip() {
     if(this.state.isMutable) {
       this.setState({ isMutable: false });
     } else {
@@ -33,14 +33,14 @@ export abstract class Flipper <R, P, S extends FlipState<R>, RES extends ROMFlip
     }
   }  
 
-  render () {
+  render() {
     if(this.state.isMutable){
       return(
         this.mutableJSX(this.state.refs)
       );
     } else {
       return(
-        this.immutableJSX(this.toRES(this.state))
+        this.immutableJSX(this.toROS(this.state))
       ); 
     }
   }
