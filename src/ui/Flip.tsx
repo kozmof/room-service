@@ -10,7 +10,7 @@ export type ROFlipState<R, S extends FlipState<R>> = Readonly<Omit<S, "isMutable
 
 interface JSXFactory<R, S extends FlipState<R>, ROS extends ROFlipState<R, S>> {
   mutableJSX(refs: R): JSX.Element;
-  immutableJSX(rexState: ROS): JSX.Element;
+  immutableJSX(ros: ROS): JSX.Element;
   toROS(s: S): ROS;
 }
 
