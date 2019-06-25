@@ -2,18 +2,18 @@ import { EvaluationType, EvaluationTable } from "../evaluation_table/EvaluationT
 import { PersonID, DataID, DataType, UserAction } from "../common/CommonType"
 
 
-export type DataSurface = {
+export type Data = {
   readonly id: DataID;
   readonly dataType: DataType;
   readonly MD5: string;
 }
 
-export type MetaDataEvaluationSurface <E extends EvaluationType> = {
+export type MetaDataEvaluation <E extends EvaluationType> = {
   readonly evaluationType: E;
   readonly evaluationTable: EvaluationTable<E>;
 }
 
-export type MetaDataPersonSurface = {
+export type MetaDataPerson = {
   readonly authorName: string;
   readonly authorID: PersonID;
   readonly editorName: string;
@@ -22,24 +22,24 @@ export type MetaDataPersonSurface = {
 
 type ModifiedDataType = "text";
 
-export type MetaDataLogSurface = {
+export type MetaDataLog = {
   readonly userAction: UserAction;
   readonly modifiedDataType: ModifiedDataType;
   readonly time: Date;
 }
 
 // TODO
-export type MetaDataSourceSurface = {
+export type MetaDataSource = {
   readonly source: Array<string>;
 }
 
 // TODO
-export type MetaDataCategorySurface = {
+export type MetaDataCategory = {
   readonly category: Array<string>;
 }
 
 // TODO
-export type MetaDataTagSurface = {
+export type MetaDataTag = {
   readonly tag: Array<string>;
 }
 
