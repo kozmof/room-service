@@ -1,3 +1,4 @@
+import { DataID } from "../common/CommonType"
 import { ActionType, Action } from "../action/Action"
 
 class TagAction implements Action {
@@ -6,14 +7,14 @@ class TagAction implements Action {
 
 class Tag {
   constructor(
-    private tagID: string,
+    private tagID: DataID,
     public name: string,
   ) {}
 
-  private entityIDs: Array<string>;
+  private entityIDs: Array<DataID>;
   private actions: Array<TagAction>;
 
-  and = (tag : Tag) : Array<string> => {
+  and = (tag : Tag) : Array<DataID> => {
     const result : Array<string> = []
 
     for (let id1 of this.entityIDs) {
@@ -27,8 +28,8 @@ class Tag {
     return Array.from(new Set(result))
   }
 
-  or = (tag : Tag) : Array<string> => {
-    const result: Array<string> = [];
+  or = (tag : Tag) : Array<DataID> => {
+    const result: Array<DataID> = [];
     result.concat(this.entityIDs);
     result.concat(tag.entityIDs);
 
