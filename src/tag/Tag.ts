@@ -1,6 +1,6 @@
-import { ActionType, ActionSurface } from "../action/Action"
+import { ActionType, Action } from "../action/Action"
 
-class TagAction implements ActionSurface {
+class TagAction implements Action {
   readonly actionType: ActionType = "tag";
 }
 
@@ -15,6 +15,7 @@ class Tag {
 
   and = (tag : Tag) : Array<string> => {
     const result : Array<string> = []
+
     for (let id1 of this.entityIDs) {
       for (let id2 of tag.entityIDs) {
         if (id1 === id2) {
@@ -22,6 +23,7 @@ class Tag {
         } 
       } 
     }
+
     return Array.from(new Set(result))
   }
 
@@ -29,6 +31,7 @@ class Tag {
     const result: Array<string> = [];
     result.concat(this.entityIDs);
     result.concat(tag.entityIDs);
+
     return Array.from(new Set(result))
   }
 }
