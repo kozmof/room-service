@@ -27,12 +27,12 @@ export type TopicEntity<T> =
   T extends CustomTopic ? CustomTopicEntity<T> :
   never;
 
-export interface BuiltInTopicEntity<T extends BuiltInTopic> {
+export type BuiltInTopicEntity<T extends BuiltInTopic> = {
   topic: T;
   entity: Array<TopicEntityType<T>>;
 }
 
-export interface CustomTopicEntity<T extends CustomTopic> {
+export type CustomTopicEntity<T extends CustomTopic> = {
   topic: T;
   customDetail: string;
   entity: Array<TopicEntityType<T>>;
