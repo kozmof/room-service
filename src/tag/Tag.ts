@@ -15,7 +15,7 @@ class Tag {
   private actions: Array<TagAction>;
 
   and = (tag : Tag) : Array<DataID> => {
-    const result : Array<string> = []
+    const result : Array<DataID> = []
 
     for (let id1 of this.entityIDs) {
       for (let id2 of tag.entityIDs) {
