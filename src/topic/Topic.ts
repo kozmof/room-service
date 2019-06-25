@@ -31,12 +31,16 @@ export type TopicEntity<T> =
 
 export type BuiltInTopicEntity<T extends BuiltInTopic> = {
   topic: T;
+  topicTypeID: DataID;
+  topicID: DataID;
   targetID: DataID;
   entity: Array<TopicEntityType<T>>;
 }
 
 export type CustomTopicEntity<T extends CustomTopic> = {
   topic: T;
+  topicTypeID: DataID;
+  topicID: DataID;
   targetID: DataID;
   customDetail: string;
   entity: Array<TopicEntityType<T>>;
