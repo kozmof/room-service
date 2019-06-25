@@ -1,3 +1,5 @@
+import { DataID } from "../common/CommonType"
+
 export type Topic = "memo";
 export type NumberTopic = "money";
 export type URLTopic = "link";
@@ -29,11 +31,13 @@ export type TopicEntity<T> =
 
 export type BuiltInTopicEntity<T extends BuiltInTopic> = {
   topic: T;
+  targetID: DataID;
   entity: Array<TopicEntityType<T>>;
 }
 
 export type CustomTopicEntity<T extends CustomTopic> = {
   topic: T;
+  targetID: DataID;
   customDetail: string;
   entity: Array<TopicEntityType<T>>;
 }
