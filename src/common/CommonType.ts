@@ -1,5 +1,4 @@
 // TODO
-export type Data = any;
 export type DataID = string;
 export type PersonID = string;
 
