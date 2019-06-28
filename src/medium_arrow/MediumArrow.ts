@@ -1,10 +1,10 @@
-import { ActionType, ActionSurface } from "../action/Action"
-import { DataID, DataType, Data } from "../common/CommonType"
-import { DataSurface } from "../data/Data"
+import { ActionType, Action } from "../action/Action"
+import { DataID, DataType } from "../common/CommonType"
+import { Data } from "../data/Data"
 
 // Ex: A => B (A phoned B)
 
-class MediumAction implements ActionSurface {
+class MediumAction implements Action {
   readonly actionType : ActionType = "predicator";
   constructor(
     public verb: string  
@@ -28,7 +28,7 @@ interface LinkSurface {
   readonly arrowData: MediumArrow;
 }
 
-class Link implements DataSurface, LinkSurface {
+class Link implements Data, LinkSurface {
   dataType: DataType = "link";
 
   constructor (
