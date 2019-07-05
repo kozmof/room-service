@@ -30,18 +30,18 @@ export type TopicEntity<T> =
   never;
 
 export type BuiltInTopicEntity<T extends BuiltInTopic> = {
-  topic: T;
-  topicTypeID: DataID;
-  topicID: DataID;
-  targetID: DataID;
-  entity: Array<TopicEntityType<T>>;
+  readonly topic: T;
+  readonly topicTypeID: DataID;
+  readonly topicID: DataID;
+  readonly targetID: DataID;
+  readonly entity: Array<TopicEntityType<T>>;
 }
 
 export type CustomTopicEntity<T extends CustomTopic> = {
-  topic: T;
-  topicTypeID: DataID;
-  topicID: DataID;
-  targetID: DataID;
-  customDetail: string;
-  entity: Array<TopicEntityType<T>>;
+  readonly topic: T;
+  readonly topicTypeID: DataID;
+  readonly topicID: DataID;
+  readonly targetID: DataID;
+  readonly customDetail: string;
+  readonly entity: Array<TopicEntityType<T>>;
 }
