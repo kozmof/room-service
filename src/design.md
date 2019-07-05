@@ -30,13 +30,8 @@
 
 #### Structure
 
-|        | Manipulation  |
-|--------|---------------|
-| Corset | Formatter     |
-| Lens   | Viewer        |
-
 ##### Corset
-Specific processing of data
+Data Formatter
 
 ###### EvaluationTable
 A 3x3 evaluation scheme based on `Fake news. It’s complicated.`
@@ -47,7 +42,7 @@ A data pattern of subject and details. One of a text data combined with other da
 A data pattern of combination of raw data and its clips. Clips also have markers.
 
 ##### Lens
-Specific view of data
+Data Viewer
 
 ###### Tag
 Named set. It has AND and OR operators.
