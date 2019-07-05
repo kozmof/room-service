@@ -25,6 +25,7 @@ export class EvaluationTable3x3 implements Mat<SourceTransparency, InfoValidity>
   constructor(
     public sourceRank: SourceTransparency = "N", 
     public infoRank: InfoValidity = 0, 
+    public malformTypes: Array<MalformType> = [],
     private lang: Language = "EN"
   ) {}
 
