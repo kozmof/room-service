@@ -13,7 +13,7 @@ class MediumAction implements Action {
 
 class MediumArrow {
   constructor(
-    public readonly arrowID: DataID,
+    public readonly id: DataID,
     public readonly mediumAction: MediumAction,
     private srcX: number,
     private srcY: number,
@@ -22,7 +22,7 @@ class MediumArrow {
   ) {}
 }
 
-interface LinkSurface {
+type LinkSurface = {
   readonly subjectData: Data;
   readonly objectData: Data;
   readonly arrowData: MediumArrow;
@@ -32,11 +32,11 @@ class Link implements Data, LinkSurface {
   dataType: DataType = "link";
 
   constructor (
-    public id: DataID,
-    public subjectData: Data,
-    public objectData: Data,
-    public arrowData: MediumArrow, 
-    public MD5: string
+    public readonly id: DataID,
+    public readonly subjectData: Data,
+    public readonly objectData: Data,
+    public readonly arrowData: MediumArrow, 
+    public readonly MD5: string
   ) {}
 }
 
