@@ -5,7 +5,7 @@ export type SourceTransparency = "N" | "A" | "B";
 export type InfoValidity = 0 | 1 | 2; 
 export type MalformType = 3 | 5 | 7 | 11 | 13 | 17 | 19 | 23;
 
-export interface Rank3x3 {
+export type Rank3x3 = {
   sourceRank: SourceTransparency;
   infoRank: InfoValidity;
 }
@@ -23,8 +23,8 @@ class Explanation {
 
 export class EvaluationTable3x3 implements Mat<SourceTransparency, InfoValidity>, Rank3x3 {
   constructor(
-    private sourceRank: SourceTransparency = "N", 
-    private infoRank: InfoValidity = 0, 
+    public sourceRank: SourceTransparency = "N", 
+    public infoRank: InfoValidity = 0, 
     private malformTypes: Array<MalformType> = [],
     private lang: Language = "EN"
   ) {}
