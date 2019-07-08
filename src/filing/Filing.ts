@@ -101,8 +101,8 @@ class BranchData extends ContentManager implements BranchFilingSurface {
   constructor(
     private branchID: DataID,
     private parentID: DataID,
-    entities: Array<EntityData> = [],
-    branches: Array<BranchData> = []
+    private entities: Array<EntityData> = [],
+    private branches: Array<BranchData> = []
   ) {
     super(entities, branches);
   }
