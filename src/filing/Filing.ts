@@ -59,8 +59,8 @@ class RootData extends ContentManager implements RootFilingSurface {
 
   constructor(
     private entityID: DataID,
-    entities: Array<EntityData> = [],
-    branches: Array<BranchData> = []
+    entities: Array<EntityData>,
+    branches: Array<BranchData>
   ) {
     super(entities, branches);
   }
@@ -101,8 +101,8 @@ class BranchData extends ContentManager implements BranchFilingSurface {
   constructor(
     private branchID: DataID,
     private parentID: DataID,
-    private entities: Array<EntityData> = [],
-    private branches: Array<BranchData> = []
+    entities: Array<EntityData>,
+    branches: Array<BranchData>
   ) {
     super(entities, branches);
   }
