@@ -1,10 +1,10 @@
 import { Language } from "./Language"
 import { Detail, Mat } from "./EvaluationTableBase"
 
-export type SourceEvaluation = "N" | "A" | "B" | "C" | "X";
-export type InfoEvaluation = 0 | 1 | 2 | 3 | 4;
+type SourceEvaluation = "N" | "A" | "B" | "C" | "X";
+type InfoEvaluation = 0 | 1 | 2 | 3 | 4;
 
-export interface Rank5x5 {
+type Rank5x5 = {
   sourceRank: SourceEvaluation;
   infoRank: InfoEvaluation;
 }
@@ -65,7 +65,7 @@ export class EvaluationTable5x5 implements Mat<SourceEvaluation, InfoEvaluation>
   }
 
   detail = (): Detail => {
-    const det5x5 = {
+    const det5x5: Detail = {
       sourceDetail: this.detailSource(this.sourceRank),
       infoDetail: this.detailInfo(this.infoRank)
     }

@@ -1,16 +1,16 @@
 import { Language } from "./Language"
 import { Detail, Mat } from "./EvaluationTableBase"
 
-export type SourceTransparency = "N" | "A" | "B";
-export type InfoValidity = 0 | 1 | 2; 
-export type MalformType = 3 | 5 | 7 | 11 | 13 | 17 | 19 | 23;
+type SourceTransparency = "N" | "A" | "B";
+type InfoValidity = 0 | 1 | 2; 
+type MalformType = 3 | 5 | 7 | 11 | 13 | 17 | 19 | 23;
 
-export type Rank3x3 = {
+type Rank3x3 = {
   sourceRank: SourceTransparency;
   infoRank: InfoValidity;
 }
 
-export interface MalformTable {
+interface MalformTable {
   malform(malformTypes: Array<MalformType>): Array<string>
 }
 
@@ -110,7 +110,7 @@ export class EvaluationTable3x3 implements Mat<SourceTransparency, InfoValidity>
   }
 
   detail = (): Detail => {
-    const det3x3 = {
+    const det3x3: Detail = {
       sourceDetail: this.detailSource(this.sourceRank),
       infoDetail: this.detailInfo(this.infoRank)
     } 

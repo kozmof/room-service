@@ -1,10 +1,10 @@
 import { Language } from "./Language";
 import { Detail, Mat } from "./EvaluationTableBase"
 
-export type SourceReliability = "N" | "A" | "B" | "C" | "D" | "E" | "F";
-export type DataValidity = 0 | 1 | 2 | 3 | 4 | 5 | 6;
+type SourceReliability = "N" | "A" | "B" | "C" | "D" | "E" | "F";
+type DataValidity = 0 | 1 | 2 | 3 | 4 | 5 | 6;
 
-export interface Rank7x7 {
+type Rank7x7 = {
   sourceRank: SourceReliability;
   infoRank: DataValidity;
 }
@@ -137,7 +137,7 @@ export class EvaluationTable7x7 implements Mat<SourceReliability, DataValidity>,
   }
 
   detail = (): Detail => {
-    const det7x7 = {
+    const det7x7: Detail = {
       sourceDetail: this.detailSource(this.sourceRank), 
       infoDetail: this.detailInfo(this.infoRank)
     } 
