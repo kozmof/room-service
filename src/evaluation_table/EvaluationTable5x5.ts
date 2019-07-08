@@ -11,8 +11,8 @@ export interface Rank5x5 {
 
 export class EvaluationTable5x5 implements Mat<SourceEvaluation, InfoEvaluation>, Rank5x5 {
   constructor(
-    public sourceRank: SourceEvaluation = "N", 
-    public infoRank: InfoEvaluation = 0, 
+    private sourceRank: SourceEvaluation = "N", 
+    private infoRank: InfoEvaluation = 0, 
     private lang: Language = "EN") {}
 
   detailSource = (sourceRank: SourceEvaluation): Array < string > => {

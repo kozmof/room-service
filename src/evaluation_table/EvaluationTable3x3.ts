@@ -23,9 +23,9 @@ class Explanation {
 
 export class EvaluationTable3x3 implements Mat<SourceTransparency, InfoValidity>, Rank3x3 {
   constructor(
-    public sourceRank: SourceTransparency = "N", 
-    public infoRank: InfoValidity = 0, 
-    public malformTypes: Array<MalformType> = [],
+    private sourceRank: SourceTransparency = "N", 
+    private infoRank: InfoValidity = 0, 
+    private malformTypes: Array<MalformType> = [],
     private lang: Language = "EN"
   ) {}
 
