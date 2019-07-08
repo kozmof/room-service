@@ -7,7 +7,7 @@ import { Data } from "../data/Data"
 class MediumAction implements Action {
   readonly actionType : ActionType = "predicator";
   constructor(
-    public verb: string  
+    private verb: string  
   ) {}
 }
 
