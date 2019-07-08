@@ -55,7 +55,7 @@ class ContentManager {
 }
 
 class RootData extends ContentManager implements RootFilingSurface {
-  private dataType: FilingDataType  = "root";
+  private dataType: FilingDataType = "root";
 
   constructor(
     private entityID: DataID,
