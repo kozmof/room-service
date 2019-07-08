@@ -9,10 +9,9 @@ type Rank5x5 = {
   infoRank: InfoEvaluation;
 }
 
-export class EvaluationTable5x5 implements Mat<SourceEvaluation, InfoEvaluation>, Rank5x5 {
+export class EvaluationTable5x5 implements Mat<SourceEvaluation, InfoEvaluation> {
   constructor(
-    public sourceRank: SourceEvaluation = "N", 
-    public infoRank: InfoEvaluation = 0, 
+    private rank: Rank5x5 = {sourceRank: "N", infoRank: 0},
     private lang: Language = "EN") {}
 
   detailSource = (sourceRank: SourceEvaluation): Array < string > => {
@@ -66,8 +65,8 @@ export class EvaluationTable5x5 implements Mat<SourceEvaluation, InfoEvaluation>
 
   detail = (): Detail => {
     const det5x5: Detail = {
-      sourceDetail: this.detailSource(this.sourceRank),
-      infoDetail: this.detailInfo(this.infoRank)
+      sourceDetail: this.detailSource(this.rank.sourceRank),
+      infoDetail: this.detailInfo(this.rank.infoRank)
     }
     return det5x5
   }

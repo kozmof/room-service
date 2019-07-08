@@ -21,10 +21,9 @@ class Explanation {
   ) {}
 }
 
-export class EvaluationTable3x3 implements Mat<SourceTransparency, InfoValidity>, Rank3x3 {
+export class EvaluationTable3x3 implements Mat<SourceTransparency, InfoValidity> {
   constructor(
-    public sourceRank: SourceTransparency = "N", 
-    public infoRank: InfoValidity = 0, 
+    private rank: Rank3x3 = {sourceRank: "N", infoRank: 0},
     private malformTypes: Array<MalformType> = [],
     private lang: Language = "EN"
   ) {}
@@ -111,8 +110,8 @@ export class EvaluationTable3x3 implements Mat<SourceTransparency, InfoValidity>
 
   detail = (): Detail => {
     const det3x3: Detail = {
-      sourceDetail: this.detailSource(this.sourceRank),
-      infoDetail: this.detailInfo(this.infoRank)
+      sourceDetail: this.detailSource(this.rank.sourceRank),
+      infoDetail: this.detailInfo(this.rank.infoRank)
     } 
     return det3x3
   }

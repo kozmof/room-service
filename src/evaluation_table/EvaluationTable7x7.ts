@@ -14,10 +14,9 @@ interface Tag {
   validity(infoRank: DataValidity): string;
 }
 
-export class EvaluationTable7x7 implements Mat<SourceReliability, DataValidity>, Rank7x7, Tag {
+export class EvaluationTable7x7 implements Mat<SourceReliability, DataValidity>, Tag {
   constructor(
-    public sourceRank: SourceReliability = "N", 
-    public infoRank: DataValidity = 0, 
+    private rank: Rank7x7 = {sourceRank: "N", infoRank: 0},
     private lang: Language = "EN") {}
 
   detailSource = (sourceRank: SourceReliability): Array < string > => {
@@ -138,8 +137,8 @@ export class EvaluationTable7x7 implements Mat<SourceReliability, DataValidity>,
 
   detail = (): Detail => {
     const det7x7: Detail = {
-      sourceDetail: this.detailSource(this.sourceRank), 
-      infoDetail: this.detailInfo(this.infoRank)
+      sourceDetail: this.detailSource(this.rank.sourceRank), 
+      infoDetail: this.detailInfo(this.rank.infoRank)
     } 
 
     return det7x7
