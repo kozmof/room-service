@@ -29,7 +29,7 @@ type LinkSurface = {
 }
 
 class Link implements Data, LinkSurface {
-  dataType: DataType = "link";
+  readonly dataType: DataType = "link";
 
   constructor (
     public readonly id: DataID,
