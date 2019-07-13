@@ -53,6 +53,12 @@ File System.
 ###### Box
 Temporary-filing System
 
+# Action
+Triggered by specific events
+
+## Action Types
+- predicator
+
 ## References
 - Criminal Intelligence Manual for Analysts, 2011 https://www.unodc.org/unodc/en/drug-trafficking/crimjust/tools-and-publications.html 
 - Fake news. It’s complicated. https://firstdraftnews.org/fake-news-complicated/
