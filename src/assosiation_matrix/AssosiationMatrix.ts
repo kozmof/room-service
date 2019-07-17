@@ -13,23 +13,32 @@ type Check = {
 type PairName = {
   nameX: string;
   nameY: string;
-} & Pos
+} 
 
-type AssosiationInfo = Array<string>;
+type AssosiationNames = Array<string>;
 type AssosiationItems = Array<Array<Check>>;
+type AssosiationConditions = Array<Check & PairName>;
 type Overview = Readonly<Array<Readonly<Array<Readonly<Check & PairName>>>>>
 
 export class AssosiationMatrix {
   private assosiationItems: AssosiationItems = [];
+  private assosiationCondition: AssosiationConditions = [];
 
   constructor(
-    private assosiationInfo: AssosiationInfo,
-    checkType: string = "default"
+    private assosiationName: AssosiationNames,
+    private defaultCheckType: string = "default"
   ) {
-    for (const [x_index, x_item] of assosiationInfo.entries()) {
-      const y_array: Array<Check> = []
+      this.initTable(defaultCheckType);
+    }
 
-      for (const [y_index, y_item] of assosiationInfo.slice(x_index + 1).reverse().entries()) {
+  initTable = (checkType: string) => {
+    this.assosiationItems = [];
+    this.assosiationCondition = [];
+
+    for (const [x_index, x_name] of this.assosiationName.entries()) {
+      const y_array: Array<Check> = [];
+
+      for (const [y_index, y_name] of this.assosiationName.slice(x_index + 1).reverse().entries()) {
         const check: Check = {
           checkType: checkType,
           isChecked: false,
@@ -37,19 +46,39 @@ export class AssosiationMatrix {
           y: y_index
         } 
 
+        const condition: Check & PairName = Object.assign(
+          { 
+            nameX: x_name,
+            nameY: y_name
+          },
+          check
+        )
+
         y_array.push(check);
+        this.assosiationCondition.push(condition);
+
       }
 
-      this.assosiationItems.push(y_array)
+      this.assosiationItems.push(y_array);
     }
   }
 
-  addItem = (item :string, num? :number) => {
-  
+  // TODO Bound check
+  addName = (name:string, num? :number) => {
+    if (num) {
+      this.assosiationName.splice(num, 0, name);
+    } else {
+      this.assosiationName.push(name);
+    }
   }
 
-  removeItem =  (item: string) => {
-  
+  removeName = (name: string) => {
+    for (const [index, item] of this.assosiationName.entries()) {
+      if (name === item) {
+        this.assosiationName.splice(index, 1); 
+        return 
+      }
+    }
   }
 
   overview = () => {
