@@ -64,7 +64,7 @@ export class AssosiationMatrix {
   }
 
   // TODO Bound check
-  addName = (name:string, num? :number) => {
+  addName = (name: string, num?: number) => {
     if (num) {
       this.assosiationName.splice(num, 0, name);
     } else {
