@@ -3,6 +3,7 @@
 *swo
 /src/*.js
 /src/action/*.js
+/src/assosiation_matrix/*.js
 /src/box/*.js
 /src/common/*.js
 /src/data/*.js
