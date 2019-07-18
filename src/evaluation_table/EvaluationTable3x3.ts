@@ -21,6 +21,12 @@ class Explanation {
   ) {}
 }
 
+export interface Arg3x3 {
+  readonly rank: Rank3x3;
+  readonly malformTypes: Array<MalformType>;
+  readonly lang: Language;
+}
+
 export class EvaluationTable3x3 implements Mat<SourceTransparency, InfoValidity> {
   constructor(
     private rank: Rank3x3 = {sourceRank: "N", infoRank: 0},

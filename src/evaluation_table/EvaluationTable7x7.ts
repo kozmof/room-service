@@ -14,6 +14,11 @@ interface Tag {
   validity(infoRank: DataValidity): string;
 }
 
+export interface Arg7x7 {
+  readonly rank: Rank7x7;
+  readonly lang: Language;
+}
+
 export class EvaluationTable7x7 implements Mat<SourceReliability, DataValidity>, Tag {
   constructor(
     private rank: Rank7x7 = {sourceRank: "N", infoRank: 0},

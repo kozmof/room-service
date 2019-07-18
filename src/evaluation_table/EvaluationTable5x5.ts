@@ -9,6 +9,11 @@ type Rank5x5 = {
   infoRank: InfoEvaluation;
 }
 
+export interface Arg5x5 {
+  readonly rank: Rank5x5;
+  readonly lang: Language;
+}
+
 export class EvaluationTable5x5 implements Mat<SourceEvaluation, InfoEvaluation> {
   constructor(
     private rank: Rank5x5 = {sourceRank: "N", infoRank: 0},
