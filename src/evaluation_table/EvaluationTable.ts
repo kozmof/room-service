@@ -18,15 +18,18 @@ export type EvaluationArg<E extends EvaluationType> =
 
 const makeEvaluationTable = (evaluationType: EvaluationType, arg: EvaluationArg<typeof evaluationType>) : EvaluationTable<typeof evaluationType> => {
   switch (evaluationType) {
-    case "3x3": 
-      const arg3x3: Arg3x3 = arg as Arg3x3;
-      return new EvaluationTable3x3(arg3x3.rank, arg3x3.malformTypes, arg3x3.lang);
-    case "5x5":
-      const arg5x5: Arg5x5 = arg as Arg5x5;
-      return new EvaluationTable5x5(arg5x5.rank, arg5x5.lang);
-    case "7x7":
-      const arg7x7: Arg7x7 = arg as Arg7x7;
-      return new EvaluationTable7x7(arg7x7.rank, arg7x7.lang);
+    case "3x3": {
+      const { rank, malformTypes, lang } = arg as Arg3x3;
+      return new EvaluationTable3x3(rank, malformTypes, lang);
+    }
+    case "5x5": {
+      const { rank, lang } = arg as Arg5x5;
+      return new EvaluationTable5x5(rank, lang);
+    }
+    case "7x7": {
+      const { rank, lang }= arg as Arg7x7;
+      return new EvaluationTable7x7(rank, lang);
+    }
   }
 }
 
