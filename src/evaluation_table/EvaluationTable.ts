@@ -16,20 +16,31 @@ export type EvaluationArg<E extends EvaluationType> =
   E extends "7x7" ? Arg7x7:
   never;
 
-const makeEvaluationTable = (evaluationType: EvaluationType, arg: EvaluationArg<typeof evaluationType>) : EvaluationTable<typeof evaluationType> => {
+const makeEvaluationTable = (evaluationType: EvaluationType, arg?: EvaluationArg<typeof evaluationType>) : EvaluationTable<typeof evaluationType> => {
   switch (evaluationType) {
     case "3x3": {
-      const { rank, malformTypes, lang } = arg as Arg3x3;
-      return new EvaluationTable3x3(rank, malformTypes, lang);
+      if (arg) {
+        const { rank, malformTypes, lang } = arg as Arg3x3;
+        return new EvaluationTable3x3(rank, malformTypes, lang);
+      } else {
+        return new EvaluationTable3x3();
+      }
     }
     case "5x5": {
-      const { rank, lang } = arg as Arg5x5;
-      return new EvaluationTable5x5(rank, lang);
+      if (arg) {
+        const { rank, lang } = arg as Arg5x5;
+        return new EvaluationTable5x5(rank, lang);
+      } else {
+        return new EvaluationTable5x5();
+      }
     }
     case "7x7": {
-      const { rank, lang }= arg as Arg7x7;
-      return new EvaluationTable7x7(rank, lang);
+      if (arg) {
+        const { rank, lang } = arg as Arg7x7;
+        return new EvaluationTable7x7(rank, lang);
+      } else {
+        return new EvaluationTable7x7();
+      }
     }
   }
 }
-
