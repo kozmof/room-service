@@ -22,6 +22,7 @@
     "newtype-ts": "^0.3.2",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "typeface-roboto": "0.0.75",
     "uuid": "^3.3.2",
     "webpack": "^4.35.3"
   },
