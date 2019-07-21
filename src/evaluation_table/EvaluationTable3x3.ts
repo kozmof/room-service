@@ -5,7 +5,7 @@ type SourceTransparency = "N" | "A" | "B";
 type InfoValidity = 0 | 1 | 2; 
 type MalformType = 3 | 5 | 7 | 11 | 13 | 17 | 19 | 23;
 
-type Rank3x3 = {
+export type Rank3x3 = {
   sourceRank: SourceTransparency;
   infoRank: InfoValidity;
 }
@@ -29,9 +29,9 @@ export interface Arg3x3 {
 
 export class EvaluationTable3x3 implements Mat<SourceTransparency, InfoValidity> {
   constructor(
-    private rank: Rank3x3 = {sourceRank: "N", infoRank: 0},
-    private malformTypes: Array<MalformType> = [],
-    private lang: Language = "EN"
+    public readonly rank: Rank3x3 = {sourceRank: "N", infoRank: 0},
+    public readonly malformTypes: Array<MalformType> = [],
+    public readonly lang: Language = "EN"
   ) {}
 
   detailSource = (sourceTransparency: SourceTransparency) : Array<string> => {

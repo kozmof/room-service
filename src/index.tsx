@@ -11,8 +11,7 @@ const props: EvaluationProps = {
       infoRank: 3
     },
     lang: "EN"
-  },
-  lang: "EN"
+  }
 }
 
 ReactDom.render(

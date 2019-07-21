@@ -4,12 +4,12 @@ import Dialog from "@material-ui/core/Dialog";
 import DialogTitle from "@material-ui/core/DialogTitle";
 import Typography from "@material-ui/core/Typography";
 import { Language } from "./Language";
-import { EvaluationType, EvaluationArg, makeEvaluationTable } from "./EvaluationTable";
+import { EvaluationType } from "./EvaluationTableBase";
+import { EvaluationArg, makeEvaluationTable } from "./EvaluationTable";
 
 export type EvaluationProps = {
   evaluationType: EvaluationType;
   evaluationArg: EvaluationArg<EvaluationType>;
-  lang: Language;
 }
 
 type EvaluationDialogProps = {
@@ -34,8 +34,7 @@ export const EvaluationDialog = (props: EvaluationDialogProps) => {
 
 export const EvaluationChip =  (props: EvaluationProps) => {
   const [open, setOpen] = useState(false);
-  const [evaluationArg, setEvaluationArg] = useState(props.evaluationArg);
-  const [evaluationTable, setEvaluationTable] = useState(makeEvaluationTable(props.evaluationType, evaluationArg));
+  const [evaluationTable, setEvaluationTable] = useState(makeEvaluationTable(props.evaluationType, props.evaluationArg));
 
   const handleOpen = () => {
     setOpen(true); 
@@ -48,7 +47,7 @@ export const EvaluationChip =  (props: EvaluationProps) => {
   return (
     <div>
       <Button variant="outlined" color="primary" onClick={handleOpen}>
-        N 0
+        {evaluationTable.rank.sourceRank} {evaluationTable.rank.infoRank}
       </Button>
       <EvaluationDialog open={open} onClose={handleClose} />
     </div>

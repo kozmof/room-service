@@ -4,7 +4,7 @@ import { Detail, Mat } from "./EvaluationTableBase"
 type SourceReliability = "N" | "A" | "B" | "C" | "D" | "E" | "F";
 type DataValidity = 0 | 1 | 2 | 3 | 4 | 5 | 6;
 
-type Rank7x7 = {
+export type Rank7x7 = {
   sourceRank: SourceReliability;
   infoRank: DataValidity;
 }
@@ -21,8 +21,8 @@ export interface Arg7x7 {
 
 export class EvaluationTable7x7 implements Mat<SourceReliability, DataValidity>, Tag {
   constructor(
-    private rank: Rank7x7 = {sourceRank: "N", infoRank: 0},
-    private lang: Language = "EN") {}
+    public readonly rank: Rank7x7 = {sourceRank: "N", infoRank: 0},
+    public readonly lang: Language = "EN") {}
 
   detailSource = (sourceRank: SourceReliability): Array < string > => {
     switch(this.lang){

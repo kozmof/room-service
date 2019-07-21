@@ -37151,8 +37151,7 @@ exports.EvaluationDialog = (props) => {
 };
 exports.EvaluationChip = (props) => {
     const [open, setOpen] = react_1.useState(false);
-    const [evaluationArg, setEvaluationArg] = react_1.useState(props.evaluationArg);
-    const [evaluationTable, setEvaluationTable] = react_1.useState(EvaluationTable_1.makeEvaluationTable(props.evaluationType, evaluationArg));
+    const [evaluationTable, setEvaluationTable] = react_1.useState(EvaluationTable_1.makeEvaluationTable(props.evaluationType, props.evaluationArg));
     const handleOpen = () => {
         setOpen(true);
     };
@@ -37160,7 +37159,10 @@ exports.EvaluationChip = (props) => {
         setOpen(false);
     };
     return (react_1.default.createElement("div", null,
-        react_1.default.createElement(Button_1.default, { variant: "outlined", color: "primary", onClick: handleOpen }, "N 0"),
+        react_1.default.createElement(Button_1.default, { variant: "outlined", color: "primary", onClick: handleOpen },
+            evaluationTable.rank.sourceRank,
+            " ",
+            evaluationTable.rank.infoRank),
         react_1.default.createElement(exports.EvaluationDialog, { open: open, onClose: handleClose })));
 };
 
@@ -37569,8 +37571,7 @@ const props = {
             infoRank: 3
         },
         lang: "EN"
-    },
-    lang: "EN"
+    }
 };
 ReactDom.render(React.createElement("div", null,
     React.createElement(TestEditor_1.TestEditor, null),
