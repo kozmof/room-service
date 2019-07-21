@@ -37227,6 +37227,8 @@ exports.makeEvaluationTable = (evaluationType, arg) => {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
+const Data3x3_1 = __webpack_require__(/*! ./data/Data3x3 */ "./src/evaluation_table/data/Data3x3.ts");
+const Data3x3_2 = __webpack_require__(/*! ./data/Data3x3 */ "./src/evaluation_table/data/Data3x3.ts");
 class Explanation {
     constructor(subject, detail) {
         this.subject = subject;
@@ -37243,14 +37245,11 @@ class EvaluationTable3x3 {
                 case "EN":
                     switch (sourceTransparency) {
                         case "N":
-                            const dataN0 = "Not evaluated yet.";
-                            return [dataN0];
+                            return [Data3x3_1.data_N_0_en];
                         case "A":
-                            const dataA0 = "Source has valid author.";
-                            return [dataA0];
+                            return [Data3x3_1.data_A_0_en];
                         case "B":
-                            const dataB0 = "No valid author.";
-                            return [dataB0];
+                            return [Data3x3_1.data_B_0_en];
                     }
             }
         };
@@ -37259,14 +37258,11 @@ class EvaluationTable3x3 {
                 case "EN":
                     switch (infoRank) {
                         case 0:
-                            const data00 = "Not evaluated yet.";
-                            return [data00];
+                            return [Data3x3_1.data_0_0_en];
                         case 1:
-                            const data10 = "Valid information.";
-                            return [data10];
+                            return [Data3x3_1.data_1_0_en];
                         case 2:
-                            const data20 = "Invalid infoRank.";
-                            return [data20];
+                            return [Data3x3_1.data_2_0_en];
                     }
             }
         };
@@ -37277,37 +37273,21 @@ class EvaluationTable3x3 {
                     for (let maltype of malformTypes) {
                         switch (maltype) {
                             case 3:
-                                const data30 = "NOT EVALUATED YET";
-                                const data31 = "";
-                                result.push(new Explanation(data30, data31));
+                                result.push(new Explanation(Data3x3_2.data_3_0_mal_en, Data3x3_2.data_3_1_mal_en));
                             case 5:
-                                const data50 = "SATIRE OR PARODY";
-                                const data51 = "No intention to cause harm but has potential to fool.";
-                                result.push(new Explanation(data50, data51));
+                                result.push(new Explanation(Data3x3_2.data_5_0_mal_en, Data3x3_2.data_5_1_mal_en));
                             case 7:
-                                const data70 = "MISLEADING CONTENT";
-                                const data71 = "Misleading use of information to frame an issue or individual.";
-                                result.push(new Explanation(data70, data71));
+                                result.push(new Explanation(Data3x3_2.data_7_0_mal_en, Data3x3_2.data_7_1_mal_en));
                             case 11:
-                                const data110 = "IMPOSTER CONTENT";
-                                const data111 = "When genuine sources are impersonated.";
-                                result.push(new Explanation(data110, data111));
+                                result.push(new Explanation(Data3x3_2.data_11_0_mal_en, Data3x3_2.data_11_1_mal_en));
                             case 13:
-                                const data130 = "FABRICATED CONTENT";
-                                const data131 = "New content is 100% false, designed to deceive and do harm.";
-                                result.push(new Explanation(data130, data131));
+                                result.push(new Explanation(Data3x3_2.data_13_0_mal_en, Data3x3_2.data_13_1_mal_en));
                             case 17:
-                                const data170 = "FALSE CONNECTION";
-                                const data171 = "When headlines, visuals or captions don't support the content.";
-                                result.push(new Explanation(data170, data171));
+                                result.push(new Explanation(Data3x3_2.data_17_0_mal_en, Data3x3_2.data_17_1_mal_en));
                             case 19:
-                                const data190 = "FALSE CONTEXT";
-                                const data191 = "When genuine content is shared with false contextual information.";
-                                result.push(new Explanation(data190, data191));
+                                result.push(new Explanation(Data3x3_2.data_19_0_mal_en, Data3x3_2.data_19_1_mal_en));
                             case 23:
-                                const data230 = "MANIPULATED CONTENT";
-                                const data231 = "When genuine information or imagery is manipulated to deceive.";
-                                result.push(new Explanation(data230, data231));
+                                result.push(new Explanation(Data3x3_2.data_21_0_mal_en, Data3x3_2.data_21_1_mal_en));
                         }
                     }
                     return result;
@@ -37337,6 +37317,8 @@ exports.EvaluationTable3x3 = EvaluationTable3x3;
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
+const Data5x5_1 = __webpack_require__(/*! ./data/Data5x5 */ "./src/evaluation_table/data/Data5x5.ts");
+const Data5x5_2 = __webpack_require__(/*! ./data/Data5x5 */ "./src/evaluation_table/data/Data5x5.ts");
 class EvaluationTable5x5 {
     constructor(rank = { sourceRank: "N", infoRank: 0 }, lang = "EN") {
         this.rank = rank;
@@ -37346,21 +37328,15 @@ class EvaluationTable5x5 {
                 case "EN":
                     switch (sourceRank) {
                         case "N":
-                            const detN0 = "Not evaluated yet.";
-                            return [detN0];
+                            return [Data5x5_1.data_N_0_en];
                         case "A":
-                            const detA0 = "No doubt regarding authenticity, trustworthiness, integrity, competence.";
-                            const detA1 = "History of complete reliability.";
-                            return [detA0, detA1];
+                            return [Data5x5_1.data_A_0_en, Data5x5_1.data_A_1_en];
                         case "B":
-                            const detB0 = "Source from whom information received has in most instances proved to be reliable.";
-                            return [detB0];
+                            return [Data5x5_1.data_B_0_en];
                         case "C":
-                            const detC0 = "Source from whom information received has in most instances proved to be unreliable.";
-                            return [detC0];
+                            return [Data5x5_1.data_C_0_en];
                         case "X":
-                            const detX0 = "Reliability cannot be judged.";
-                            return [detX0];
+                            return [Data5x5_1.data_X_0_en];
                     }
             }
         };
@@ -37369,22 +37345,15 @@ class EvaluationTable5x5 {
                 case "EN":
                     switch (infoRank) {
                         case 0:
-                            const det00 = "Not evaluated yet.";
-                            return [det00];
+                            return [Data5x5_2.data_0_0_en];
                         case 1:
-                            const det10 = "No doubt about accuracy.";
-                            return [det10];
+                            return [Data5x5_2.data_1_0_en];
                         case 2:
-                            const det20 = "Information known personally to the source but not known personally to the official who is passing it on";
-                            const det21 = "Logical in itself.";
-                            const det22 = "Agrees with other information on the subject.";
-                            return [det20, det21, det22];
+                            return [Data5x5_2.data_2_0_en, Data5x5_2.data_2_1_en, Data5x5_2.data_2_2_en];
                         case 3:
-                            const det30 = "Information not known personally to the source but corroborated by other information already recorded.";
-                            return [det30];
+                            return [Data5x5_2.data_3_0_en];
                         case 4:
-                            const det40 = "Information which is not known personally to the source and can not be independently corroborated.";
-                            return [det40];
+                            return [Data5x5_2.data_4_0_en];
                     }
             }
         };
@@ -37412,6 +37381,10 @@ exports.EvaluationTable5x5 = EvaluationTable5x5;
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
+const Data7x7_1 = __webpack_require__(/*! ./data/Data7x7 */ "./src/evaluation_table/data/Data7x7.ts");
+const Data7x7_2 = __webpack_require__(/*! ./data/Data7x7 */ "./src/evaluation_table/data/Data7x7.ts");
+const Data7x7_3 = __webpack_require__(/*! ./data/Data7x7 */ "./src/evaluation_table/data/Data7x7.ts");
+const Data7x7_4 = __webpack_require__(/*! ./data/Data7x7 */ "./src/evaluation_table/data/Data7x7.ts");
 class EvaluationTable7x7 {
     constructor(rank = { sourceRank: "N", infoRank: 0 }, lang = "EN") {
         this.rank = rank;
@@ -37421,31 +37394,19 @@ class EvaluationTable7x7 {
                 case "EN":
                     switch (sourceRank) {
                         case "N":
-                            const detN0 = "Not yet evaluated yet.";
-                            return [detN0];
+                            return [Data7x7_1.data_N_0_en];
                         case "A":
-                            const detA0 = "No doubt regarding authenticity, trustworthiness, integrity, competence.";
-                            const detA1 = "History of complete reliability.";
-                            return [detA0, detA1];
+                            return [Data7x7_1.data_A_0_en, Data7x7_1.data_A_1_en];
                         case "B":
-                            const detB0 = "Some doubt regarding authenticity or trustworthiness or integrity or competence (one count).";
-                            const detB1 = "History of general reliability.";
-                            return [detB0, detB1];
+                            return [Data7x7_1.data_B_0_en, Data7x7_1.data_B_1_en];
                         case "C":
-                            const detC0 = "Doubt regarding authenticity, trustworthiness, integrity, competence (two counts and more).";
-                            const detC1 = "History of periodic reliability.";
-                            return [detC0, detC1];
+                            return [Data7x7_1.data_C_0_en, Data7x7_1.data_C_1_en];
                         case "D":
-                            const detD0 = "Definite doubt regarding authenticity, trustworthiness, integrity, competence.";
-                            const detD1 = "History of occasional reliability.";
-                            return [detD0, detD1];
+                            return [Data7x7_1.data_D_0_en, Data7x7_1.data_D_1_en];
                         case "E":
-                            const detE0 = "Certainty about lack of authenticity, trustworthiness, integrity, competence.";
-                            const detE1 = "History of unreliability.";
-                            return [detE0, detE1];
+                            return [Data7x7_1.data_E_0_en, Data7x7_1.data_E_1_en];
                         case "F":
-                            const detF0 = "Cannot be judged.";
-                            return [detF0];
+                            return [Data7x7_1.data_F_0_en];
                     }
             }
         };
@@ -37454,19 +37415,19 @@ class EvaluationTable7x7 {
                 case "EN":
                     switch (sourceRank) {
                         case "N":
-                            return "NOT EVALUATED YET";
+                            return Data7x7_2.data_N_digest_en;
                         case "A":
-                            return "COMPLETELY RELIABLE";
+                            return Data7x7_2.data_A_digest_en;
                         case "B":
-                            return "USUALY RELIABLE";
+                            return Data7x7_2.data_B_digest_en;
                         case "C":
-                            return "FAIRLY RELIABLE";
+                            return Data7x7_2.data_C_digest_en;
                         case "D":
-                            return "USUALY NOT RELIABLE";
+                            return Data7x7_2.data_D_digest_en;
                         case "E":
-                            return "UNRELIABLE";
+                            return Data7x7_2.data_E_digest_en;
                         case "F":
-                            return "";
+                            return Data7x7_2.data_F_digest_en;
                     }
             }
         };
@@ -37475,35 +37436,19 @@ class EvaluationTable7x7 {
                 case "EN":
                     switch (infoRank) {
                         case 0:
-                            const det00 = "Not yet evaluated yet.";
-                            return [det00];
+                            return [Data7x7_3.data_0_0_en];
                         case 1:
-                            const det10 = "Confirmed by other independent sources.";
-                            const det11 = "Logical in itself.";
-                            const det12 = "Agrees with other information on the subject.";
-                            return [det10, det11, det12];
+                            return [Data7x7_3.data_1_0_en, Data7x7_3.data_1_1_en, Data7x7_3.data_1_2_en];
                         case 2:
-                            const det20 = "Not confirmed independently.";
-                            const det21 = "Logical in itself.";
-                            const det22 = "Agrees with other information on the subject.";
-                            return [det20, det21, det22];
+                            return [Data7x7_3.data_2_0_en, Data7x7_3.data_2_1_en, Data7x7_3.data_2_2_en];
                         case 3:
-                            const det30 = "Not confirmed.";
-                            const det31 = "Logical in itself.";
-                            const det32 = "Agrees somewhat with other information on the subject.";
-                            return [det30, det31, det32];
+                            return [Data7x7_3.data_3_0_en, Data7x7_3.data_3_1_en, Data7x7_3.data_3_2_en];
                         case 4:
-                            const det40 = "Not confirmed.";
-                            const det41 = "Not illogical.";
-                            const det42 = "Not believed at time of receipt although possible.";
-                            return [det40, det41, det42];
+                            return [Data7x7_3.data_4_0_en, Data7x7_3.data_4_1_en, Data7x7_3.data_4_2_en];
                         case 5:
-                            const det50 = "Confirmation available of the contrary.";
-                            const det51 = "Illogical in itself.";
-                            const det52 = "ontradicted by other information on the subject.";
-                            return [det50, det51, det52];
+                            return [Data7x7_3.data_5_0_en, Data7x7_3.data_5_1_en, Data7x7_3.data_5_2_en];
                         case 6:
-                            const det60 = "Cannot be judged.";
+                            return [Data7x7_3.data_6_0_en];
                     }
             }
         };
@@ -37512,19 +37457,19 @@ class EvaluationTable7x7 {
                 case "EN":
                     switch (infoRank) {
                         case 0:
-                            return "NOT EVALUATED YET";
+                            return Data7x7_4.data_0_digest_en;
                         case 1:
-                            return "CONFIRMED";
+                            return Data7x7_4.data_1_digest_en;
                         case 2:
-                            return "PROBABLY TRUE";
+                            return Data7x7_4.data_2_digest_en;
                         case 3:
-                            return "POSSIBLY TRUE";
+                            return Data7x7_4.data_3_digest_en;
                         case 4:
-                            return "DOUBTFULLY TRUE";
+                            return Data7x7_4.data_4_digest_en;
                         case 5:
-                            return "IMPROBABLE";
+                            return Data7x7_4.data_5_digest_en;
                         case 6:
-                            return "";
+                            return Data7x7_4.data_6_digest_en;
                     }
             }
         };
@@ -37538,6 +37483,126 @@ class EvaluationTable7x7 {
     }
 }
 exports.EvaluationTable7x7 = EvaluationTable7x7;
+
+
+/***/ }),
+
+/***/ "./src/evaluation_table/data/Data3x3.ts":
+/*!**********************************************!*\
+  !*** ./src/evaluation_table/data/Data3x3.ts ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.data_N_0_en = "Not evaluated yet.";
+exports.data_A_0_en = "Source has a valid author.";
+exports.data_B_0_en = "No valid authorl.";
+exports.data_0_0_en = "Not evaluated yet.";
+exports.data_1_0_en = "Valid Information.";
+exports.data_2_0_en = "Invalid information.";
+exports.data_3_0_mal_en = "NOT EVALUATED YET";
+exports.data_3_1_mal_en = "";
+exports.data_5_0_mal_en = "SATIRE OR PARODY";
+exports.data_5_1_mal_en = "No intention to cause harm but has potential to fool.";
+exports.data_7_0_mal_en = "MISLEADING CONTENT";
+exports.data_7_1_mal_en = "Misleading use of information to frame an issue or individual.";
+exports.data_11_0_mal_en = "IMPOSTER CONTENT";
+exports.data_11_1_mal_en = "When genuine sources are impersonated.";
+exports.data_13_0_mal_en = "FABRICATED CONTENT";
+exports.data_13_1_mal_en = "New content is 100% false, designed to deceive and do harm.";
+exports.data_17_0_mal_en = "FALSE CONNECTION";
+exports.data_17_1_mal_en = "When headlines, visuals or captions don't support the content.";
+exports.data_19_0_mal_en = "FALSE CONTEXT";
+exports.data_19_1_mal_en = "When genuine content is shared with false contextual information";
+exports.data_21_0_mal_en = "MANIPULATED CONTENT";
+exports.data_21_1_mal_en = "When genuine information or imagery is manipulated to deceive";
+
+
+/***/ }),
+
+/***/ "./src/evaluation_table/data/Data5x5.ts":
+/*!**********************************************!*\
+  !*** ./src/evaluation_table/data/Data5x5.ts ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.data_N_0_en = "Not evaluated yet.";
+exports.data_A_0_en = "No doubt regarding authenticity, trustworthiness, integrity, competence.";
+exports.data_A_1_en = "History of complete reliability.";
+exports.data_B_0_en = "Source from whom information received has in most instances proved to be reliable.";
+exports.data_C_0_en = "Source from whom information received has in most instances proved to be unreliable.";
+exports.data_X_0_en = "Reliability cannot be judged.";
+exports.data_0_0_en = "Not evaluated yet.";
+exports.data_1_0_en = "No doubt about accurency.";
+exports.data_2_0_en = "Information known personally to the source but not known personally to the official who is passing it on.";
+exports.data_2_1_en = "Logical in itself.";
+exports.data_2_2_en = "Agrees with other information on the subject.";
+exports.data_3_0_en = "Information not known personally to the source but corroborated by other information already recorded.";
+exports.data_4_0_en = "Information which is not known personally to the source and can not be independently corroborated.";
+
+
+/***/ }),
+
+/***/ "./src/evaluation_table/data/Data7x7.ts":
+/*!**********************************************!*\
+  !*** ./src/evaluation_table/data/Data7x7.ts ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.data_N_0_en = "Not evaluated yet.";
+exports.data_A_0_en = "No doubt regarding authenticity, trustworthiness, integrity, competence.";
+exports.data_A_1_en = "History of complete reliability.";
+exports.data_B_0_en = "Some doubt regarding authenticity or trustworthiness or integrity or competence (one count).";
+exports.data_B_1_en = "History of general reliability.";
+exports.data_C_0_en = "Doubt regarding authenticity, trustworthiness, integrity, competence (two counts and more).";
+exports.data_C_1_en = "History of periodic reliability.";
+exports.data_D_0_en = "Definite doubt regarding authenticity, trustworthiness, integrity, competence.";
+exports.data_D_1_en = "History of occasional reliability.";
+exports.data_E_0_en = "Certainty about lack of authenticity, trustworthiness, integrity, competence.";
+exports.data_E_1_en = "History of unreliability.";
+exports.data_F_0_en = "Cannot be judged.";
+exports.data_N_digest_en = "NOT EVALUATED YET";
+exports.data_A_digest_en = "COMPLETELY RELIABLE";
+exports.data_B_digest_en = "USUALY RELIABLE";
+exports.data_C_digest_en = "FAIRLY RELIABLE";
+exports.data_D_digest_en = "USUALY NOT RELIABLE";
+exports.data_E_digest_en = "UNRELIABLE";
+exports.data_F_digest_en = "";
+exports.data_0_0_en = "Not evaluated yet.";
+exports.data_1_0_en = "Confirmed by other independent sources.";
+exports.data_1_1_en = "Logical in itself.";
+exports.data_1_2_en = "Agrees with other information on the subject.";
+exports.data_2_0_en = "Not confirmed independently.";
+exports.data_2_1_en = "Logical in itself.";
+exports.data_2_2_en = "Agrees with other information on the subject.";
+exports.data_3_0_en = "Not comfirmed.";
+exports.data_3_1_en = "Logical in itself.";
+exports.data_3_2_en = "Agrees somewhat with other information on the subject.";
+exports.data_4_0_en = "Not comfirmed.";
+exports.data_4_1_en = "Not illogical.";
+exports.data_4_2_en = "Not believed at time of receipt although possible.";
+exports.data_5_0_en = "Confirmation available of the contrary.";
+exports.data_5_1_en = "Illogical in itself.";
+exports.data_5_2_en = "Ontradicted by other information on the subject.";
+exports.data_6_0_en = "Cannot be judged.";
+exports.data_0_digest_en = "NOT EVALUATED YET";
+exports.data_1_digest_en = "CONFIRMED";
+exports.data_2_digest_en = "PROBABLY TRUE";
+exports.data_3_digest_en = "POSSIBLY TRUE";
+exports.data_4_digest_en = "DOUBTFULLY TRUE";
+exports.data_5_digest_en = "IMPROBABLE";
+exports.data_6_digest_en = "";
 
 
 /***/ }),
