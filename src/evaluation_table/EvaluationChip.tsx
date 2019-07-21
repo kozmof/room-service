@@ -5,6 +5,7 @@ import DialogTitle from "@material-ui/core/DialogTitle";
 import Typography from "@material-ui/core/Typography";
 import { Language } from "./Language";
 import { EvaluationType } from "./EvaluationTableBase";
+import { Rank } from "./EvaluationTableBind";
 import { EvaluationArg, makeEvaluationTable } from "./EvaluationTable";
 
 export type EvaluationProps = {

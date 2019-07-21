@@ -1,6 +1,46 @@
 import { Language } from "./Language";
 import { Detail, Mat } from "./EvaluationTableBase"
 
+import {
+  data_N_0_en,
+  data_A_0_en, data_A_1_en,
+  data_B_0_en, data_B_1_en,
+  data_C_0_en, data_C_1_en,
+  data_D_0_en, data_D_1_en,
+  data_E_0_en, data_E_1_en,
+  data_F_0_en,
+} from "./data/Data7x7"
+
+import {
+  data_N_digest_en,
+  data_A_digest_en,
+  data_B_digest_en,
+  data_C_digest_en,
+  data_D_digest_en,
+  data_E_digest_en,
+  data_F_digest_en,
+} from "./data/Data7x7"
+
+import {
+  data_0_0_en,
+  data_1_0_en, data_1_1_en, data_1_2_en,
+  data_2_0_en, data_2_1_en, data_2_2_en,
+  data_3_0_en, data_3_1_en, data_3_2_en,
+  data_4_0_en, data_4_1_en, data_4_2_en,
+  data_5_0_en, data_5_1_en, data_5_2_en,
+  data_6_0_en,
+} from "./data/Data7x7"
+
+import {
+  data_0_digest_en,
+  data_1_digest_en,
+  data_2_digest_en,
+  data_3_digest_en,
+  data_4_digest_en,
+  data_5_digest_en,
+  data_6_digest_en,
+} from "./data/Data7x7"
+
 type SourceReliability = "N" | "A" | "B" | "C" | "D" | "E" | "F";
 type DataValidity = 0 | 1 | 2 | 3 | 4 | 5 | 6;
 
@@ -29,31 +69,19 @@ export class EvaluationTable7x7 implements Mat<SourceReliability, DataValidity>,
       case "EN": 
         switch(sourceRank){
           case "N":
-            const detN0: string = "Not yet evaluated yet.";
-            return [detN0]
+            return [data_N_0_en];
           case "A":
-            const detA0: string = "No doubt regarding authenticity, trustworthiness, integrity, competence.";
-            const detA1: string = "History of complete reliability.";
-            return [detA0, detA1]
+            return [data_A_0_en, data_A_1_en];
           case "B":
-            const detB0: string = "Some doubt regarding authenticity or trustworthiness or integrity or competence (one count).";
-            const detB1: string = "History of general reliability.";
-            return [detB0, detB1]
+            return [data_B_0_en, data_B_1_en];
           case "C":
-            const detC0: string = "Doubt regarding authenticity, trustworthiness, integrity, competence (two counts and more).";
-            const detC1: string = "History of periodic reliability.";
-            return [detC0, detC1]
+            return [data_C_0_en, data_C_1_en];
           case "D":
-            const detD0: string = "Definite doubt regarding authenticity, trustworthiness, integrity, competence.";
-            const detD1: string = "History of occasional reliability.";
-            return [detD0, detD1]
+            return [data_D_0_en, data_D_1_en];
           case "E":
-            const detE0: string = "Certainty about lack of authenticity, trustworthiness, integrity, competence.";
-            const detE1: string = "History of unreliability.";
-            return [detE0, detE1]
+            return [data_E_0_en, data_E_1_en];
           case "F":
-            const detF0: string = "Cannot be judged.";
-            return [detF0]
+            return [data_F_0_en];
         }
     } 
   }
@@ -63,19 +91,19 @@ export class EvaluationTable7x7 implements Mat<SourceReliability, DataValidity>,
       case "EN":
         switch(sourceRank){
           case "N":
-            return "NOT EVALUATED YET"
+            return data_N_digest_en;
           case "A": 
-            return "COMPLETELY RELIABLE"
+            return data_A_digest_en;
           case "B":
-            return "USUALY RELIABLE"
+            return data_B_digest_en;
           case "C":
-            return "FAIRLY RELIABLE"
+            return data_C_digest_en;
           case "D":
-            return "USUALY NOT RELIABLE"
+            return data_D_digest_en;
           case "E":
-            return "UNRELIABLE"
+            return data_E_digest_en;
           case "F":
-            return ""
+            return data_F_digest_en;
         } 
     } 
   }
@@ -85,35 +113,19 @@ export class EvaluationTable7x7 implements Mat<SourceReliability, DataValidity>,
       case "EN": 
         switch(infoRank){
           case 0: 
-            const det00: string = "Not yet evaluated yet.";
-            return [det00]
+            return [data_0_0_en];
           case 1:
-            const det10: string = "Confirmed by other independent sources.";
-            const det11: string = "Logical in itself.";
-            const det12: string = "Agrees with other information on the subject.";
-            return [det10, det11, det12]
+            return [data_1_0_en, data_1_1_en, data_1_2_en];
           case 2:
-            const det20: string = "Not confirmed independently.";
-            const det21: string = "Logical in itself.";
-            const det22: string = "Agrees with other information on the subject.";
-            return [det20, det21, det22]
+            return [data_2_0_en, data_2_1_en, data_2_2_en];
           case 3:
-            const det30: string = "Not confirmed.";
-            const det31: string = "Logical in itself.";
-            const det32: string = "Agrees somewhat with other information on the subject.";
-            return [det30, det31, det32]
+            return [data_3_0_en, data_3_1_en, data_3_2_en];
           case 4:
-            const det40: string = "Not confirmed.";
-            const det41: string = "Not illogical.";
-            const det42: string = "Not believed at time of receipt although possible.";
-            return [det40, det41, det42]
+            return [data_4_0_en, data_4_1_en, data_4_2_en];
           case 5:
-            const det50: string = "Confirmation available of the contrary.";
-            const det51: string = "Illogical in itself.";
-            const det52: string = "ontradicted by other information on the subject.";
-            return [det50, det51, det52]
+            return [data_5_0_en, data_5_1_en, data_5_2_en];
           case 6:
-            const det60: string = "Cannot be judged.";
+            return [data_6_0_en];
         }
     } 
   }
@@ -123,19 +135,19 @@ export class EvaluationTable7x7 implements Mat<SourceReliability, DataValidity>,
       case "EN":
         switch(infoRank){
           case 0: 
-            return "NOT EVALUATED YET"
+            return data_0_digest_en;
           case 1:
-            return "CONFIRMED"
+            return data_1_digest_en;
           case 2:
-            return "PROBABLY TRUE"
+            return data_2_digest_en;
           case 3:
-            return "POSSIBLY TRUE"
+            return data_3_digest_en;
           case 4:
-            return "DOUBTFULLY TRUE"
+            return data_4_digest_en;
           case 5:
-            return "IMPROBABLE"
+            return data_5_digest_en;
           case 6:
-            return ""
+            return data_6_digest_en;
         }
     }
   }

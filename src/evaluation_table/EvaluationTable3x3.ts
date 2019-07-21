@@ -1,6 +1,22 @@
 import { Language } from "./Language"
 import { Detail, Mat } from "./EvaluationTableBase"
 
+import {
+  data_N_0_en, data_A_0_en, data_B_0_en,
+  data_0_0_en, data_1_0_en, data_2_0_en
+} from "./data/Data3x3"
+
+import {
+  data_3_0_mal_en, data_3_1_mal_en,
+  data_5_0_mal_en, data_5_1_mal_en,
+  data_7_0_mal_en, data_7_1_mal_en,
+  data_11_0_mal_en, data_11_1_mal_en,
+  data_13_0_mal_en, data_13_1_mal_en,
+  data_17_0_mal_en, data_17_1_mal_en,
+  data_19_0_mal_en, data_19_1_mal_en,
+  data_21_0_mal_en, data_21_1_mal_en
+} from "./data/Data3x3"
+
 type SourceTransparency = "N" | "A" | "B";
 type InfoValidity = 0 | 1 | 2; 
 type MalformType = 3 | 5 | 7 | 11 | 13 | 17 | 19 | 23;
@@ -39,14 +55,11 @@ export class EvaluationTable3x3 implements Mat<SourceTransparency, InfoValidity>
       case "EN": 
         switch(sourceTransparency) {
           case "N": 
-            const dataN0: string = "Not evaluated yet.";
-            return [dataN0]
+            return [data_N_0_en];
           case "A":
-            const dataA0: string = "Source has valid author.";
-            return [dataA0]
+            return [data_A_0_en];
           case "B":
-            const dataB0: string = "No valid author.";
-            return [dataB0]
+            return [data_B_0_en];
         }
     } 
   }
@@ -56,14 +69,11 @@ export class EvaluationTable3x3 implements Mat<SourceTransparency, InfoValidity>
       case "EN": 
         switch(infoRank) {
           case 0:
-            const data00: string = "Not evaluated yet.";
-            return [data00]
+            return [data_0_0_en];
           case 1:
-            const data10: string = "Valid information.";
-            return [data10]
+            return [data_1_0_en];
           case 2:
-            const data20: string = "Invalid infoRank.";
-            return [data20]
+            return [data_2_0_en];
         }
     } 
   }
@@ -76,37 +86,21 @@ export class EvaluationTable3x3 implements Mat<SourceTransparency, InfoValidity>
         for(let maltype of malformTypes){
           switch(maltype) {
             case 3: 
-              const data30: string = "NOT EVALUATED YET";
-              const data31: string = "";
-              result.push(new Explanation(data30, data31));
+              result.push(new Explanation(data_3_0_mal_en, data_3_1_mal_en));
             case 5:
-              const data50: string = "SATIRE OR PARODY";
-              const data51: string = "No intention to cause harm but has potential to fool.";
-              result.push(new Explanation(data50, data51));
+              result.push(new Explanation(data_5_0_mal_en, data_5_1_mal_en));
             case 7:
-              const data70: string = "MISLEADING CONTENT";
-              const data71: string = "Misleading use of information to frame an issue or individual.";
-              result.push(new Explanation(data70, data71));
+              result.push(new Explanation(data_7_0_mal_en, data_7_1_mal_en));
             case 11:
-              const data110: string = "IMPOSTER CONTENT";
-              const data111: string = "When genuine sources are impersonated.";
-              result.push(new Explanation(data110, data111));
+              result.push(new Explanation(data_11_0_mal_en, data_11_1_mal_en));
             case 13:
-              const data130: string = "FABRICATED CONTENT";
-              const data131: string = "New content is 100% false, designed to deceive and do harm.";
-              result.push(new Explanation(data130, data131));
+              result.push(new Explanation(data_13_0_mal_en, data_13_1_mal_en));
             case 17:
-              const data170: string = "FALSE CONNECTION";
-              const data171: string = "When headlines, visuals or captions don't support the content.";
-              result.push(new Explanation(data170, data171));
+              result.push(new Explanation(data_17_0_mal_en, data_17_1_mal_en));
             case 19:
-              const data190: string = "FALSE CONTEXT";
-              const data191: string = "When genuine content is shared with false contextual information.";
-              result.push(new Explanation(data190, data191));
+              result.push(new Explanation(data_19_0_mal_en, data_19_1_mal_en));
             case 23:
-              const data230: string = "MANIPULATED CONTENT";
-              const data231: string = "When genuine information or imagery is manipulated to deceive.";
-              result.push(new Explanation(data230, data231));
+              result.push(new Explanation(data_21_0_mal_en, data_21_1_mal_en));
           }
         }
 
