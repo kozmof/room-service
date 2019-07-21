@@ -1,6 +1,6 @@
 export const data_N_0_en: string = "Not evaluated yet.";
 export const data_A_0_en: string = "Source has a valid author.";
-export const data_B_0_en: string = "No valid authorl."; 
+export const data_B_0_en: string = "No valid author."; 
 
 
 export const data_0_0_en: string = "Not evaluated yet.";
