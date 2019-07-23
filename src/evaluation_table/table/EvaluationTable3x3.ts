@@ -4,7 +4,7 @@ import { Detail, Mat } from "./EvaluationTableBase"
 import {
   data_N_0_en, data_A_0_en, data_B_0_en,
   data_0_0_en, data_1_0_en, data_2_0_en
-} from "./data/Data3x3"
+} from "../data/Data3x3"
 
 import {
   data_3_0_mal_en, data_3_1_mal_en,
@@ -15,7 +15,7 @@ import {
   data_17_0_mal_en, data_17_1_mal_en,
   data_19_0_mal_en, data_19_1_mal_en,
   data_21_0_mal_en, data_21_1_mal_en
-} from "./data/Data3x3"
+} from "../data/Data3x3"
 
 type SourceTransparency = "N" | "A" | "B";
 type InfoValidity = 0 | 1 | 2; 

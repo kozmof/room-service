@@ -10,6 +10,9 @@
 /src/editor/*.js
 /src/editor/marker/*.js
 /src/evaluation_table/*.js
+/src/evaluation_table/data/*.js
+/src/evaluation_table/ui/*.js
+/src/evaluation_table/table/*.js
 /src/topic/*.js
 /src/medium_arrow/*.js
 /src/tag/*.js

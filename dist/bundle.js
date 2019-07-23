@@ -43684,456 +43684,6 @@ exports.TestEditor = TestEditor;
 
 /***/ }),
 
-/***/ "./src/evaluation_table/EvaluationChip.tsx":
-/*!*************************************************!*\
-  !*** ./src/evaluation_table/EvaluationChip.tsx ***!
-  \*************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __importStar = (this && this.__importStar) || function (mod) {
-    if (mod && mod.__esModule) return mod;
-    var result = {};
-    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
-    result["default"] = mod;
-    return result;
-};
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-const react_1 = __importStar(__webpack_require__(/*! react */ "react"));
-const Button_1 = __importDefault(__webpack_require__(/*! @material-ui/core/Button */ "./node_modules/@material-ui/core/esm/Button/index.js"));
-const styles_1 = __webpack_require__(/*! @material-ui/styles */ "./node_modules/@material-ui/styles/esm/index.js");
-const EvaluationDialog_1 = __webpack_require__(/*! ./EvaluationDialog */ "./src/evaluation_table/EvaluationDialog.tsx");
-const EvaluationTable_1 = __webpack_require__(/*! ./EvaluationTable */ "./src/evaluation_table/EvaluationTable.ts");
-exports.EvaluationChip = (props) => {
-    const [open, setOpen] = react_1.useState(false);
-    const [evaluationTable, setEvaluationTable] = react_1.useState(EvaluationTable_1.makeEvaluationTable(props.evaluationType, props.evaluationArg));
-    const useStyles = styles_1.makeStyles({
-        button: {
-            borderRadius: '25px'
-        },
-    });
-    const classes = useStyles({});
-    const handleOpen = () => {
-        setOpen(true);
-    };
-    const handleClose = () => {
-        setOpen(false);
-    };
-    return (react_1.default.createElement("div", null,
-        react_1.default.createElement(Button_1.default, { className: classes.button, variant: "outlined", color: "primary", size: "small", onClick: handleOpen },
-            evaluationTable.rank.sourceRank,
-            " ",
-            evaluationTable.rank.infoRank),
-        react_1.default.createElement(EvaluationDialog_1.EvaluationDialog, { open: open, onClose: handleClose })));
-};
-
-
-/***/ }),
-
-/***/ "./src/evaluation_table/EvaluationDialog.tsx":
-/*!***************************************************!*\
-  !*** ./src/evaluation_table/EvaluationDialog.tsx ***!
-  \***************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
-const react_1 = __importDefault(__webpack_require__(/*! react */ "react"));
-const Button_1 = __importDefault(__webpack_require__(/*! @material-ui/core/Button */ "./node_modules/@material-ui/core/esm/Button/index.js"));
-const Radio_1 = __importDefault(__webpack_require__(/*! @material-ui/core/Radio */ "./node_modules/@material-ui/core/esm/Radio/index.js"));
-const RadioGroup_1 = __importDefault(__webpack_require__(/*! @material-ui/core/RadioGroup */ "./node_modules/@material-ui/core/esm/RadioGroup/index.js"));
-const FormLabel_1 = __importDefault(__webpack_require__(/*! @material-ui/core/FormLabel */ "./node_modules/@material-ui/core/esm/FormLabel/index.js"));
-const FormControl_1 = __importDefault(__webpack_require__(/*! @material-ui/core/FormControl */ "./node_modules/@material-ui/core/esm/FormControl/index.js"));
-const FormControlLabel_1 = __importDefault(__webpack_require__(/*! @material-ui/core/FormControlLabel */ "./node_modules/@material-ui/core/esm/FormControlLabel/index.js"));
-const Dialog_1 = __importDefault(__webpack_require__(/*! @material-ui/core/Dialog */ "./node_modules/@material-ui/core/esm/Dialog/index.js"));
-const DialogActions_1 = __importDefault(__webpack_require__(/*! @material-ui/core/DialogActions */ "./node_modules/@material-ui/core/esm/DialogActions/index.js"));
-const DialogContent_1 = __importDefault(__webpack_require__(/*! @material-ui/core/DialogContent */ "./node_modules/@material-ui/core/esm/DialogContent/index.js"));
-const Select_1 = __importDefault(__webpack_require__(/*! @material-ui/core/Select */ "./node_modules/@material-ui/core/esm/Select/index.js"));
-const MenuItem_1 = __importDefault(__webpack_require__(/*! @material-ui/core/MenuItem */ "./node_modules/@material-ui/core/esm/MenuItem/index.js"));
-const Typography_1 = __importDefault(__webpack_require__(/*! @material-ui/core/Typography */ "./node_modules/@material-ui/core/esm/Typography/index.js"));
-const Data3x3_1 = __webpack_require__(/*! ./data/Data3x3 */ "./src/evaluation_table/data/Data3x3.ts");
-exports.SelectMatrix = () => {
-    return (react_1.default.createElement(DialogActions_1.default, null,
-        react_1.default.createElement(Select_1.default, { value: "3x3" },
-            react_1.default.createElement(MenuItem_1.default, { value: "3x3" },
-                react_1.default.createElement(Typography_1.default, null, "3x3")),
-            react_1.default.createElement(MenuItem_1.default, { value: "5x5" },
-                react_1.default.createElement(Typography_1.default, null, "5x5")),
-            react_1.default.createElement(MenuItem_1.default, { value: "7x7" },
-                react_1.default.createElement(Typography_1.default, null, "7x7")))));
-};
-exports.EvaluationRadio3x3 = () => {
-    return (react_1.default.createElement(DialogContent_1.default, null,
-        react_1.default.createElement(FormControl_1.default, { component: "fieldset" },
-            react_1.default.createElement(FormLabel_1.default, { component: "label" },
-                react_1.default.createElement(Typography_1.default, null, "Source Rank")),
-            react_1.default.createElement(RadioGroup_1.default, null,
-                react_1.default.createElement(FormControlLabel_1.default, { value: "N", control: react_1.default.createElement(Radio_1.default, { disableRipple: true }), label: react_1.default.createElement(Typography_1.default, null, "N: " + Data3x3_1.data_N_0_en) }),
-                react_1.default.createElement(FormControlLabel_1.default, { value: "A", control: react_1.default.createElement(Radio_1.default, { disableRipple: true }), label: react_1.default.createElement(Typography_1.default, null, "A: " + Data3x3_1.data_A_0_en) }),
-                react_1.default.createElement(FormControlLabel_1.default, { value: "B", control: react_1.default.createElement(Radio_1.default, { disableRipple: true }), label: react_1.default.createElement(Typography_1.default, null, "B: " + Data3x3_1.data_B_0_en) }))),
-        react_1.default.createElement(FormControl_1.default, { component: "fieldset" },
-            react_1.default.createElement(FormLabel_1.default, { component: "label" },
-                react_1.default.createElement(Typography_1.default, null, "Info Rank")),
-            react_1.default.createElement(RadioGroup_1.default, null,
-                react_1.default.createElement(FormControlLabel_1.default, { value: "0", control: react_1.default.createElement(Radio_1.default, { disableRipple: true }), label: react_1.default.createElement(Typography_1.default, null, "0: " + Data3x3_1.data_0_0_en) }),
-                react_1.default.createElement(FormControlLabel_1.default, { value: "1", control: react_1.default.createElement(Radio_1.default, { disableRipple: true }), label: react_1.default.createElement(Typography_1.default, null, "1: " + Data3x3_1.data_1_0_en) }),
-                react_1.default.createElement(FormControlLabel_1.default, { value: "2", control: react_1.default.createElement(Radio_1.default, { disableRipple: true }), label: react_1.default.createElement(Typography_1.default, null, "2: " + Data3x3_1.data_2_0_en) })))));
-};
-exports.EvaluationRadio = (props) => {
-    const evaluationType = props.evaluationType;
-    switch (evaluationType) {
-        case "3x3":
-            return (react_1.default.createElement(exports.EvaluationRadio3x3, null));
-        case "5x5":
-            return (react_1.default.createElement(exports.EvaluationRadio3x3, null));
-        case "7x7":
-            return (react_1.default.createElement(exports.EvaluationRadio3x3, null));
-    }
-};
-exports.EvaluationDialog = (props) => {
-    const { open, onClose } = props;
-    const handleClose = () => {
-        onClose();
-    };
-    return (react_1.default.createElement(Dialog_1.default, { onClose: handleClose, open: open, "aria-labelledby": "evaluation-dialog", transitionDuration: 0 },
-        react_1.default.createElement(exports.SelectMatrix, null),
-        react_1.default.createElement(exports.EvaluationRadio, { evaluationType: "3x3" }),
-        react_1.default.createElement(DialogActions_1.default, null,
-            react_1.default.createElement(Button_1.default, { onClick: handleClose, color: "primary", autoFocus: true }, "Commit"),
-            react_1.default.createElement(Button_1.default, { onClick: handleClose, color: "primary" }, "Cancel"))));
-};
-
-
-/***/ }),
-
-/***/ "./src/evaluation_table/EvaluationTable.ts":
-/*!*************************************************!*\
-  !*** ./src/evaluation_table/EvaluationTable.ts ***!
-  \*************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-const EvaluationTable3x3_1 = __webpack_require__(/*! ./EvaluationTable3x3 */ "./src/evaluation_table/EvaluationTable3x3.ts");
-const EvaluationTable5x5_1 = __webpack_require__(/*! ./EvaluationTable5x5 */ "./src/evaluation_table/EvaluationTable5x5.ts");
-const EvaluationTable7x7_1 = __webpack_require__(/*! ./EvaluationTable7x7 */ "./src/evaluation_table/EvaluationTable7x7.ts");
-exports.makeEvaluationTable = (evaluationType, arg) => {
-    switch (evaluationType) {
-        case "3x3": {
-            if (arg) {
-                const { rank, malformTypes, lang } = arg;
-                return new EvaluationTable3x3_1.EvaluationTable3x3(rank, malformTypes, lang);
-            }
-            else {
-                return new EvaluationTable3x3_1.EvaluationTable3x3();
-            }
-        }
-        case "5x5": {
-            if (arg) {
-                const { rank, lang } = arg;
-                return new EvaluationTable5x5_1.EvaluationTable5x5(rank, lang);
-            }
-            else {
-                return new EvaluationTable5x5_1.EvaluationTable5x5();
-            }
-        }
-        case "7x7": {
-            if (arg) {
-                const { rank, lang } = arg;
-                return new EvaluationTable7x7_1.EvaluationTable7x7(rank, lang);
-            }
-            else {
-                return new EvaluationTable7x7_1.EvaluationTable7x7();
-            }
-        }
-    }
-};
-
-
-/***/ }),
-
-/***/ "./src/evaluation_table/EvaluationTable3x3.ts":
-/*!****************************************************!*\
-  !*** ./src/evaluation_table/EvaluationTable3x3.ts ***!
-  \****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-const Data3x3_1 = __webpack_require__(/*! ./data/Data3x3 */ "./src/evaluation_table/data/Data3x3.ts");
-const Data3x3_2 = __webpack_require__(/*! ./data/Data3x3 */ "./src/evaluation_table/data/Data3x3.ts");
-class Explanation {
-    constructor(subject, detail) {
-        this.subject = subject;
-        this.detail = detail;
-    }
-}
-class EvaluationTable3x3 {
-    constructor(rank = { sourceRank: "N", infoRank: 0 }, malformTypes = [], lang = "EN") {
-        this.rank = rank;
-        this.malformTypes = malformTypes;
-        this.lang = lang;
-        this.detailSource = (sourceTransparency) => {
-            switch (this.lang) {
-                case "EN":
-                    switch (sourceTransparency) {
-                        case "N":
-                            return [Data3x3_1.data_N_0_en];
-                        case "A":
-                            return [Data3x3_1.data_A_0_en];
-                        case "B":
-                            return [Data3x3_1.data_B_0_en];
-                    }
-            }
-        };
-        this.detailInfo = (infoRank) => {
-            switch (this.lang) {
-                case "EN":
-                    switch (infoRank) {
-                        case 0:
-                            return [Data3x3_1.data_0_0_en];
-                        case 1:
-                            return [Data3x3_1.data_1_0_en];
-                        case 2:
-                            return [Data3x3_1.data_2_0_en];
-                    }
-            }
-        };
-        this.malform = (malformTypes) => {
-            let result = [];
-            switch (this.lang) {
-                case "EN":
-                    for (let maltype of malformTypes) {
-                        switch (maltype) {
-                            case 3:
-                                result.push(new Explanation(Data3x3_2.data_3_0_mal_en, Data3x3_2.data_3_1_mal_en));
-                            case 5:
-                                result.push(new Explanation(Data3x3_2.data_5_0_mal_en, Data3x3_2.data_5_1_mal_en));
-                            case 7:
-                                result.push(new Explanation(Data3x3_2.data_7_0_mal_en, Data3x3_2.data_7_1_mal_en));
-                            case 11:
-                                result.push(new Explanation(Data3x3_2.data_11_0_mal_en, Data3x3_2.data_11_1_mal_en));
-                            case 13:
-                                result.push(new Explanation(Data3x3_2.data_13_0_mal_en, Data3x3_2.data_13_1_mal_en));
-                            case 17:
-                                result.push(new Explanation(Data3x3_2.data_17_0_mal_en, Data3x3_2.data_17_1_mal_en));
-                            case 19:
-                                result.push(new Explanation(Data3x3_2.data_19_0_mal_en, Data3x3_2.data_19_1_mal_en));
-                            case 23:
-                                result.push(new Explanation(Data3x3_2.data_21_0_mal_en, Data3x3_2.data_21_1_mal_en));
-                        }
-                    }
-                    return result;
-            }
-        };
-        this.detail = () => {
-            const det3x3 = {
-                sourceDetail: this.detailSource(this.rank.sourceRank),
-                infoDetail: this.detailInfo(this.rank.infoRank)
-            };
-            return det3x3;
-        };
-    }
-}
-exports.EvaluationTable3x3 = EvaluationTable3x3;
-
-
-/***/ }),
-
-/***/ "./src/evaluation_table/EvaluationTable5x5.ts":
-/*!****************************************************!*\
-  !*** ./src/evaluation_table/EvaluationTable5x5.ts ***!
-  \****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-const Data5x5_1 = __webpack_require__(/*! ./data/Data5x5 */ "./src/evaluation_table/data/Data5x5.ts");
-const Data5x5_2 = __webpack_require__(/*! ./data/Data5x5 */ "./src/evaluation_table/data/Data5x5.ts");
-class EvaluationTable5x5 {
-    constructor(rank = { sourceRank: "N", infoRank: 0 }, lang = "EN") {
-        this.rank = rank;
-        this.lang = lang;
-        this.detailSource = (sourceRank) => {
-            switch (this.lang) {
-                case "EN":
-                    switch (sourceRank) {
-                        case "N":
-                            return [Data5x5_1.data_N_0_en];
-                        case "A":
-                            return [Data5x5_1.data_A_0_en, Data5x5_1.data_A_1_en];
-                        case "B":
-                            return [Data5x5_1.data_B_0_en];
-                        case "C":
-                            return [Data5x5_1.data_C_0_en];
-                        case "X":
-                            return [Data5x5_1.data_X_0_en];
-                    }
-            }
-        };
-        this.detailInfo = (infoRank) => {
-            switch (this.lang) {
-                case "EN":
-                    switch (infoRank) {
-                        case 0:
-                            return [Data5x5_2.data_0_0_en];
-                        case 1:
-                            return [Data5x5_2.data_1_0_en];
-                        case 2:
-                            return [Data5x5_2.data_2_0_en, Data5x5_2.data_2_1_en, Data5x5_2.data_2_2_en];
-                        case 3:
-                            return [Data5x5_2.data_3_0_en];
-                        case 4:
-                            return [Data5x5_2.data_4_0_en];
-                    }
-            }
-        };
-        this.detail = () => {
-            const det5x5 = {
-                sourceDetail: this.detailSource(this.rank.sourceRank),
-                infoDetail: this.detailInfo(this.rank.infoRank)
-            };
-            return det5x5;
-        };
-    }
-}
-exports.EvaluationTable5x5 = EvaluationTable5x5;
-
-
-/***/ }),
-
-/***/ "./src/evaluation_table/EvaluationTable7x7.ts":
-/*!****************************************************!*\
-  !*** ./src/evaluation_table/EvaluationTable7x7.ts ***!
-  \****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
-const Data7x7_1 = __webpack_require__(/*! ./data/Data7x7 */ "./src/evaluation_table/data/Data7x7.ts");
-const Data7x7_2 = __webpack_require__(/*! ./data/Data7x7 */ "./src/evaluation_table/data/Data7x7.ts");
-const Data7x7_3 = __webpack_require__(/*! ./data/Data7x7 */ "./src/evaluation_table/data/Data7x7.ts");
-const Data7x7_4 = __webpack_require__(/*! ./data/Data7x7 */ "./src/evaluation_table/data/Data7x7.ts");
-class EvaluationTable7x7 {
-    constructor(rank = { sourceRank: "N", infoRank: 0 }, lang = "EN") {
-        this.rank = rank;
-        this.lang = lang;
-        this.detailSource = (sourceRank) => {
-            switch (this.lang) {
-                case "EN":
-                    switch (sourceRank) {
-                        case "N":
-                            return [Data7x7_1.data_N_0_en];
-                        case "A":
-                            return [Data7x7_1.data_A_0_en, Data7x7_1.data_A_1_en];
-                        case "B":
-                            return [Data7x7_1.data_B_0_en, Data7x7_1.data_B_1_en];
-                        case "C":
-                            return [Data7x7_1.data_C_0_en, Data7x7_1.data_C_1_en];
-                        case "D":
-                            return [Data7x7_1.data_D_0_en, Data7x7_1.data_D_1_en];
-                        case "E":
-                            return [Data7x7_1.data_E_0_en, Data7x7_1.data_E_1_en];
-                        case "F":
-                            return [Data7x7_1.data_F_0_en];
-                    }
-            }
-        };
-        this.reliability = (sourceRank) => {
-            switch (this.lang) {
-                case "EN":
-                    switch (sourceRank) {
-                        case "N":
-                            return Data7x7_2.data_N_digest_en;
-                        case "A":
-                            return Data7x7_2.data_A_digest_en;
-                        case "B":
-                            return Data7x7_2.data_B_digest_en;
-                        case "C":
-                            return Data7x7_2.data_C_digest_en;
-                        case "D":
-                            return Data7x7_2.data_D_digest_en;
-                        case "E":
-                            return Data7x7_2.data_E_digest_en;
-                        case "F":
-                            return Data7x7_2.data_F_digest_en;
-                    }
-            }
-        };
-        this.detailInfo = (infoRank) => {
-            switch (this.lang) {
-                case "EN":
-                    switch (infoRank) {
-                        case 0:
-                            return [Data7x7_3.data_0_0_en];
-                        case 1:
-                            return [Data7x7_3.data_1_0_en, Data7x7_3.data_1_1_en, Data7x7_3.data_1_2_en];
-                        case 2:
-                            return [Data7x7_3.data_2_0_en, Data7x7_3.data_2_1_en, Data7x7_3.data_2_2_en];
-                        case 3:
-                            return [Data7x7_3.data_3_0_en, Data7x7_3.data_3_1_en, Data7x7_3.data_3_2_en];
-                        case 4:
-                            return [Data7x7_3.data_4_0_en, Data7x7_3.data_4_1_en, Data7x7_3.data_4_2_en];
-                        case 5:
-                            return [Data7x7_3.data_5_0_en, Data7x7_3.data_5_1_en, Data7x7_3.data_5_2_en];
-                        case 6:
-                            return [Data7x7_3.data_6_0_en];
-                    }
-            }
-        };
-        this.validity = (infoRank) => {
-            switch (this.lang) {
-                case "EN":
-                    switch (infoRank) {
-                        case 0:
-                            return Data7x7_4.data_0_digest_en;
-                        case 1:
-                            return Data7x7_4.data_1_digest_en;
-                        case 2:
-                            return Data7x7_4.data_2_digest_en;
-                        case 3:
-                            return Data7x7_4.data_3_digest_en;
-                        case 4:
-                            return Data7x7_4.data_4_digest_en;
-                        case 5:
-                            return Data7x7_4.data_5_digest_en;
-                        case 6:
-                            return Data7x7_4.data_6_digest_en;
-                    }
-            }
-        };
-        this.detail = () => {
-            const det7x7 = {
-                sourceDetail: this.detailSource(this.rank.sourceRank),
-                infoDetail: this.detailInfo(this.rank.infoRank)
-            };
-            return det7x7;
-        };
-    }
-}
-exports.EvaluationTable7x7 = EvaluationTable7x7;
-
-
-/***/ }),
-
 /***/ "./src/evaluation_table/data/Data3x3.ts":
 /*!**********************************************!*\
   !*** ./src/evaluation_table/data/Data3x3.ts ***!
@@ -44254,6 +43804,516 @@ exports.data_6_digest_en = "";
 
 /***/ }),
 
+/***/ "./src/evaluation_table/table/EvaluationTable.ts":
+/*!*******************************************************!*\
+  !*** ./src/evaluation_table/table/EvaluationTable.ts ***!
+  \*******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+const EvaluationTable3x3_1 = __webpack_require__(/*! ./EvaluationTable3x3 */ "./src/evaluation_table/table/EvaluationTable3x3.ts");
+const EvaluationTable5x5_1 = __webpack_require__(/*! ./EvaluationTable5x5 */ "./src/evaluation_table/table/EvaluationTable5x5.ts");
+const EvaluationTable7x7_1 = __webpack_require__(/*! ./EvaluationTable7x7 */ "./src/evaluation_table/table/EvaluationTable7x7.ts");
+exports.makeEvaluationTable = (evaluationType, arg) => {
+    switch (evaluationType) {
+        case "3x3": {
+            if (arg) {
+                const { rank, malformTypes, lang } = arg;
+                return new EvaluationTable3x3_1.EvaluationTable3x3(rank, malformTypes, lang);
+            }
+            else {
+                return new EvaluationTable3x3_1.EvaluationTable3x3();
+            }
+        }
+        case "5x5": {
+            if (arg) {
+                const { rank, lang } = arg;
+                return new EvaluationTable5x5_1.EvaluationTable5x5(rank, lang);
+            }
+            else {
+                return new EvaluationTable5x5_1.EvaluationTable5x5();
+            }
+        }
+        case "7x7": {
+            if (arg) {
+                const { rank, lang } = arg;
+                return new EvaluationTable7x7_1.EvaluationTable7x7(rank, lang);
+            }
+            else {
+                return new EvaluationTable7x7_1.EvaluationTable7x7();
+            }
+        }
+    }
+};
+
+
+/***/ }),
+
+/***/ "./src/evaluation_table/table/EvaluationTable3x3.ts":
+/*!**********************************************************!*\
+  !*** ./src/evaluation_table/table/EvaluationTable3x3.ts ***!
+  \**********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+const Data3x3_1 = __webpack_require__(/*! ../data/Data3x3 */ "./src/evaluation_table/data/Data3x3.ts");
+const Data3x3_2 = __webpack_require__(/*! ../data/Data3x3 */ "./src/evaluation_table/data/Data3x3.ts");
+class Explanation {
+    constructor(subject, detail) {
+        this.subject = subject;
+        this.detail = detail;
+    }
+}
+class EvaluationTable3x3 {
+    constructor(rank = { sourceRank: "N", infoRank: 0 }, malformTypes = [], lang = "EN") {
+        this.rank = rank;
+        this.malformTypes = malformTypes;
+        this.lang = lang;
+        this.detailSource = (sourceTransparency) => {
+            switch (this.lang) {
+                case "EN":
+                    switch (sourceTransparency) {
+                        case "N":
+                            return [Data3x3_1.data_N_0_en];
+                        case "A":
+                            return [Data3x3_1.data_A_0_en];
+                        case "B":
+                            return [Data3x3_1.data_B_0_en];
+                    }
+            }
+        };
+        this.detailInfo = (infoRank) => {
+            switch (this.lang) {
+                case "EN":
+                    switch (infoRank) {
+                        case 0:
+                            return [Data3x3_1.data_0_0_en];
+                        case 1:
+                            return [Data3x3_1.data_1_0_en];
+                        case 2:
+                            return [Data3x3_1.data_2_0_en];
+                    }
+            }
+        };
+        this.malform = (malformTypes) => {
+            let result = [];
+            switch (this.lang) {
+                case "EN":
+                    for (let maltype of malformTypes) {
+                        switch (maltype) {
+                            case 3:
+                                result.push(new Explanation(Data3x3_2.data_3_0_mal_en, Data3x3_2.data_3_1_mal_en));
+                            case 5:
+                                result.push(new Explanation(Data3x3_2.data_5_0_mal_en, Data3x3_2.data_5_1_mal_en));
+                            case 7:
+                                result.push(new Explanation(Data3x3_2.data_7_0_mal_en, Data3x3_2.data_7_1_mal_en));
+                            case 11:
+                                result.push(new Explanation(Data3x3_2.data_11_0_mal_en, Data3x3_2.data_11_1_mal_en));
+                            case 13:
+                                result.push(new Explanation(Data3x3_2.data_13_0_mal_en, Data3x3_2.data_13_1_mal_en));
+                            case 17:
+                                result.push(new Explanation(Data3x3_2.data_17_0_mal_en, Data3x3_2.data_17_1_mal_en));
+                            case 19:
+                                result.push(new Explanation(Data3x3_2.data_19_0_mal_en, Data3x3_2.data_19_1_mal_en));
+                            case 23:
+                                result.push(new Explanation(Data3x3_2.data_21_0_mal_en, Data3x3_2.data_21_1_mal_en));
+                        }
+                    }
+                    return result;
+            }
+        };
+        this.detail = () => {
+            const det3x3 = {
+                sourceDetail: this.detailSource(this.rank.sourceRank),
+                infoDetail: this.detailInfo(this.rank.infoRank)
+            };
+            return det3x3;
+        };
+    }
+}
+exports.EvaluationTable3x3 = EvaluationTable3x3;
+
+
+/***/ }),
+
+/***/ "./src/evaluation_table/table/EvaluationTable5x5.ts":
+/*!**********************************************************!*\
+  !*** ./src/evaluation_table/table/EvaluationTable5x5.ts ***!
+  \**********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+const Data5x5_1 = __webpack_require__(/*! ../data/Data5x5 */ "./src/evaluation_table/data/Data5x5.ts");
+const Data5x5_2 = __webpack_require__(/*! ../data/Data5x5 */ "./src/evaluation_table/data/Data5x5.ts");
+class EvaluationTable5x5 {
+    constructor(rank = { sourceRank: "N", infoRank: 0 }, lang = "EN") {
+        this.rank = rank;
+        this.lang = lang;
+        this.detailSource = (sourceRank) => {
+            switch (this.lang) {
+                case "EN":
+                    switch (sourceRank) {
+                        case "N":
+                            return [Data5x5_1.data_N_0_en];
+                        case "A":
+                            return [Data5x5_1.data_A_0_en, Data5x5_1.data_A_1_en];
+                        case "B":
+                            return [Data5x5_1.data_B_0_en];
+                        case "C":
+                            return [Data5x5_1.data_C_0_en];
+                        case "X":
+                            return [Data5x5_1.data_X_0_en];
+                    }
+            }
+        };
+        this.detailInfo = (infoRank) => {
+            switch (this.lang) {
+                case "EN":
+                    switch (infoRank) {
+                        case 0:
+                            return [Data5x5_2.data_0_0_en];
+                        case 1:
+                            return [Data5x5_2.data_1_0_en];
+                        case 2:
+                            return [Data5x5_2.data_2_0_en, Data5x5_2.data_2_1_en, Data5x5_2.data_2_2_en];
+                        case 3:
+                            return [Data5x5_2.data_3_0_en];
+                        case 4:
+                            return [Data5x5_2.data_4_0_en];
+                    }
+            }
+        };
+        this.detail = () => {
+            const det5x5 = {
+                sourceDetail: this.detailSource(this.rank.sourceRank),
+                infoDetail: this.detailInfo(this.rank.infoRank)
+            };
+            return det5x5;
+        };
+    }
+}
+exports.EvaluationTable5x5 = EvaluationTable5x5;
+
+
+/***/ }),
+
+/***/ "./src/evaluation_table/table/EvaluationTable7x7.ts":
+/*!**********************************************************!*\
+  !*** ./src/evaluation_table/table/EvaluationTable7x7.ts ***!
+  \**********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+Object.defineProperty(exports, "__esModule", { value: true });
+const Data7x7_1 = __webpack_require__(/*! ../data/Data7x7 */ "./src/evaluation_table/data/Data7x7.ts");
+const Data7x7_2 = __webpack_require__(/*! ../data/Data7x7 */ "./src/evaluation_table/data/Data7x7.ts");
+const Data7x7_3 = __webpack_require__(/*! ../data/Data7x7 */ "./src/evaluation_table/data/Data7x7.ts");
+const Data7x7_4 = __webpack_require__(/*! ../data/Data7x7 */ "./src/evaluation_table/data/Data7x7.ts");
+class EvaluationTable7x7 {
+    constructor(rank = { sourceRank: "N", infoRank: 0 }, lang = "EN") {
+        this.rank = rank;
+        this.lang = lang;
+        this.detailSource = (sourceRank) => {
+            switch (this.lang) {
+                case "EN":
+                    switch (sourceRank) {
+                        case "N":
+                            return [Data7x7_1.data_N_0_en];
+                        case "A":
+                            return [Data7x7_1.data_A_0_en, Data7x7_1.data_A_1_en];
+                        case "B":
+                            return [Data7x7_1.data_B_0_en, Data7x7_1.data_B_1_en];
+                        case "C":
+                            return [Data7x7_1.data_C_0_en, Data7x7_1.data_C_1_en];
+                        case "D":
+                            return [Data7x7_1.data_D_0_en, Data7x7_1.data_D_1_en];
+                        case "E":
+                            return [Data7x7_1.data_E_0_en, Data7x7_1.data_E_1_en];
+                        case "F":
+                            return [Data7x7_1.data_F_0_en];
+                    }
+            }
+        };
+        this.reliability = (sourceRank) => {
+            switch (this.lang) {
+                case "EN":
+                    switch (sourceRank) {
+                        case "N":
+                            return Data7x7_2.data_N_digest_en;
+                        case "A":
+                            return Data7x7_2.data_A_digest_en;
+                        case "B":
+                            return Data7x7_2.data_B_digest_en;
+                        case "C":
+                            return Data7x7_2.data_C_digest_en;
+                        case "D":
+                            return Data7x7_2.data_D_digest_en;
+                        case "E":
+                            return Data7x7_2.data_E_digest_en;
+                        case "F":
+                            return Data7x7_2.data_F_digest_en;
+                    }
+            }
+        };
+        this.detailInfo = (infoRank) => {
+            switch (this.lang) {
+                case "EN":
+                    switch (infoRank) {
+                        case 0:
+                            return [Data7x7_3.data_0_0_en];
+                        case 1:
+                            return [Data7x7_3.data_1_0_en, Data7x7_3.data_1_1_en, Data7x7_3.data_1_2_en];
+                        case 2:
+                            return [Data7x7_3.data_2_0_en, Data7x7_3.data_2_1_en, Data7x7_3.data_2_2_en];
+                        case 3:
+                            return [Data7x7_3.data_3_0_en, Data7x7_3.data_3_1_en, Data7x7_3.data_3_2_en];
+                        case 4:
+                            return [Data7x7_3.data_4_0_en, Data7x7_3.data_4_1_en, Data7x7_3.data_4_2_en];
+                        case 5:
+                            return [Data7x7_3.data_5_0_en, Data7x7_3.data_5_1_en, Data7x7_3.data_5_2_en];
+                        case 6:
+                            return [Data7x7_3.data_6_0_en];
+                    }
+            }
+        };
+        this.validity = (infoRank) => {
+            switch (this.lang) {
+                case "EN":
+                    switch (infoRank) {
+                        case 0:
+                            return Data7x7_4.data_0_digest_en;
+                        case 1:
+                            return Data7x7_4.data_1_digest_en;
+                        case 2:
+                            return Data7x7_4.data_2_digest_en;
+                        case 3:
+                            return Data7x7_4.data_3_digest_en;
+                        case 4:
+                            return Data7x7_4.data_4_digest_en;
+                        case 5:
+                            return Data7x7_4.data_5_digest_en;
+                        case 6:
+                            return Data7x7_4.data_6_digest_en;
+                    }
+            }
+        };
+        this.detail = () => {
+            const det7x7 = {
+                sourceDetail: this.detailSource(this.rank.sourceRank),
+                infoDetail: this.detailInfo(this.rank.infoRank)
+            };
+            return det7x7;
+        };
+    }
+}
+exports.EvaluationTable7x7 = EvaluationTable7x7;
+
+
+/***/ }),
+
+/***/ "./src/evaluation_table/ui/EvaluationChip.tsx":
+/*!****************************************************!*\
+  !*** ./src/evaluation_table/ui/EvaluationChip.tsx ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
+    result["default"] = mod;
+    return result;
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const react_1 = __importStar(__webpack_require__(/*! react */ "react"));
+const Button_1 = __importDefault(__webpack_require__(/*! @material-ui/core/Button */ "./node_modules/@material-ui/core/esm/Button/index.js"));
+const styles_1 = __webpack_require__(/*! @material-ui/styles */ "./node_modules/@material-ui/styles/esm/index.js");
+const EvaluationDialog_1 = __webpack_require__(/*! ./EvaluationDialog */ "./src/evaluation_table/ui/EvaluationDialog.tsx");
+const EvaluationTable_1 = __webpack_require__(/*! ../table/EvaluationTable */ "./src/evaluation_table/table/EvaluationTable.ts");
+exports.EvaluationChip = (props) => {
+    const [open, setOpen] = react_1.useState(false);
+    const [evaluationType, setEvaluationType] = react_1.useState(props.evaluationType);
+    const [evaluationArg, setEvaluationArg] = react_1.useState(props.evaluationArg);
+    const [evaluationTable, setEvaluationTable] = react_1.useState(EvaluationTable_1.makeEvaluationTable(props.evaluationType, props.evaluationArg));
+    const useStyles = styles_1.makeStyles({
+        button: {
+            borderRadius: '25px'
+        },
+    });
+    const classes = useStyles({});
+    const handleOpen = () => {
+        setOpen(true);
+    };
+    const handleCommit = (evaluationType, evaluationArg) => {
+        setOpen(false);
+        // setEvaluationTable
+    };
+    const handleCancel = () => {
+        setOpen(false);
+    };
+    return (react_1.default.createElement("div", null,
+        react_1.default.createElement(Button_1.default, { className: classes.button, variant: "outlined", color: "primary", size: "small", onClick: handleOpen },
+            evaluationTable.rank.sourceRank,
+            " ",
+            evaluationTable.rank.infoRank),
+        react_1.default.createElement(EvaluationDialog_1.EvaluationDialog, { open: open, onCommit: handleCommit, onCancel: handleCancel, evaluationType: evaluationType, evaluationArg: evaluationArg })));
+};
+
+
+/***/ }),
+
+/***/ "./src/evaluation_table/ui/EvaluationDialog.tsx":
+/*!******************************************************!*\
+  !*** ./src/evaluation_table/ui/EvaluationDialog.tsx ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (Object.hasOwnProperty.call(mod, k)) result[k] = mod[k];
+    result["default"] = mod;
+    return result;
+};
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const react_1 = __importStar(__webpack_require__(/*! react */ "react"));
+const Button_1 = __importDefault(__webpack_require__(/*! @material-ui/core/Button */ "./node_modules/@material-ui/core/esm/Button/index.js"));
+const Radio_1 = __importDefault(__webpack_require__(/*! @material-ui/core/Radio */ "./node_modules/@material-ui/core/esm/Radio/index.js"));
+const RadioGroup_1 = __importDefault(__webpack_require__(/*! @material-ui/core/RadioGroup */ "./node_modules/@material-ui/core/esm/RadioGroup/index.js"));
+const FormLabel_1 = __importDefault(__webpack_require__(/*! @material-ui/core/FormLabel */ "./node_modules/@material-ui/core/esm/FormLabel/index.js"));
+const FormControl_1 = __importDefault(__webpack_require__(/*! @material-ui/core/FormControl */ "./node_modules/@material-ui/core/esm/FormControl/index.js"));
+const FormControlLabel_1 = __importDefault(__webpack_require__(/*! @material-ui/core/FormControlLabel */ "./node_modules/@material-ui/core/esm/FormControlLabel/index.js"));
+const Dialog_1 = __importDefault(__webpack_require__(/*! @material-ui/core/Dialog */ "./node_modules/@material-ui/core/esm/Dialog/index.js"));
+const DialogActions_1 = __importDefault(__webpack_require__(/*! @material-ui/core/DialogActions */ "./node_modules/@material-ui/core/esm/DialogActions/index.js"));
+const DialogContent_1 = __importDefault(__webpack_require__(/*! @material-ui/core/DialogContent */ "./node_modules/@material-ui/core/esm/DialogContent/index.js"));
+const Select_1 = __importDefault(__webpack_require__(/*! @material-ui/core/Select */ "./node_modules/@material-ui/core/esm/Select/index.js"));
+const MenuItem_1 = __importDefault(__webpack_require__(/*! @material-ui/core/MenuItem */ "./node_modules/@material-ui/core/esm/MenuItem/index.js"));
+const Typography_1 = __importDefault(__webpack_require__(/*! @material-ui/core/Typography */ "./node_modules/@material-ui/core/esm/Typography/index.js"));
+const Data3x3_1 = __webpack_require__(/*! ../data/Data3x3 */ "./src/evaluation_table/data/Data3x3.ts");
+exports.SelectMatrix = () => {
+    return (react_1.default.createElement(DialogActions_1.default, null,
+        react_1.default.createElement(Select_1.default, { value: "3x3" },
+            react_1.default.createElement(MenuItem_1.default, { value: "3x3" },
+                react_1.default.createElement(Typography_1.default, null, "3x3")),
+            react_1.default.createElement(MenuItem_1.default, { value: "5x5" },
+                react_1.default.createElement(Typography_1.default, null, "5x5")),
+            react_1.default.createElement(MenuItem_1.default, { value: "7x7" },
+                react_1.default.createElement(Typography_1.default, null, "7x7")))));
+};
+exports.EvaluationRadio3x3 = () => {
+    return (react_1.default.createElement(DialogContent_1.default, null,
+        react_1.default.createElement(FormControl_1.default, { component: "fieldset" },
+            react_1.default.createElement(FormLabel_1.default, { component: "label" },
+                react_1.default.createElement(Typography_1.default, null, "Source Rank")),
+            react_1.default.createElement(RadioGroup_1.default, null,
+                react_1.default.createElement(FormControlLabel_1.default, { value: "N", control: react_1.default.createElement(Radio_1.default, { disableRipple: true }), label: react_1.default.createElement(Typography_1.default, null, "N: " + Data3x3_1.data_N_0_en) }),
+                react_1.default.createElement(FormControlLabel_1.default, { value: "A", control: react_1.default.createElement(Radio_1.default, { disableRipple: true }), label: react_1.default.createElement(Typography_1.default, null, "A: " + Data3x3_1.data_A_0_en) }),
+                react_1.default.createElement(FormControlLabel_1.default, { value: "B", control: react_1.default.createElement(Radio_1.default, { disableRipple: true }), label: react_1.default.createElement(Typography_1.default, null, "B: " + Data3x3_1.data_B_0_en) }))),
+        react_1.default.createElement(FormControl_1.default, { component: "fieldset" },
+            react_1.default.createElement(FormLabel_1.default, { component: "label" },
+                react_1.default.createElement(Typography_1.default, null, "Info Rank")),
+            react_1.default.createElement(RadioGroup_1.default, null,
+                react_1.default.createElement(FormControlLabel_1.default, { value: "0", control: react_1.default.createElement(Radio_1.default, { disableRipple: true }), label: react_1.default.createElement(Typography_1.default, null, "0: " + Data3x3_1.data_0_0_en) }),
+                react_1.default.createElement(FormControlLabel_1.default, { value: "1", control: react_1.default.createElement(Radio_1.default, { disableRipple: true }), label: react_1.default.createElement(Typography_1.default, null, "1: " + Data3x3_1.data_1_0_en) }),
+                react_1.default.createElement(FormControlLabel_1.default, { value: "2", control: react_1.default.createElement(Radio_1.default, { disableRipple: true }), label: react_1.default.createElement(Typography_1.default, null, "2: " + Data3x3_1.data_2_0_en) })))));
+};
+exports.EvaluationRadio = (props) => {
+    const { evaluationType, changeHandlers } = props;
+    switch (evaluationType) {
+        case "3x3": {
+            const { handleChangeSourceRank, handleChangeInfoRank, handleChangeMalformtype } = changeHandlers;
+            return (react_1.default.createElement(exports.EvaluationRadio3x3, null));
+        }
+        case "5x5": {
+            const { handleChangeSourceRank, handleChangeInfoRank } = changeHandlers;
+            return (react_1.default.createElement(exports.EvaluationRadio3x3, null));
+        }
+        case "7x7": {
+            const { handleChangeSourceRank, handleChangeInfoRank } = changeHandlers;
+            return (react_1.default.createElement(exports.EvaluationRadio3x3, null));
+        }
+    }
+};
+exports.EvaluationDialog = (props) => {
+    const { open, onCommit, onCancel, evaluationType, evaluationArg } = props;
+    const [selectedEvaluationType, setSelectedEvaluationType] = react_1.useState(evaluationType);
+    const [evaluationStatus, setEvaluationStatus] = react_1.useState(evaluationArg);
+    const commit = (evaluationType, evaluationArg) => {
+        // pass new values to the parent
+        onCommit(evaluationType, evaluationArg);
+    };
+    const cancel = () => {
+        onCancel();
+    };
+    const handleChangeSourceRank = () => {
+        // get value from radio buttons
+        // setEvaluationStatus();
+    };
+    const handleChangeInfoRank = () => {
+        // get value from radio buttons
+        // setEvaluationStatus();
+    };
+    const handleChangeMalformtype = () => {
+    };
+    const changeHandlersFactory = (evaluationType) => {
+        switch (evaluationType) {
+            case "3x3": {
+                const changeHandlers = {
+                    handleChangeSourceRank: handleChangeSourceRank,
+                    handleChangeInfoRank: handleChangeInfoRank,
+                    handleChangeMalformtype: handleChangeMalformtype
+                };
+            }
+            case "5x5": {
+                const changeHandlers = {
+                    handleChangeSourceRank: handleChangeSourceRank,
+                    handleChangeInfoRank: handleChangeInfoRank,
+                };
+            }
+            case "7x7": {
+                const changeHandlers = {
+                    handleChangeSourceRank: handleChangeSourceRank,
+                    handleChangeInfoRank: handleChangeInfoRank,
+                };
+            }
+        }
+        return changeHandlers;
+    };
+    const changeHandlers = changeHandlersFactory(evaluationType);
+    return (react_1.default.createElement(Dialog_1.default, { onClose: onCancel, open: open, "aria-labelledby": "evaluation-dialog", transitionDuration: 0 },
+        react_1.default.createElement(exports.SelectMatrix, null),
+        react_1.default.createElement(exports.EvaluationRadio, { evaluationType: evaluationType, changeHandlers: changeHandlers }),
+        react_1.default.createElement(DialogActions_1.default, null,
+            react_1.default.createElement(Button_1.default, { onClick: () => commit(evaluationType, evaluationStatus), color: "primary", autoFocus: true }, "Commit"),
+            react_1.default.createElement(Button_1.default, { onClick: () => cancel(), color: "primary" }, "Cancel"))));
+};
+
+
+/***/ }),
+
 /***/ "./src/index.tsx":
 /*!***********************!*\
   !*** ./src/index.tsx ***!
@@ -44274,7 +44334,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const React = __importStar(__webpack_require__(/*! react */ "react"));
 const ReactDom = __importStar(__webpack_require__(/*! react-dom */ "react-dom"));
 const TestEditor_1 = __webpack_require__(/*! ./editor/TestEditor */ "./src/editor/TestEditor.tsx");
-const EvaluationChip_1 = __webpack_require__(/*! ./evaluation_table/EvaluationChip */ "./src/evaluation_table/EvaluationChip.tsx");
+const EvaluationChip_1 = __webpack_require__(/*! ./evaluation_table/ui/EvaluationChip */ "./src/evaluation_table/ui/EvaluationChip.tsx");
 const props = {
     evaluationType: "5x5",
     evaluationArg: {
@@ -44286,7 +44346,10 @@ const props = {
     }
 };
 ReactDom.render(React.createElement("div", null,
-    React.createElement(TestEditor_1.TestEditor, null),
+    React.createElement(TestEditor_1.TestEditor, null)
+// <EvaluationChip {...props} />
+,
+    "// ",
     React.createElement(EvaluationChip_1.EvaluationChip, Object.assign({}, props))), document.getElementById("main"));
 
 

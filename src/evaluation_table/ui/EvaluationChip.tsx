@@ -2,22 +2,26 @@ import React, { useState } from 'react';
 import Button from '@material-ui/core/Button';
 import { makeStyles } from '@material-ui/styles';
 import { EvaluationDialog } from './EvaluationDialog';
-import { EvaluationType } from './EvaluationTableBase';
-import { EvaluationArg, makeEvaluationTable } from './EvaluationTable';
+import { EvaluationType } from '../table/EvaluationTableBase';
+import { EvaluationArg, makeEvaluationTable } from '../table/EvaluationTable';
 
 export type EvaluationProps = {
   evaluationType: EvaluationType;
   evaluationArg: EvaluationArg<EvaluationType>;
 }
 
-type EvaluationDialogProps = {
+interface EvaluationDialogProps {
   open: boolean;
-  onClose: () => void;
+  onCommit: (evaluationType: EvaluationType, evaluationArg: EvaluationArg<typeof evaluationType>) => void;
+  onCancel: () => void;
 }
 
 export const EvaluationChip =  (props: EvaluationProps) => {
   const [open, setOpen] = useState(false);
+  const [evaluationType, setEvaluationType] = useState(props.evaluationType);
+  const [evaluationArg, setEvaluationArg] = useState(props.evaluationArg);
   const [evaluationTable, setEvaluationTable] = useState(makeEvaluationTable(props.evaluationType, props.evaluationArg));
+
   const useStyles = makeStyles({
     button: {
       borderRadius: '25px'
@@ -30,7 +34,12 @@ export const EvaluationChip =  (props: EvaluationProps) => {
     setOpen(true); 
   }
 
-  const handleClose = () => {
+  const handleCommit = (evaluationType: EvaluationType, evaluationArg: EvaluationArg<typeof evaluationType>) => {
+    setOpen(false); 
+    // setEvaluationTable
+  }
+
+  const handleCancel = () => {
     setOpen(false); 
   }
   
@@ -39,7 +48,7 @@ export const EvaluationChip =  (props: EvaluationProps) => {
       <Button className={classes.button} variant="outlined" color="primary" size="small" onClick={handleOpen}>
         {evaluationTable.rank.sourceRank} {evaluationTable.rank.infoRank}
       </Button>
-      <EvaluationDialog open={open} onClose={handleClose} />
+      <EvaluationDialog open={open} onCommit={handleCommit} onCancel={handleCancel} evaluationType={evaluationType} evaluationArg={evaluationArg}/>
     </div>
   );
 }

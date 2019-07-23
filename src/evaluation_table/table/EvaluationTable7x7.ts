@@ -9,7 +9,7 @@ import {
   data_D_0_en, data_D_1_en,
   data_E_0_en, data_E_1_en,
   data_F_0_en,
-} from "./data/Data7x7"
+} from "../data/Data7x7"
 
 import {
   data_N_digest_en,
@@ -19,7 +19,7 @@ import {
   data_D_digest_en,
   data_E_digest_en,
   data_F_digest_en,
-} from "./data/Data7x7"
+} from "../data/Data7x7"
 
 import {
   data_0_0_en,
@@ -29,7 +29,7 @@ import {
   data_4_0_en, data_4_1_en, data_4_2_en,
   data_5_0_en, data_5_1_en, data_5_2_en,
   data_6_0_en,
-} from "./data/Data7x7"
+} from "../data/Data7x7"
 
 import {
   data_0_digest_en,
@@ -39,7 +39,7 @@ import {
   data_4_digest_en,
   data_5_digest_en,
   data_6_digest_en,
-} from "./data/Data7x7"
+} from "../data/Data7x7"
 
 type SourceReliability = "N" | "A" | "B" | "C" | "D" | "E" | "F";
 type DataValidity = 0 | 1 | 2 | 3 | 4 | 5 | 6;

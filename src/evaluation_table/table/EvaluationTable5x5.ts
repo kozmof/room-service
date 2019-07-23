@@ -7,7 +7,7 @@ import {
   data_B_0_en,
   data_C_0_en,
   data_X_0_en
-} from "./data/Data5x5"
+} from "../data/Data5x5"
 
 import {
   data_0_0_en, 
@@ -15,7 +15,7 @@ import {
   data_2_0_en, data_2_1_en, data_2_2_en,
   data_3_0_en,
   data_4_0_en
-} from "./data/Data5x5"
+} from "../data/Data5x5"
 
 
 type SourceEvaluation = "N" | "A" | "B" | "C" | "X";
