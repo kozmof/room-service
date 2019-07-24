@@ -81,19 +81,19 @@ export const EvaluationRadio3x3 = () => {
 }
 
 type HandleChange3x3 = {
-  handleChangeSourceRank: () => void;
-  handleChangeInfoRank: () => void;
-  handleChangeMalformtype: () => void;
+  onChangeSourceRank: () => void;
+  onChangeInfoRank: () => void;
+  onChangeMalformtype: () => void;
 }
 
 type HandleChange5x5= {
-  handleChangeSourceRank: () => void;
-  handleChangeInfoRank: () => void;
+  onChangeSourceRank: () => void;
+  onChangeInfoRank: () => void;
 }
 
 type HandleChange7x7= {
-  handleChangeSourceRank: () => void;
-  handleChangeInfoRank: () => void;
+  onChangeSourceRank: () => void;
+  onChangeInfoRank: () => void;
 }
 
 type HandleChange <T extends EvaluationType> = 
@@ -112,19 +112,19 @@ export const EvaluationRadio = <T extends EvaluationType> (props: EvaluationRadi
 
   switch (evaluationType) {
     case "3x3": {
-      const { handleChangeSourceRank, handleChangeInfoRank, handleChangeMalformtype } = changeHandlers as HandleChange3x3;
+      const { onChangeSourceRank, onChangeInfoRank, onChangeMalformtype } = changeHandlers as HandleChange3x3;
       return (
         <EvaluationRadio3x3/>
       )
     }
     case "5x5": {
-      const { handleChangeSourceRank, handleChangeInfoRank } = changeHandlers as HandleChange5x5;
+      const { onChangeSourceRank, onChangeInfoRank } = changeHandlers as HandleChange5x5;
       return (
         <EvaluationRadio3x3/>
       )
     }
     case "7x7": {
-      const { handleChangeSourceRank, handleChangeInfoRank } = changeHandlers as HandleChange7x7;
+      const { onChangeSourceRank, onChangeInfoRank } = changeHandlers as HandleChange7x7;
       return (
         <EvaluationRadio3x3/>
       )
@@ -154,17 +154,17 @@ export const EvaluationDialog = <T extends EvaluationType> (props: EvaluationDia
     onCancel();
   }
 
-  const handleChangeSourceRank = () => {
+  const onChangeSourceRank = () => {
     // get value from radio buttons
     // setEvaluationStatus();
   }
 
-  const handleChangeInfoRank = () => {
+  const onChangeInfoRank = () => {
     // get value from radio buttons
     // setEvaluationStatus();
   }
 
-  const handleChangeMalformtype = () => {
+  const onChangeMalformtype = () => {
   
   }
 
@@ -172,21 +172,21 @@ export const EvaluationDialog = <T extends EvaluationType> (props: EvaluationDia
     switch(evaluationType) {
       case "3x3": {
         const changeHandlers: HandleChange<"3x3"> = {
-          handleChangeSourceRank: handleChangeSourceRank,
-          handleChangeInfoRank: handleChangeInfoRank,
-          handleChangeMalformtype: handleChangeMalformtype
+          onChangeSourceRank: onChangeSourceRank,
+          onChangeInfoRank: onChangeInfoRank,
+          onChangeMalformtype: onChangeMalformtype 
         }
       }
       case "5x5": {
         const changeHandlers: HandleChange<"5x5"> = {
-          handleChangeSourceRank: handleChangeSourceRank,
-          handleChangeInfoRank: handleChangeInfoRank,
+          onChangeSourceRank: onChangeSourceRank,
+          onChangeInfoRank: onChangeInfoRank
         }
       }
       case "7x7": {
         const changeHandlers: HandleChange<"7x7"> = {
-          handleChangeSourceRank: handleChangeSourceRank,
-          handleChangeInfoRank: handleChangeInfoRank,
+          onChangeSourceRank: onChangeSourceRank,
+          onChangeInfoRank: onChangeInfoRank
         }
       }
     }

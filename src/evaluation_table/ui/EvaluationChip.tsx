@@ -34,12 +34,12 @@ export const EvaluationChip =  (props: EvaluationProps) => {
     setOpen(true); 
   }
 
-  const handleCommit = (evaluationType: EvaluationType, evaluationArg: EvaluationArg<typeof evaluationType>) => {
+  const onCommit = (evaluationType: EvaluationType, evaluationArg: EvaluationArg<typeof evaluationType>) => {
     setOpen(false); 
     // setEvaluationTable
   }
 
-  const handleCancel = () => {
+  const onCancel = () => {
     setOpen(false); 
   }
   
@@ -48,7 +48,7 @@ export const EvaluationChip =  (props: EvaluationProps) => {
       <Button className={classes.button} variant="outlined" color="primary" size="small" onClick={handleOpen}>
         {evaluationTable.rank.sourceRank} {evaluationTable.rank.infoRank}
       </Button>
-      <EvaluationDialog open={open} onCommit={handleCommit} onCancel={handleCancel} evaluationType={evaluationType} evaluationArg={evaluationArg}/>
+      <EvaluationDialog open={open} onCommit={onCommit} onCancel={onCancel} evaluationType={evaluationType} evaluationArg={evaluationArg}/>
     </div>
   );
 }

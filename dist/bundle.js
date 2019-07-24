@@ -44161,11 +44161,11 @@ exports.EvaluationChip = (props) => {
     const handleOpen = () => {
         setOpen(true);
     };
-    const handleCommit = (evaluationType, evaluationArg) => {
+    const onCommit = (evaluationType, evaluationArg) => {
         setOpen(false);
         // setEvaluationTable
     };
-    const handleCancel = () => {
+    const onCancel = () => {
         setOpen(false);
     };
     return (react_1.default.createElement("div", null,
@@ -44173,7 +44173,7 @@ exports.EvaluationChip = (props) => {
             evaluationTable.rank.sourceRank,
             " ",
             evaluationTable.rank.infoRank),
-        react_1.default.createElement(EvaluationDialog_1.EvaluationDialog, { open: open, onCommit: handleCommit, onCancel: handleCancel, evaluationType: evaluationType, evaluationArg: evaluationArg })));
+        react_1.default.createElement(EvaluationDialog_1.EvaluationDialog, { open: open, onCommit: onCommit, onCancel: onCancel, evaluationType: evaluationType, evaluationArg: evaluationArg })));
 };
 
 
@@ -44244,15 +44244,15 @@ exports.EvaluationRadio = (props) => {
     const { evaluationType, changeHandlers } = props;
     switch (evaluationType) {
         case "3x3": {
-            const { handleChangeSourceRank, handleChangeInfoRank, handleChangeMalformtype } = changeHandlers;
+            const { onChangeSourceRank, onChangeInfoRank, onChangeMalformtype } = changeHandlers;
             return (react_1.default.createElement(exports.EvaluationRadio3x3, null));
         }
         case "5x5": {
-            const { handleChangeSourceRank, handleChangeInfoRank } = changeHandlers;
+            const { onChangeSourceRank, onChangeInfoRank } = changeHandlers;
             return (react_1.default.createElement(exports.EvaluationRadio3x3, null));
         }
         case "7x7": {
-            const { handleChangeSourceRank, handleChangeInfoRank } = changeHandlers;
+            const { onChangeSourceRank, onChangeInfoRank } = changeHandlers;
             return (react_1.default.createElement(exports.EvaluationRadio3x3, null));
         }
     }
@@ -44268,35 +44268,35 @@ exports.EvaluationDialog = (props) => {
     const cancel = () => {
         onCancel();
     };
-    const handleChangeSourceRank = () => {
+    const onChangeSourceRank = () => {
         // get value from radio buttons
         // setEvaluationStatus();
     };
-    const handleChangeInfoRank = () => {
+    const onChangeInfoRank = () => {
         // get value from radio buttons
         // setEvaluationStatus();
     };
-    const handleChangeMalformtype = () => {
+    const onChangeMalformtype = () => {
     };
     const changeHandlersFactory = (evaluationType) => {
         switch (evaluationType) {
             case "3x3": {
                 const changeHandlers = {
-                    handleChangeSourceRank: handleChangeSourceRank,
-                    handleChangeInfoRank: handleChangeInfoRank,
-                    handleChangeMalformtype: handleChangeMalformtype
+                    onChangeSourceRank: onChangeSourceRank,
+                    onChangeInfoRank: onChangeInfoRank,
+                    onChangeMalformtype: onChangeMalformtype
                 };
             }
             case "5x5": {
                 const changeHandlers = {
-                    handleChangeSourceRank: handleChangeSourceRank,
-                    handleChangeInfoRank: handleChangeInfoRank,
+                    onChangeSourceRank: onChangeSourceRank,
+                    onChangeInfoRank: onChangeInfoRank
                 };
             }
             case "7x7": {
                 const changeHandlers = {
-                    handleChangeSourceRank: handleChangeSourceRank,
-                    handleChangeInfoRank: handleChangeInfoRank,
+                    onChangeSourceRank: onChangeSourceRank,
+                    onChangeInfoRank: onChangeInfoRank
                 };
             }
         }
