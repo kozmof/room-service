@@ -44223,38 +44223,42 @@ exports.SelectMatrix = () => {
             react_1.default.createElement(MenuItem_1.default, { value: "7x7" },
                 react_1.default.createElement(Typography_1.default, null, "7x7")))));
 };
-exports.EvaluationRadio3x3 = () => {
+exports.EvaluationRadio3x3 = (props) => {
     return (react_1.default.createElement(DialogContent_1.default, null,
         react_1.default.createElement(FormControl_1.default, { component: "fieldset" },
             react_1.default.createElement(FormLabel_1.default, { component: "label" },
                 react_1.default.createElement(Typography_1.default, null, "Source Rank")),
             react_1.default.createElement(RadioGroup_1.default, null,
-                react_1.default.createElement(FormControlLabel_1.default, { value: "N", control: react_1.default.createElement(Radio_1.default, { disableRipple: true }), label: react_1.default.createElement(Typography_1.default, null, "N: " + Data3x3_1.data_N_0_en) }),
-                react_1.default.createElement(FormControlLabel_1.default, { value: "A", control: react_1.default.createElement(Radio_1.default, { disableRipple: true }), label: react_1.default.createElement(Typography_1.default, null, "A: " + Data3x3_1.data_A_0_en) }),
-                react_1.default.createElement(FormControlLabel_1.default, { value: "B", control: react_1.default.createElement(Radio_1.default, { disableRipple: true }), label: react_1.default.createElement(Typography_1.default, null, "B: " + Data3x3_1.data_B_0_en) }))),
+                react_1.default.createElement(FormControlLabel_1.default, { value: "N", control: react_1.default.createElement(Radio_1.default, { disableRipple: true, onChange: props.onChangeSourceRank }), label: react_1.default.createElement(Typography_1.default, null, "N: " + Data3x3_1.data_N_0_en) }),
+                react_1.default.createElement(FormControlLabel_1.default, { value: "A", control: react_1.default.createElement(Radio_1.default, { disableRipple: true, onChange: props.onChangeSourceRank }), label: react_1.default.createElement(Typography_1.default, null, "A: " + Data3x3_1.data_A_0_en) }),
+                react_1.default.createElement(FormControlLabel_1.default, { value: "B", control: react_1.default.createElement(Radio_1.default, { disableRipple: true, onChange: props.onChangeSourceRank }), label: react_1.default.createElement(Typography_1.default, null, "B: " + Data3x3_1.data_B_0_en) }))),
         react_1.default.createElement(FormControl_1.default, { component: "fieldset" },
             react_1.default.createElement(FormLabel_1.default, { component: "label" },
                 react_1.default.createElement(Typography_1.default, null, "Info Rank")),
             react_1.default.createElement(RadioGroup_1.default, null,
-                react_1.default.createElement(FormControlLabel_1.default, { value: "0", control: react_1.default.createElement(Radio_1.default, { disableRipple: true }), label: react_1.default.createElement(Typography_1.default, null, "0: " + Data3x3_1.data_0_0_en) }),
-                react_1.default.createElement(FormControlLabel_1.default, { value: "1", control: react_1.default.createElement(Radio_1.default, { disableRipple: true }), label: react_1.default.createElement(Typography_1.default, null, "1: " + Data3x3_1.data_1_0_en) }),
-                react_1.default.createElement(FormControlLabel_1.default, { value: "2", control: react_1.default.createElement(Radio_1.default, { disableRipple: true }), label: react_1.default.createElement(Typography_1.default, null, "2: " + Data3x3_1.data_2_0_en) })))));
+                react_1.default.createElement(FormControlLabel_1.default, { value: "0", control: react_1.default.createElement(Radio_1.default, { disableRipple: true, onChange: props.onChangeInfoRank }), label: react_1.default.createElement(Typography_1.default, null, "0: " + Data3x3_1.data_0_0_en) }),
+                react_1.default.createElement(FormControlLabel_1.default, { value: "1", control: react_1.default.createElement(Radio_1.default, { disableRipple: true, onChange: props.onChangeInfoRank }), label: react_1.default.createElement(Typography_1.default, null, "1: " + Data3x3_1.data_1_0_en) }),
+                react_1.default.createElement(FormControlLabel_1.default, { value: "2", control: react_1.default.createElement(Radio_1.default, { disableRipple: true, onChange: props.onChangeInfoRank }), label: react_1.default.createElement(Typography_1.default, null, "2: " + Data3x3_1.data_2_0_en) })))));
 };
 exports.EvaluationRadio = (props) => {
     const { evaluationType, changeHandlers } = props;
     switch (evaluationType) {
         case "3x3": {
             const { onChangeSourceRank, onChangeInfoRank, onChangeMalformtype } = changeHandlers;
-            return (react_1.default.createElement(exports.EvaluationRadio3x3, null));
+            return (react_1.default.createElement(exports.EvaluationRadio3x3, { onChangeSourceRank: onChangeSourceRank, onChangeInfoRank: onChangeInfoRank, onChangeMalformtype: onChangeMalformtype }));
         }
-        case "5x5": {
-            const { onChangeSourceRank, onChangeInfoRank } = changeHandlers;
-            return (react_1.default.createElement(exports.EvaluationRadio3x3, null));
-        }
-        case "7x7": {
-            const { onChangeSourceRank, onChangeInfoRank } = changeHandlers;
-            return (react_1.default.createElement(exports.EvaluationRadio3x3, null));
-        }
+        // case "5x5": {
+        //   const { onChangeSourceRank, onChangeInfoRank } = changeHandlers as HandleChange5x5;
+        //   return (
+        //     <EvaluationRadio5x5 onChangeSourceRank={onChangeSourceRank} onChangeInfoRank={onChangeInfoRank}/>
+        //   )
+        // }
+        // case "7x7": {
+        //   const { onChangeSourceRank, onChangeInfoRank } = changeHandlers as HandleChange7x7;
+        //   return (
+        //     <EvaluationRadio7x7 onChangeSourceRank={onChangeSourceRank} onChangeInfoRank={onChangeInfoRank}/>
+        //   )
+        // }
     }
 };
 exports.EvaluationDialog = (props) => {
@@ -44268,15 +44272,16 @@ exports.EvaluationDialog = (props) => {
     const cancel = () => {
         onCancel();
     };
-    const onChangeSourceRank = () => {
-        // get value from radio buttons
-        // setEvaluationStatus();
+    const onChangeSourceRank = (event) => {
+        const sourceRank = event.currentTarget.value;
+        setEvaluationStatus(Object.assign({}, evaluationStatus, { sourceRank: sourceRank }));
     };
-    const onChangeInfoRank = () => {
-        // get value from radio buttons
-        // setEvaluationStatus();
+    const onChangeInfoRank = (event) => {
+        const infoRank = event.currentTarget.value;
+        setEvaluationStatus(Object.assign({}, evaluationStatus, { infoRank: infoRank }));
     };
-    const onChangeMalformtype = () => {
+    // setEvaluationStatus();
+    const onChangeMalformtype = (event) => {
     };
     const changeHandlersFactory = (evaluationType) => {
         switch (evaluationType) {

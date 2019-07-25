@@ -49,7 +49,7 @@ export const SelectMatrix = () => {
   )
 }
 
-export const EvaluationRadio3x3 = () => {
+export const EvaluationRadio3x3 = (props: HandleChange3x3) => {
   return (
     <DialogContent>
       <FormControl component="fieldset">
@@ -59,9 +59,9 @@ export const EvaluationRadio3x3 = () => {
           </Typography>
         </FormLabel>
         <RadioGroup>
-          <FormControlLabel value="N" control={<Radio disableRipple={true} />} label={<Typography>{"N: " + data_N_0_en}</Typography>}/>
-          <FormControlLabel value="A" control={<Radio disableRipple={true} />} label={<Typography>{"A: " + data_A_0_en}</Typography>}/>
-          <FormControlLabel value="B" control={<Radio disableRipple={true} />} label={<Typography>{"B: " + data_B_0_en}</Typography>}/>
+          <FormControlLabel value="N" control={<Radio disableRipple={true} onChange={props.onChangeSourceRank}/>} label={<Typography>{"N: " + data_N_0_en}</Typography>}/>
+          <FormControlLabel value="A" control={<Radio disableRipple={true} onChange={props.onChangeSourceRank}/>} label={<Typography>{"A: " + data_A_0_en}</Typography>}/>
+          <FormControlLabel value="B" control={<Radio disableRipple={true} onChange={props.onChangeSourceRank}/>} label={<Typography>{"B: " + data_B_0_en}</Typography>}/>
         </RadioGroup>
       </FormControl>
       <FormControl component="fieldset">
@@ -71,9 +71,9 @@ export const EvaluationRadio3x3 = () => {
           </Typography>
         </FormLabel>
         <RadioGroup>
-          <FormControlLabel value="0" control={<Radio disableRipple={true} />} label={<Typography>{"0: " + data_0_0_en}</Typography>}/>
-          <FormControlLabel value="1" control={<Radio disableRipple={true} />} label={<Typography>{"1: " + data_1_0_en}</Typography>}/>
-          <FormControlLabel value="2" control={<Radio disableRipple={true} />} label={<Typography>{"2: " + data_2_0_en}</Typography>}/>
+          <FormControlLabel value="0" control={<Radio disableRipple={true} onChange={props.onChangeInfoRank}/>} label={<Typography>{"0: " + data_0_0_en}</Typography>}/>
+          <FormControlLabel value="1" control={<Radio disableRipple={true} onChange={props.onChangeInfoRank}/>} label={<Typography>{"1: " + data_1_0_en}</Typography>}/>
+          <FormControlLabel value="2" control={<Radio disableRipple={true} onChange={props.onChangeInfoRank}/>} label={<Typography>{"2: " + data_2_0_en}</Typography>}/>
         </RadioGroup>
       </FormControl>
     </DialogContent>
@@ -81,19 +81,19 @@ export const EvaluationRadio3x3 = () => {
 }
 
 type HandleChange3x3 = {
-  onChangeSourceRank: () => void;
-  onChangeInfoRank: () => void;
-  onChangeMalformtype: () => void;
+  onChangeSourceRank: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  onChangeInfoRank: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  onChangeMalformtype: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 type HandleChange5x5= {
-  onChangeSourceRank: () => void;
-  onChangeInfoRank: () => void;
+  onChangeSourceRank: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  onChangeInfoRank: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 type HandleChange7x7= {
-  onChangeSourceRank: () => void;
-  onChangeInfoRank: () => void;
+  onChangeSourceRank: (event: React.ChangeEvent<HTMLInputElement>) => void;
+  onChangeInfoRank: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
 type HandleChange <T extends EvaluationType> = 
@@ -114,21 +114,21 @@ export const EvaluationRadio = <T extends EvaluationType> (props: EvaluationRadi
     case "3x3": {
       const { onChangeSourceRank, onChangeInfoRank, onChangeMalformtype } = changeHandlers as HandleChange3x3;
       return (
-        <EvaluationRadio3x3/>
+        <EvaluationRadio3x3 onChangeSourceRank={onChangeSourceRank} onChangeInfoRank={onChangeInfoRank} onChangeMalformtype={onChangeMalformtype}/>
       )
     }
-    case "5x5": {
-      const { onChangeSourceRank, onChangeInfoRank } = changeHandlers as HandleChange5x5;
-      return (
-        <EvaluationRadio3x3/>
-      )
-    }
-    case "7x7": {
-      const { onChangeSourceRank, onChangeInfoRank } = changeHandlers as HandleChange7x7;
-      return (
-        <EvaluationRadio3x3/>
-      )
-    }
+    // case "5x5": {
+    //   const { onChangeSourceRank, onChangeInfoRank } = changeHandlers as HandleChange5x5;
+    //   return (
+    //     <EvaluationRadio5x5 onChangeSourceRank={onChangeSourceRank} onChangeInfoRank={onChangeInfoRank}/>
+    //   )
+    // }
+    // case "7x7": {
+    //   const { onChangeSourceRank, onChangeInfoRank } = changeHandlers as HandleChange7x7;
+    //   return (
+    //     <EvaluationRadio7x7 onChangeSourceRank={onChangeSourceRank} onChangeInfoRank={onChangeInfoRank}/>
+    //   )
+    // }
   }
 }
 
@@ -154,17 +154,18 @@ export const EvaluationDialog = <T extends EvaluationType> (props: EvaluationDia
     onCancel();
   }
 
-  const onChangeSourceRank = () => {
-    // get value from radio buttons
-    // setEvaluationStatus();
+  const onChangeSourceRank = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const sourceRank = event.currentTarget.value;
+    setEvaluationStatus(Object.assign({}, evaluationStatus, { sourceRank: sourceRank }));
   }
 
-  const onChangeInfoRank = () => {
-    // get value from radio buttons
-    // setEvaluationStatus();
+  const onChangeInfoRank = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const infoRank = event.currentTarget.value;
+    setEvaluationStatus(Object.assign({}, evaluationStatus, { infoRank: infoRank }));
   }
+    // setEvaluationStatus();
 
-  const onChangeMalformtype = () => {
+  const onChangeMalformtype = (event: React.ChangeEvent<HTMLInputElement>) => {
   
   }
 

@@ -10,12 +10,6 @@ export type EvaluationProps = {
   evaluationArg: EvaluationArg<EvaluationType>;
 }
 
-interface EvaluationDialogProps {
-  open: boolean;
-  onCommit: (evaluationType: EvaluationType, evaluationArg: EvaluationArg<typeof evaluationType>) => void;
-  onCancel: () => void;
-}
-
 export const EvaluationChip =  (props: EvaluationProps) => {
   const [open, setOpen] = useState(false);
   const [evaluationType, setEvaluationType] = useState(props.evaluationType);
@@ -48,7 +42,7 @@ export const EvaluationChip =  (props: EvaluationProps) => {
       <Button className={classes.button} variant="outlined" color="primary" size="small" onClick={handleOpen}>
         {evaluationTable.rank.sourceRank} {evaluationTable.rank.infoRank}
       </Button>
-      <EvaluationDialog open={open} onCommit={onCommit} onCancel={onCancel} evaluationType={evaluationType} evaluationArg={evaluationArg}/>
+      <EvaluationDialog<typeof evaluationType> open={open} onCommit={onCommit} onCancel={onCancel} evaluationType={evaluationType} evaluationArg={evaluationArg}/>
     </div>
   );
 }
