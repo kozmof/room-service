@@ -10,7 +10,7 @@ export type EvaluationProps = {
   evaluationArg: EvaluationArg<EvaluationType>;
 }
 
-export const EvaluationChip =  (props: EvaluationProps) => {
+export const EvaluationChip = (props: EvaluationProps) => {
   const [open, setOpen] = useState(false);
   const [evaluationType, setEvaluationType] = useState(props.evaluationType);
   const [evaluationArg, setEvaluationArg] = useState(props.evaluationArg);

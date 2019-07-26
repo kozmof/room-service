@@ -85,27 +85,30 @@ export const EvaluationDialog = <T extends EvaluationType> (props: EvaluationDia
           onChangeInfoRank: onChangeInfoRank,
           onChangeMalformtype: onChangeMalformtype 
         }
+        return changeHandlers;
       }
       case "5x5": {
         const changeHandlers: HandleChange<"5x5"> = {
           onChangeSourceRank: onChangeSourceRank,
           onChangeInfoRank: onChangeInfoRank
         }
+        return changeHandlers;
       }
       case "7x7": {
         const changeHandlers: HandleChange<"7x7"> = {
           onChangeSourceRank: onChangeSourceRank,
           onChangeInfoRank: onChangeInfoRank
         }
+        return changeHandlers;
       }
     }
-    return changeHandlers;
   }
+
 
   const changeHandlers: HandleChange<typeof evaluationType> = changeHandlersFactory<typeof evaluationType>(evaluationType); 
 
   return (
-    <Dialog onClose={onCancel} open={open} aria-labelledby="evaluation-dialog" transitionDuration={0}> 
+    <Dialog onClose={()=>cancel()} open={open} aria-labelledby="evaluation-dialog" transitionDuration={0}> 
       <SelectMatrix />
       <EvaluationRadio evaluationType={evaluationType} changeHandlers={changeHandlers}/>
       <DialogActions>

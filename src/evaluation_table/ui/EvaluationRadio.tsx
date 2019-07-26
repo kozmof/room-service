@@ -25,18 +25,18 @@ export const EvaluationRadio = <T extends EvaluationType> (props: EvaluationRadi
         <EvaluationRadio3x3 onChangeSourceRank={onChangeSourceRank} onChangeInfoRank={onChangeInfoRank} onChangeMalformtype={onChangeMalformtype}/>
       )
     }
-    // case "5x5": {
-    //   const { onChangeSourceRank, onChangeInfoRank } = changeHandlers as HandleChange5x5;
-    //   return (
-    //     <EvaluationRadio5x5 onChangeSourceRank={onChangeSourceRank} onChangeInfoRank={onChangeInfoRank}/>
-    //   )
-    // }
-    // case "7x7": {
-    //   const { onChangeSourceRank, onChangeInfoRank } = changeHandlers as HandleChange7x7;
-    //   return (
-    //     <EvaluationRadio7x7 onChangeSourceRank={onChangeSourceRank} onChangeInfoRank={onChangeInfoRank}/>
-    //   )
-    // }
+    case "5x5": {
+      const { onChangeSourceRank, onChangeInfoRank } = changeHandlers as HandleChange5x5;
+      return (
+        <EvaluationRadio5x5 onChangeSourceRank={onChangeSourceRank} onChangeInfoRank={onChangeInfoRank}/>
+      )
+    }
+    case "7x7": {
+      const { onChangeSourceRank, onChangeInfoRank } = changeHandlers as HandleChange7x7;
+      return (
+        <EvaluationRadio7x7 onChangeSourceRank={onChangeSourceRank} onChangeInfoRank={onChangeInfoRank}/>
+      )
+    }
   }
 }
 

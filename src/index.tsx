@@ -4,7 +4,7 @@ import { TestEditor } from "./editor/TestEditor";
 import { EvaluationChip, EvaluationProps } from "./evaluation_table/ui/EvaluationChip";
 
 const props: EvaluationProps = {
-  evaluationType: "5x5",
+  evaluationType: "7x7",
   evaluationArg: {
     rank: {
       sourceRank: "A",
@@ -17,7 +17,7 @@ const props: EvaluationProps = {
 ReactDom.render(
   <div>
     <TestEditor />
-    // <EvaluationChip {...props} />
+    <EvaluationChip {...props} />
   </div>,
   document.getElementById("main")
 );
