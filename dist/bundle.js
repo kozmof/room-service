@@ -44201,18 +44201,12 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 Object.defineProperty(exports, "__esModule", { value: true });
 const react_1 = __importStar(__webpack_require__(/*! react */ "react"));
 const Button_1 = __importDefault(__webpack_require__(/*! @material-ui/core/Button */ "./node_modules/@material-ui/core/esm/Button/index.js"));
-const Radio_1 = __importDefault(__webpack_require__(/*! @material-ui/core/Radio */ "./node_modules/@material-ui/core/esm/Radio/index.js"));
-const RadioGroup_1 = __importDefault(__webpack_require__(/*! @material-ui/core/RadioGroup */ "./node_modules/@material-ui/core/esm/RadioGroup/index.js"));
-const FormLabel_1 = __importDefault(__webpack_require__(/*! @material-ui/core/FormLabel */ "./node_modules/@material-ui/core/esm/FormLabel/index.js"));
-const FormControl_1 = __importDefault(__webpack_require__(/*! @material-ui/core/FormControl */ "./node_modules/@material-ui/core/esm/FormControl/index.js"));
-const FormControlLabel_1 = __importDefault(__webpack_require__(/*! @material-ui/core/FormControlLabel */ "./node_modules/@material-ui/core/esm/FormControlLabel/index.js"));
 const Dialog_1 = __importDefault(__webpack_require__(/*! @material-ui/core/Dialog */ "./node_modules/@material-ui/core/esm/Dialog/index.js"));
 const DialogActions_1 = __importDefault(__webpack_require__(/*! @material-ui/core/DialogActions */ "./node_modules/@material-ui/core/esm/DialogActions/index.js"));
-const DialogContent_1 = __importDefault(__webpack_require__(/*! @material-ui/core/DialogContent */ "./node_modules/@material-ui/core/esm/DialogContent/index.js"));
 const Select_1 = __importDefault(__webpack_require__(/*! @material-ui/core/Select */ "./node_modules/@material-ui/core/esm/Select/index.js"));
 const MenuItem_1 = __importDefault(__webpack_require__(/*! @material-ui/core/MenuItem */ "./node_modules/@material-ui/core/esm/MenuItem/index.js"));
 const Typography_1 = __importDefault(__webpack_require__(/*! @material-ui/core/Typography */ "./node_modules/@material-ui/core/esm/Typography/index.js"));
-const Data3x3_1 = __webpack_require__(/*! ../data/Data3x3 */ "./src/evaluation_table/data/Data3x3.ts");
+const EvaluationRadio_1 = __webpack_require__(/*! ./EvaluationRadio */ "./src/evaluation_table/ui/EvaluationRadio.tsx");
 exports.SelectMatrix = () => {
     return (react_1.default.createElement(DialogActions_1.default, null,
         react_1.default.createElement(Select_1.default, { value: "3x3" },
@@ -44222,44 +44216,6 @@ exports.SelectMatrix = () => {
                 react_1.default.createElement(Typography_1.default, null, "5x5")),
             react_1.default.createElement(MenuItem_1.default, { value: "7x7" },
                 react_1.default.createElement(Typography_1.default, null, "7x7")))));
-};
-exports.EvaluationRadio3x3 = (props) => {
-    return (react_1.default.createElement(DialogContent_1.default, null,
-        react_1.default.createElement(FormControl_1.default, { component: "fieldset" },
-            react_1.default.createElement(FormLabel_1.default, { component: "label" },
-                react_1.default.createElement(Typography_1.default, null, "Source Rank")),
-            react_1.default.createElement(RadioGroup_1.default, null,
-                react_1.default.createElement(FormControlLabel_1.default, { value: "N", control: react_1.default.createElement(Radio_1.default, { disableRipple: true, onChange: props.onChangeSourceRank }), label: react_1.default.createElement(Typography_1.default, null, "N: " + Data3x3_1.data_N_0_en) }),
-                react_1.default.createElement(FormControlLabel_1.default, { value: "A", control: react_1.default.createElement(Radio_1.default, { disableRipple: true, onChange: props.onChangeSourceRank }), label: react_1.default.createElement(Typography_1.default, null, "A: " + Data3x3_1.data_A_0_en) }),
-                react_1.default.createElement(FormControlLabel_1.default, { value: "B", control: react_1.default.createElement(Radio_1.default, { disableRipple: true, onChange: props.onChangeSourceRank }), label: react_1.default.createElement(Typography_1.default, null, "B: " + Data3x3_1.data_B_0_en) }))),
-        react_1.default.createElement(FormControl_1.default, { component: "fieldset" },
-            react_1.default.createElement(FormLabel_1.default, { component: "label" },
-                react_1.default.createElement(Typography_1.default, null, "Info Rank")),
-            react_1.default.createElement(RadioGroup_1.default, null,
-                react_1.default.createElement(FormControlLabel_1.default, { value: "0", control: react_1.default.createElement(Radio_1.default, { disableRipple: true, onChange: props.onChangeInfoRank }), label: react_1.default.createElement(Typography_1.default, null, "0: " + Data3x3_1.data_0_0_en) }),
-                react_1.default.createElement(FormControlLabel_1.default, { value: "1", control: react_1.default.createElement(Radio_1.default, { disableRipple: true, onChange: props.onChangeInfoRank }), label: react_1.default.createElement(Typography_1.default, null, "1: " + Data3x3_1.data_1_0_en) }),
-                react_1.default.createElement(FormControlLabel_1.default, { value: "2", control: react_1.default.createElement(Radio_1.default, { disableRipple: true, onChange: props.onChangeInfoRank }), label: react_1.default.createElement(Typography_1.default, null, "2: " + Data3x3_1.data_2_0_en) })))));
-};
-exports.EvaluationRadio = (props) => {
-    const { evaluationType, changeHandlers } = props;
-    switch (evaluationType) {
-        case "3x3": {
-            const { onChangeSourceRank, onChangeInfoRank, onChangeMalformtype } = changeHandlers;
-            return (react_1.default.createElement(exports.EvaluationRadio3x3, { onChangeSourceRank: onChangeSourceRank, onChangeInfoRank: onChangeInfoRank, onChangeMalformtype: onChangeMalformtype }));
-        }
-        // case "5x5": {
-        //   const { onChangeSourceRank, onChangeInfoRank } = changeHandlers as HandleChange5x5;
-        //   return (
-        //     <EvaluationRadio5x5 onChangeSourceRank={onChangeSourceRank} onChangeInfoRank={onChangeInfoRank}/>
-        //   )
-        // }
-        // case "7x7": {
-        //   const { onChangeSourceRank, onChangeInfoRank } = changeHandlers as HandleChange7x7;
-        //   return (
-        //     <EvaluationRadio7x7 onChangeSourceRank={onChangeSourceRank} onChangeInfoRank={onChangeInfoRank}/>
-        //   )
-        // }
-    }
 };
 exports.EvaluationDialog = (props) => {
     const { open, onCommit, onCancel, evaluationType, evaluationArg } = props;
@@ -44310,10 +44266,93 @@ exports.EvaluationDialog = (props) => {
     const changeHandlers = changeHandlersFactory(evaluationType);
     return (react_1.default.createElement(Dialog_1.default, { onClose: onCancel, open: open, "aria-labelledby": "evaluation-dialog", transitionDuration: 0 },
         react_1.default.createElement(exports.SelectMatrix, null),
-        react_1.default.createElement(exports.EvaluationRadio, { evaluationType: evaluationType, changeHandlers: changeHandlers }),
+        react_1.default.createElement(EvaluationRadio_1.EvaluationRadio, { evaluationType: evaluationType, changeHandlers: changeHandlers }),
         react_1.default.createElement(DialogActions_1.default, null,
             react_1.default.createElement(Button_1.default, { onClick: () => commit(evaluationType, evaluationStatus), color: "primary", autoFocus: true }, "Commit"),
             react_1.default.createElement(Button_1.default, { onClick: () => cancel(), color: "primary" }, "Cancel"))));
+};
+
+
+/***/ }),
+
+/***/ "./src/evaluation_table/ui/EvaluationRadio.tsx":
+/*!*****************************************************!*\
+  !*** ./src/evaluation_table/ui/EvaluationRadio.tsx ***!
+  \*****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const react_1 = __importDefault(__webpack_require__(/*! react */ "react"));
+const EvaluationRadio3x3_1 = __webpack_require__(/*! ./EvaluationRadio3x3 */ "./src/evaluation_table/ui/EvaluationRadio3x3.tsx");
+exports.EvaluationRadio = (props) => {
+    const { evaluationType, changeHandlers } = props;
+    switch (evaluationType) {
+        case "3x3": {
+            const { onChangeSourceRank, onChangeInfoRank, onChangeMalformtype } = changeHandlers;
+            return (react_1.default.createElement(EvaluationRadio3x3_1.EvaluationRadio3x3, { onChangeSourceRank: onChangeSourceRank, onChangeInfoRank: onChangeInfoRank, onChangeMalformtype: onChangeMalformtype }));
+        }
+        // case "5x5": {
+        //   const { onChangeSourceRank, onChangeInfoRank } = changeHandlers as HandleChange5x5;
+        //   return (
+        //     <EvaluationRadio5x5 onChangeSourceRank={onChangeSourceRank} onChangeInfoRank={onChangeInfoRank}/>
+        //   )
+        // }
+        // case "7x7": {
+        //   const { onChangeSourceRank, onChangeInfoRank } = changeHandlers as HandleChange7x7;
+        //   return (
+        //     <EvaluationRadio7x7 onChangeSourceRank={onChangeSourceRank} onChangeInfoRank={onChangeInfoRank}/>
+        //   )
+        // }
+    }
+};
+
+
+/***/ }),
+
+/***/ "./src/evaluation_table/ui/EvaluationRadio3x3.tsx":
+/*!********************************************************!*\
+  !*** ./src/evaluation_table/ui/EvaluationRadio3x3.tsx ***!
+  \********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+var __importDefault = (this && this.__importDefault) || function (mod) {
+    return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+const react_1 = __importDefault(__webpack_require__(/*! react */ "react"));
+const Radio_1 = __importDefault(__webpack_require__(/*! @material-ui/core/Radio */ "./node_modules/@material-ui/core/esm/Radio/index.js"));
+const RadioGroup_1 = __importDefault(__webpack_require__(/*! @material-ui/core/RadioGroup */ "./node_modules/@material-ui/core/esm/RadioGroup/index.js"));
+const DialogContent_1 = __importDefault(__webpack_require__(/*! @material-ui/core/DialogContent */ "./node_modules/@material-ui/core/esm/DialogContent/index.js"));
+const FormControl_1 = __importDefault(__webpack_require__(/*! @material-ui/core/FormControl */ "./node_modules/@material-ui/core/esm/FormControl/index.js"));
+const FormControlLabel_1 = __importDefault(__webpack_require__(/*! @material-ui/core/FormControlLabel */ "./node_modules/@material-ui/core/esm/FormControlLabel/index.js"));
+const FormLabel_1 = __importDefault(__webpack_require__(/*! @material-ui/core/FormLabel */ "./node_modules/@material-ui/core/esm/FormLabel/index.js"));
+const Typography_1 = __importDefault(__webpack_require__(/*! @material-ui/core/Typography */ "./node_modules/@material-ui/core/esm/Typography/index.js"));
+const Data3x3_1 = __webpack_require__(/*! ../data/Data3x3 */ "./src/evaluation_table/data/Data3x3.ts");
+exports.EvaluationRadio3x3 = (props) => {
+    return (react_1.default.createElement(DialogContent_1.default, null,
+        react_1.default.createElement(FormControl_1.default, { component: "fieldset" },
+            react_1.default.createElement(FormLabel_1.default, { component: "label" },
+                react_1.default.createElement(Typography_1.default, null, "Source Rank")),
+            react_1.default.createElement(RadioGroup_1.default, null,
+                react_1.default.createElement(FormControlLabel_1.default, { value: "N", control: react_1.default.createElement(Radio_1.default, { disableRipple: true, onChange: props.onChangeSourceRank }), label: react_1.default.createElement(Typography_1.default, null, "N: " + Data3x3_1.data_N_0_en) }),
+                react_1.default.createElement(FormControlLabel_1.default, { value: "A", control: react_1.default.createElement(Radio_1.default, { disableRipple: true, onChange: props.onChangeSourceRank }), label: react_1.default.createElement(Typography_1.default, null, "A: " + Data3x3_1.data_A_0_en) }),
+                react_1.default.createElement(FormControlLabel_1.default, { value: "B", control: react_1.default.createElement(Radio_1.default, { disableRipple: true, onChange: props.onChangeSourceRank }), label: react_1.default.createElement(Typography_1.default, null, "B: " + Data3x3_1.data_B_0_en) }))),
+        react_1.default.createElement(FormControl_1.default, { component: "fieldset" },
+            react_1.default.createElement(FormLabel_1.default, { component: "label" },
+                react_1.default.createElement(Typography_1.default, null, "Info Rank")),
+            react_1.default.createElement(RadioGroup_1.default, null,
+                react_1.default.createElement(FormControlLabel_1.default, { value: "0", control: react_1.default.createElement(Radio_1.default, { disableRipple: true, onChange: props.onChangeInfoRank }), label: react_1.default.createElement(Typography_1.default, null, "0: " + Data3x3_1.data_0_0_en) }),
+                react_1.default.createElement(FormControlLabel_1.default, { value: "1", control: react_1.default.createElement(Radio_1.default, { disableRipple: true, onChange: props.onChangeInfoRank }), label: react_1.default.createElement(Typography_1.default, null, "1: " + Data3x3_1.data_1_0_en) }),
+                react_1.default.createElement(FormControlLabel_1.default, { value: "2", control: react_1.default.createElement(Radio_1.default, { disableRipple: true, onChange: props.onChangeInfoRank }), label: react_1.default.createElement(Typography_1.default, null, "2: " + Data3x3_1.data_2_0_en) })))));
 };
 
 

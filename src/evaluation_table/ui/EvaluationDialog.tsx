@@ -1,10 +1,5 @@
 import React, { useState } from 'react';
 import Button from '@material-ui/core/Button';
-import Radio from '@material-ui/core/Radio';
-import RadioGroup from '@material-ui/core/RadioGroup';
-import FormLabel from '@material-ui/core/FormLabel';
-import FormControl from '@material-ui/core/FormControl';
-import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Dialog from '@material-ui/core/Dialog';
 import DialogTitle from '@material-ui/core/DialogTitle';
 import DialogActions from '@material-ui/core/DialogActions';
@@ -19,11 +14,7 @@ import { Arg3x3 } from '../table/EvaluationTable3x3';
 import { Arg5x5 }  from '../table/EvaluationTable5x5';
 import { Arg7x7 } from '../table/EvaluationTable7x7';
 import { Language } from '../table/Language';
-
-import { 
-  data_N_0_en, data_A_0_en, data_B_0_en,
-  data_0_0_en, data_1_0_en, data_2_0_en
-} from "../data/Data3x3";
+import { EvaluationRadio, HandleChange } from './EvaluationRadio';
 
 export const SelectMatrix = () => {
   return (
@@ -47,89 +38,6 @@ export const SelectMatrix = () => {
       </Select>
     </DialogActions>
   )
-}
-
-export const EvaluationRadio3x3 = (props: HandleChange3x3) => {
-  return (
-    <DialogContent>
-      <FormControl component="fieldset">
-        <FormLabel component="label"> 
-          <Typography>
-            Source Rank 
-          </Typography>
-        </FormLabel>
-        <RadioGroup>
-          <FormControlLabel value="N" control={<Radio disableRipple={true} onChange={props.onChangeSourceRank}/>} label={<Typography>{"N: " + data_N_0_en}</Typography>}/>
-          <FormControlLabel value="A" control={<Radio disableRipple={true} onChange={props.onChangeSourceRank}/>} label={<Typography>{"A: " + data_A_0_en}</Typography>}/>
-          <FormControlLabel value="B" control={<Radio disableRipple={true} onChange={props.onChangeSourceRank}/>} label={<Typography>{"B: " + data_B_0_en}</Typography>}/>
-        </RadioGroup>
-      </FormControl>
-      <FormControl component="fieldset">
-        <FormLabel component="label">
-          <Typography>
-            Info Rank
-          </Typography>
-        </FormLabel>
-        <RadioGroup>
-          <FormControlLabel value="0" control={<Radio disableRipple={true} onChange={props.onChangeInfoRank}/>} label={<Typography>{"0: " + data_0_0_en}</Typography>}/>
-          <FormControlLabel value="1" control={<Radio disableRipple={true} onChange={props.onChangeInfoRank}/>} label={<Typography>{"1: " + data_1_0_en}</Typography>}/>
-          <FormControlLabel value="2" control={<Radio disableRipple={true} onChange={props.onChangeInfoRank}/>} label={<Typography>{"2: " + data_2_0_en}</Typography>}/>
-        </RadioGroup>
-      </FormControl>
-    </DialogContent>
-  )
-}
-
-type HandleChange3x3 = {
-  onChangeSourceRank: (event: React.ChangeEvent<HTMLInputElement>) => void;
-  onChangeInfoRank: (event: React.ChangeEvent<HTMLInputElement>) => void;
-  onChangeMalformtype: (event: React.ChangeEvent<HTMLInputElement>) => void;
-}
-
-type HandleChange5x5= {
-  onChangeSourceRank: (event: React.ChangeEvent<HTMLInputElement>) => void;
-  onChangeInfoRank: (event: React.ChangeEvent<HTMLInputElement>) => void;
-}
-
-type HandleChange7x7= {
-  onChangeSourceRank: (event: React.ChangeEvent<HTMLInputElement>) => void;
-  onChangeInfoRank: (event: React.ChangeEvent<HTMLInputElement>) => void;
-}
-
-type HandleChange <T extends EvaluationType> = 
-  T extends "3x3" ? HandleChange3x3:
-  T extends "5x5" ? HandleChange5x5:
-  T extends "7x7" ? HandleChange7x7:
-  never;
-
-interface EvaluationRadioProps <T extends EvaluationType> {
-  evaluationType: EvaluationType;
-  changeHandlers: HandleChange<T>;
-}
-
-export const EvaluationRadio = <T extends EvaluationType> (props: EvaluationRadioProps<T>) => {
-  const { evaluationType, changeHandlers } = props;
-
-  switch (evaluationType) {
-    case "3x3": {
-      const { onChangeSourceRank, onChangeInfoRank, onChangeMalformtype } = changeHandlers as HandleChange3x3;
-      return (
-        <EvaluationRadio3x3 onChangeSourceRank={onChangeSourceRank} onChangeInfoRank={onChangeInfoRank} onChangeMalformtype={onChangeMalformtype}/>
-      )
-    }
-    // case "5x5": {
-    //   const { onChangeSourceRank, onChangeInfoRank } = changeHandlers as HandleChange5x5;
-    //   return (
-    //     <EvaluationRadio5x5 onChangeSourceRank={onChangeSourceRank} onChangeInfoRank={onChangeInfoRank}/>
-    //   )
-    // }
-    // case "7x7": {
-    //   const { onChangeSourceRank, onChangeInfoRank } = changeHandlers as HandleChange7x7;
-    //   return (
-    //     <EvaluationRadio7x7 onChangeSourceRank={onChangeSourceRank} onChangeInfoRank={onChangeInfoRank}/>
-    //   )
-    // }
-  }
 }
 
 type EvaluationDialogProps<T extends EvaluationType> = {
