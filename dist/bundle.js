@@ -44162,8 +44162,8 @@ exports.EvaluationChip = (props) => {
         setOpen(true);
     };
     const onCommit = (evaluationType, evaluationArg) => {
+        setEvaluationTable(EvaluationTable_1.makeEvaluationTable(evaluationType, evaluationArg));
         setOpen(false);
-        // setEvaluationTable
     };
     const onCancel = () => {
         setOpen(false);
@@ -44223,7 +44223,7 @@ exports.EvaluationDialog = (props) => {
     const [selectedEvaluationType, setSelectedEvaluationType] = react_1.useState(evaluationType);
     const [evaluationStatus, setEvaluationStatus] = react_1.useState(evaluationArg);
     const commit = (evaluationType, evaluationArg) => {
-        // pass new values to the parent
+        console.log(evaluationArg);
         onCommit(evaluationType, evaluationArg);
     };
     const cancel = () => {
@@ -44231,13 +44231,12 @@ exports.EvaluationDialog = (props) => {
     };
     const onChangeSourceRank = (event) => {
         const sourceRank = event.currentTarget.value;
-        setEvaluationStatus(Object.assign({}, evaluationStatus, { sourceRank: sourceRank }));
+        setEvaluationStatus(Object.assign({}, evaluationStatus, Object.assign({}, evaluationStatus, { rank: Object.assign({}, evaluationStatus.rank, { sourceRank: sourceRank }) })));
     };
     const onChangeInfoRank = (event) => {
         const infoRank = event.currentTarget.value;
-        setEvaluationStatus(Object.assign({}, evaluationStatus, { infoRank: infoRank }));
+        setEvaluationStatus(Object.assign({}, evaluationStatus, Object.assign({}, evaluationStatus, { rank: Object.assign({}, evaluationStatus.rank, { infoRank: infoRank }) })));
     };
-    // setEvaluationStatus();
     const onChangeMalformtype = (event) => {
     };
     const onChangeMatrix = (event) => {

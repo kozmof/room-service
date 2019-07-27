@@ -59,7 +59,6 @@ export const EvaluationDialog = <T extends EvaluationType> (props: EvaluationDia
   const [ evaluationStatus, setEvaluationStatus ] = useState(evaluationArg);
 
   const commit = (evaluationType: EvaluationType, evaluationArg: EvaluationArg<T>) => {
-    // pass new values to the parent
     onCommit(evaluationType, evaluationArg);
   }
 
@@ -68,14 +67,37 @@ export const EvaluationDialog = <T extends EvaluationType> (props: EvaluationDia
   } 
   const onChangeSourceRank = (event: React.ChangeEvent<HTMLInputElement>) => {
     const sourceRank = event.currentTarget.value;
-    setEvaluationStatus(Object.assign({}, evaluationStatus, { sourceRank: sourceRank }));
+    setEvaluationStatus(
+      Object.assign(
+        {},
+        evaluationStatus,
+        {
+          ...evaluationStatus, 
+          rank: {
+            ...evaluationStatus.rank,
+            sourceRank: sourceRank
+          }
+        }
+      )
+    );
   }
 
   const onChangeInfoRank = (event: React.ChangeEvent<HTMLInputElement>) => {
     const infoRank = event.currentTarget.value;
-    setEvaluationStatus(Object.assign({}, evaluationStatus, { infoRank: infoRank }));
+    setEvaluationStatus(
+      Object.assign(
+        {},
+        evaluationStatus,
+        {
+          ...evaluationStatus, 
+          rank: {
+            ...evaluationStatus.rank,
+            infoRank: infoRank 
+          }
+        }
+      )
+    );
   }
-    // setEvaluationStatus();
 
   const onChangeMalformtype = (event: React.ChangeEvent<HTMLInputElement>) => {
   
@@ -112,7 +134,6 @@ export const EvaluationDialog = <T extends EvaluationType> (props: EvaluationDia
       }
     }
   }
-
 
   const changeHandlers: HandleChange<typeof evaluationType> = changeHandlersFactory<typeof evaluationType>(evaluationType); 
 

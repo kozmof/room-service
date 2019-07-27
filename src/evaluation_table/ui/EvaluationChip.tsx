@@ -29,8 +29,8 @@ export const EvaluationChip = (props: EvaluationProps) => {
   }
 
   const onCommit = (evaluationType: EvaluationType, evaluationArg: EvaluationArg<typeof evaluationType>) => {
+    setEvaluationTable(makeEvaluationTable(evaluationType, evaluationArg))
     setOpen(false); 
-    // setEvaluationTable
   }
 
   const onCancel = () => {
