@@ -3464,6 +3464,152 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/@material-ui/core/esm/Divider/Divider.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/@material-ui/core/esm/Divider/Divider.js ***!
+  \***************************************************************/
+/*! exports provided: styles, default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "styles", function() { return styles; });
+/* harmony import */ var _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/extends */ "./node_modules/@babel/runtime/helpers/extends.js");
+/* harmony import */ var _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _babel_runtime_helpers_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/objectWithoutProperties */ "./node_modules/@babel/runtime/helpers/objectWithoutProperties.js");
+/* harmony import */ var _babel_runtime_helpers_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var clsx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! clsx */ "./node_modules/clsx/dist/clsx.m.js");
+/* harmony import */ var _styles_withStyles__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../styles/withStyles */ "./node_modules/@material-ui/core/esm/styles/withStyles.js");
+/* harmony import */ var _styles_colorManipulator__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../styles/colorManipulator */ "./node_modules/@material-ui/core/esm/styles/colorManipulator.js");
+
+
+
+
+
+
+
+var styles = function styles(theme) {
+  return {
+    /* Styles applied to the root element. */
+    root: {
+      height: 1,
+      margin: 0,
+      // Reset browser default style.
+      border: 'none',
+      flexShrink: 0,
+      backgroundColor: theme.palette.divider
+    },
+
+    /* Styles applied to the root element if `absolute={true}`. */
+    absolute: {
+      position: 'absolute',
+      bottom: 0,
+      left: 0,
+      width: '100%'
+    },
+
+    /* Styles applied to the root element if `variant="inset"`. */
+    inset: {
+      marginLeft: 72
+    },
+
+    /* Styles applied to the root element if `light={true}`. */
+    light: {
+      backgroundColor: Object(_styles_colorManipulator__WEBPACK_IMPORTED_MODULE_6__["fade"])(theme.palette.divider, 0.08)
+    },
+
+    /* Styles applied to the root element if `variant="middle"`. */
+    middle: {
+      marginLeft: theme.spacing(2),
+      marginRight: theme.spacing(2)
+    }
+  };
+};
+var Divider = react__WEBPACK_IMPORTED_MODULE_2___default.a.forwardRef(function Divider(props, ref) {
+  var _props$absolute = props.absolute,
+      absolute = _props$absolute === void 0 ? false : _props$absolute,
+      classes = props.classes,
+      className = props.className,
+      _props$component = props.component,
+      Component = _props$component === void 0 ? 'hr' : _props$component,
+      _props$light = props.light,
+      light = _props$light === void 0 ? false : _props$light,
+      _props$role = props.role,
+      role = _props$role === void 0 ? Component !== 'hr' ? 'separator' : undefined : _props$role,
+      _props$variant = props.variant,
+      variant = _props$variant === void 0 ? 'fullWidth' : _props$variant,
+      other = _babel_runtime_helpers_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_1___default()(props, ["absolute", "classes", "className", "component", "light", "role", "variant"]);
+
+  return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(Component, _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0___default()({
+    className: Object(clsx__WEBPACK_IMPORTED_MODULE_4__["default"])(classes.root, className, variant === 'inset' && classes.inset, variant === 'middle' && classes.middle, absolute && classes.absolute, light && classes.light),
+    role: role,
+    ref: ref
+  }, other));
+});
+ true ? Divider.propTypes = {
+  /**
+   * Absolutely position the element.
+   */
+  absolute: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.bool,
+
+  /**
+   * Override or extend the styles applied to the component.
+   * See [CSS API](#css) below for more details.
+   */
+  classes: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.object.isRequired,
+
+  /**
+   * @ignore
+   */
+  className: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.string,
+
+  /**
+   * The component used for the root node.
+   * Either a string to use a DOM element or a component.
+   */
+  component: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.elementType,
+
+  /**
+   * If `true`, the divider will have a lighter color.
+   */
+  light: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.bool,
+
+  /**
+   * @ignore
+   */
+  role: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.string,
+
+  /**
+   *  The variant to use.
+   */
+  variant: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.oneOf(['fullWidth', 'inset', 'middle'])
+} : undefined;
+/* harmony default export */ __webpack_exports__["default"] = (Object(_styles_withStyles__WEBPACK_IMPORTED_MODULE_5__["default"])(styles, {
+  name: 'MuiDivider'
+})(Divider));
+
+/***/ }),
+
+/***/ "./node_modules/@material-ui/core/esm/Divider/index.js":
+/*!*************************************************************!*\
+  !*** ./node_modules/@material-ui/core/esm/Divider/index.js ***!
+  \*************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Divider__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Divider */ "./node_modules/@material-ui/core/esm/Divider/Divider.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _Divider__WEBPACK_IMPORTED_MODULE_0__["default"]; });
+
+
+
+/***/ }),
+
 /***/ "./node_modules/@material-ui/core/esm/Fade/Fade.js":
 /*!*********************************************************!*\
   !*** ./node_modules/@material-ui/core/esm/Fade/Fade.js ***!
@@ -44922,6 +45068,7 @@ exports.EvaluationChip = (props) => {
     const onCommit = (evaluationType, evaluationArg) => {
         setEvaluationTable(EvaluationTable_1.makeEvaluationTable(evaluationType, evaluationArg));
         setEvaluationType(evaluationType);
+        setEvaluationArg(evaluationArg);
         setOpen(false);
     };
     const onCancel = () => {
@@ -45098,6 +45245,7 @@ const DialogContent_1 = __importDefault(__webpack_require__(/*! @material-ui/cor
 const FormControl_1 = __importDefault(__webpack_require__(/*! @material-ui/core/FormControl */ "./node_modules/@material-ui/core/esm/FormControl/index.js"));
 const FormControlLabel_1 = __importDefault(__webpack_require__(/*! @material-ui/core/FormControlLabel */ "./node_modules/@material-ui/core/esm/FormControlLabel/index.js"));
 const FormLabel_1 = __importDefault(__webpack_require__(/*! @material-ui/core/FormLabel */ "./node_modules/@material-ui/core/esm/FormLabel/index.js"));
+const Divider_1 = __importDefault(__webpack_require__(/*! @material-ui/core/Divider */ "./node_modules/@material-ui/core/esm/Divider/index.js"));
 const Typography_1 = __importDefault(__webpack_require__(/*! @material-ui/core/Typography */ "./node_modules/@material-ui/core/esm/Typography/index.js"));
 const Data3x3_1 = __webpack_require__(/*! ../data/Data3x3 */ "./src/evaluation_table/data/Data3x3.ts");
 exports.EvaluationRadio3x3 = (props) => {
@@ -45106,16 +45254,20 @@ exports.EvaluationRadio3x3 = (props) => {
             react_1.default.createElement(FormLabel_1.default, { component: "label" },
                 react_1.default.createElement(Typography_1.default, null, "Source Rank")),
             react_1.default.createElement(RadioGroup_1.default, { value: props.evaluationArg.rank.sourceRank, onChange: props.onChangeSourceRank },
-                react_1.default.createElement(FormControlLabel_1.default, { value: "N", control: react_1.default.createElement(Radio_1.default, { disableRipple: true }), label: react_1.default.createElement(Typography_1.default, null, "N: " + Data3x3_1.data_N_0_en) }),
-                react_1.default.createElement(FormControlLabel_1.default, { value: "A", control: react_1.default.createElement(Radio_1.default, { disableRipple: true }), label: react_1.default.createElement(Typography_1.default, null, "A: " + Data3x3_1.data_A_0_en) }),
-                react_1.default.createElement(FormControlLabel_1.default, { value: "B", control: react_1.default.createElement(Radio_1.default, { disableRipple: true }), label: react_1.default.createElement(Typography_1.default, null, "B: " + Data3x3_1.data_B_0_en) }))),
+                react_1.default.createElement(FormControlLabel_1.default, { value: "N", control: react_1.default.createElement(Radio_1.default, { disableRipple: true }), label: react_1.default.createElement(Typography_1.default, { variant: "body2" }, "N: " + Data3x3_1.data_N_0_en) }),
+                react_1.default.createElement(Divider_1.default, { variant: "middle" }),
+                react_1.default.createElement(FormControlLabel_1.default, { value: "A", control: react_1.default.createElement(Radio_1.default, { disableRipple: true }), label: react_1.default.createElement(Typography_1.default, { variant: "body2" }, "A: " + Data3x3_1.data_A_0_en) }),
+                react_1.default.createElement(Divider_1.default, { variant: "middle" }),
+                react_1.default.createElement(FormControlLabel_1.default, { value: "B", control: react_1.default.createElement(Radio_1.default, { disableRipple: true }), label: react_1.default.createElement(Typography_1.default, { variant: "body2" }, "B: " + Data3x3_1.data_B_0_en) }))),
         react_1.default.createElement(FormControl_1.default, { component: "fieldset" },
             react_1.default.createElement(FormLabel_1.default, { component: "label" },
                 react_1.default.createElement(Typography_1.default, null, "Info Rank")),
             react_1.default.createElement(RadioGroup_1.default, { value: props.evaluationArg.rank.infoRank.toString(), onChange: props.onChangeInfoRank },
-                react_1.default.createElement(FormControlLabel_1.default, { value: String(0), control: react_1.default.createElement(Radio_1.default, { disableRipple: true }), label: react_1.default.createElement(Typography_1.default, null, "0: " + Data3x3_1.data_0_0_en) }),
-                react_1.default.createElement(FormControlLabel_1.default, { value: String(1), control: react_1.default.createElement(Radio_1.default, { disableRipple: true }), label: react_1.default.createElement(Typography_1.default, null, "1: " + Data3x3_1.data_1_0_en) }),
-                react_1.default.createElement(FormControlLabel_1.default, { value: String(2), control: react_1.default.createElement(Radio_1.default, { disableRipple: true }), label: react_1.default.createElement(Typography_1.default, null, "2: " + Data3x3_1.data_2_0_en) })))));
+                react_1.default.createElement(FormControlLabel_1.default, { value: String(0), control: react_1.default.createElement(Radio_1.default, { disableRipple: true }), label: react_1.default.createElement(Typography_1.default, { variant: "body2" }, "0: " + Data3x3_1.data_0_0_en) }),
+                react_1.default.createElement(Divider_1.default, { variant: "middle" }),
+                react_1.default.createElement(FormControlLabel_1.default, { value: String(1), control: react_1.default.createElement(Radio_1.default, { disableRipple: true }), label: react_1.default.createElement(Typography_1.default, { variant: "body2" }, "1: " + Data3x3_1.data_1_0_en) }),
+                react_1.default.createElement(Divider_1.default, { variant: "middle" }),
+                react_1.default.createElement(FormControlLabel_1.default, { value: String(2), control: react_1.default.createElement(Radio_1.default, { disableRipple: true }), label: react_1.default.createElement(Typography_1.default, { variant: "body2" }, "2: " + Data3x3_1.data_2_0_en) })))));
 };
 
 
@@ -45141,6 +45293,7 @@ const DialogContent_1 = __importDefault(__webpack_require__(/*! @material-ui/cor
 const FormControl_1 = __importDefault(__webpack_require__(/*! @material-ui/core/FormControl */ "./node_modules/@material-ui/core/esm/FormControl/index.js"));
 const FormControlLabel_1 = __importDefault(__webpack_require__(/*! @material-ui/core/FormControlLabel */ "./node_modules/@material-ui/core/esm/FormControlLabel/index.js"));
 const FormLabel_1 = __importDefault(__webpack_require__(/*! @material-ui/core/FormLabel */ "./node_modules/@material-ui/core/esm/FormLabel/index.js"));
+const Divider_1 = __importDefault(__webpack_require__(/*! @material-ui/core/Divider */ "./node_modules/@material-ui/core/esm/Divider/index.js"));
 const Typography_1 = __importDefault(__webpack_require__(/*! @material-ui/core/Typography */ "./node_modules/@material-ui/core/esm/Typography/index.js"));
 const Data5x5_1 = __webpack_require__(/*! ../data/Data5x5 */ "./src/evaluation_table/data/Data5x5.ts");
 const Data5x5_2 = __webpack_require__(/*! ../data/Data5x5 */ "./src/evaluation_table/data/Data5x5.ts");
@@ -45150,20 +45303,28 @@ exports.EvaluationRadio5x5 = (props) => {
             react_1.default.createElement(FormLabel_1.default, { component: "label" },
                 react_1.default.createElement(Typography_1.default, null, "Source Rank")),
             react_1.default.createElement(RadioGroup_1.default, { value: props.evaluationArg.rank.sourceRank, onChange: props.onChangeSourceRank },
-                react_1.default.createElement(FormControlLabel_1.default, { value: "N", control: react_1.default.createElement(Radio_1.default, { disableRipple: true }), label: react_1.default.createElement(Typography_1.default, null, "N: " + Data5x5_1.data_N_0_en) }),
-                react_1.default.createElement(FormControlLabel_1.default, { value: "A", control: react_1.default.createElement(Radio_1.default, { disableRipple: true }), label: react_1.default.createElement(Typography_1.default, null, "A: " + Data5x5_1.data_A_0_en + "\n" + Data5x5_1.data_A_1_en) }),
-                react_1.default.createElement(FormControlLabel_1.default, { value: "B", control: react_1.default.createElement(Radio_1.default, { disableRipple: true }), label: react_1.default.createElement(Typography_1.default, null, "B: " + Data5x5_1.data_B_0_en) }),
-                react_1.default.createElement(FormControlLabel_1.default, { value: "C", control: react_1.default.createElement(Radio_1.default, { disableRipple: true }), label: react_1.default.createElement(Typography_1.default, null, "C: " + Data5x5_1.data_C_0_en) }),
-                react_1.default.createElement(FormControlLabel_1.default, { value: "X", control: react_1.default.createElement(Radio_1.default, { disableRipple: true }), label: react_1.default.createElement(Typography_1.default, null, "X: " + Data5x5_1.data_X_0_en) }))),
+                react_1.default.createElement(FormControlLabel_1.default, { value: "N", control: react_1.default.createElement(Radio_1.default, { disableRipple: true }), label: react_1.default.createElement(Typography_1.default, { variant: "body2" }, "N: " + Data5x5_1.data_N_0_en) }),
+                react_1.default.createElement(Divider_1.default, { variant: "middle" }),
+                react_1.default.createElement(FormControlLabel_1.default, { value: "A", control: react_1.default.createElement(Radio_1.default, { disableRipple: true }), label: react_1.default.createElement(Typography_1.default, { variant: "body2" }, "A: " + Data5x5_1.data_A_0_en + "\n" + Data5x5_1.data_A_1_en) }),
+                react_1.default.createElement(Divider_1.default, { variant: "middle" }),
+                react_1.default.createElement(FormControlLabel_1.default, { value: "B", control: react_1.default.createElement(Radio_1.default, { disableRipple: true }), label: react_1.default.createElement(Typography_1.default, { variant: "body2" }, "B: " + Data5x5_1.data_B_0_en) }),
+                react_1.default.createElement(Divider_1.default, { variant: "middle" }),
+                react_1.default.createElement(FormControlLabel_1.default, { value: "C", control: react_1.default.createElement(Radio_1.default, { disableRipple: true }), label: react_1.default.createElement(Typography_1.default, { variant: "body2" }, "C: " + Data5x5_1.data_C_0_en) }),
+                react_1.default.createElement(Divider_1.default, { variant: "middle" }),
+                react_1.default.createElement(FormControlLabel_1.default, { value: "X", control: react_1.default.createElement(Radio_1.default, { disableRipple: true }), label: react_1.default.createElement(Typography_1.default, { variant: "body2" }, "X: " + Data5x5_1.data_X_0_en) }))),
         react_1.default.createElement(FormControl_1.default, { component: "fieldset" },
             react_1.default.createElement(FormLabel_1.default, { component: "label" },
                 react_1.default.createElement(Typography_1.default, null, "Info Rank")),
             react_1.default.createElement(RadioGroup_1.default, { value: props.evaluationArg.rank.infoRank.toString(), onChange: props.onChangeInfoRank },
-                react_1.default.createElement(FormControlLabel_1.default, { value: String(0), control: react_1.default.createElement(Radio_1.default, { disableRipple: true }), label: react_1.default.createElement(Typography_1.default, null, "0: " + Data5x5_2.data_0_0_en) }),
-                react_1.default.createElement(FormControlLabel_1.default, { value: String(1), control: react_1.default.createElement(Radio_1.default, { disableRipple: true }), label: react_1.default.createElement(Typography_1.default, null, "1: " + Data5x5_2.data_1_0_en) }),
-                react_1.default.createElement(FormControlLabel_1.default, { value: String(2), control: react_1.default.createElement(Radio_1.default, { disableRipple: true }), label: react_1.default.createElement(Typography_1.default, null, "2: " + Data5x5_2.data_2_0_en + "\n" + Data5x5_2.data_2_1_en + "\n" + Data5x5_2.data_2_2_en) }),
-                react_1.default.createElement(FormControlLabel_1.default, { value: String(3), control: react_1.default.createElement(Radio_1.default, { disableRipple: true }), label: react_1.default.createElement(Typography_1.default, null, "3: " + Data5x5_2.data_3_0_en) }),
-                react_1.default.createElement(FormControlLabel_1.default, { value: String(4), control: react_1.default.createElement(Radio_1.default, { disableRipple: true }), label: react_1.default.createElement(Typography_1.default, null, "4: " + Data5x5_2.data_4_0_en) })))));
+                react_1.default.createElement(FormControlLabel_1.default, { value: String(0), control: react_1.default.createElement(Radio_1.default, { disableRipple: true }), label: react_1.default.createElement(Typography_1.default, { variant: "body2" }, "0: " + Data5x5_2.data_0_0_en) }),
+                react_1.default.createElement(Divider_1.default, { variant: "middle" }),
+                react_1.default.createElement(FormControlLabel_1.default, { value: String(1), control: react_1.default.createElement(Radio_1.default, { disableRipple: true }), label: react_1.default.createElement(Typography_1.default, { variant: "body2" }, "1: " + Data5x5_2.data_1_0_en) }),
+                react_1.default.createElement(Divider_1.default, { variant: "middle" }),
+                react_1.default.createElement(FormControlLabel_1.default, { value: String(2), control: react_1.default.createElement(Radio_1.default, { disableRipple: true }), label: react_1.default.createElement(Typography_1.default, { variant: "body2" }, "2: " + Data5x5_2.data_2_0_en + "\n" + Data5x5_2.data_2_1_en + "\n" + Data5x5_2.data_2_2_en) }),
+                react_1.default.createElement(Divider_1.default, { variant: "middle" }),
+                react_1.default.createElement(FormControlLabel_1.default, { value: String(3), control: react_1.default.createElement(Radio_1.default, { disableRipple: true }), label: react_1.default.createElement(Typography_1.default, { variant: "body2" }, "3: " + Data5x5_2.data_3_0_en) }),
+                react_1.default.createElement(Divider_1.default, { variant: "middle" }),
+                react_1.default.createElement(FormControlLabel_1.default, { value: String(4), control: react_1.default.createElement(Radio_1.default, { disableRipple: true }), label: react_1.default.createElement(Typography_1.default, { variant: "body2" }, "4: " + Data5x5_2.data_4_0_en) })))));
 };
 
 
@@ -45189,6 +45350,7 @@ const DialogContent_1 = __importDefault(__webpack_require__(/*! @material-ui/cor
 const FormControl_1 = __importDefault(__webpack_require__(/*! @material-ui/core/FormControl */ "./node_modules/@material-ui/core/esm/FormControl/index.js"));
 const FormControlLabel_1 = __importDefault(__webpack_require__(/*! @material-ui/core/FormControlLabel */ "./node_modules/@material-ui/core/esm/FormControlLabel/index.js"));
 const FormLabel_1 = __importDefault(__webpack_require__(/*! @material-ui/core/FormLabel */ "./node_modules/@material-ui/core/esm/FormLabel/index.js"));
+const Divider_1 = __importDefault(__webpack_require__(/*! @material-ui/core/Divider */ "./node_modules/@material-ui/core/esm/Divider/index.js"));
 const Typography_1 = __importDefault(__webpack_require__(/*! @material-ui/core/Typography */ "./node_modules/@material-ui/core/esm/Typography/index.js"));
 const Data7x7_1 = __webpack_require__(/*! ../data/Data7x7 */ "./src/evaluation_table/data/Data7x7.ts");
 const Data7x7_2 = __webpack_require__(/*! ../data/Data7x7 */ "./src/evaluation_table/data/Data7x7.ts");
@@ -45198,24 +45360,36 @@ exports.EvaluationRadio7x7 = (props) => {
             react_1.default.createElement(FormLabel_1.default, { component: "label" },
                 react_1.default.createElement(Typography_1.default, null, "Source Rank")),
             react_1.default.createElement(RadioGroup_1.default, { value: props.evaluationArg.rank.sourceRank, onChange: props.onChangeSourceRank },
-                react_1.default.createElement(FormControlLabel_1.default, { value: "N", control: react_1.default.createElement(Radio_1.default, { disableRipple: true }), label: react_1.default.createElement(Typography_1.default, null, "N: " + Data7x7_1.data_N_0_en) }),
-                react_1.default.createElement(FormControlLabel_1.default, { value: "A", control: react_1.default.createElement(Radio_1.default, { disableRipple: true }), label: react_1.default.createElement(Typography_1.default, null, "A: " + Data7x7_1.data_A_0_en + "\n" + Data7x7_1.data_A_1_en) }),
-                react_1.default.createElement(FormControlLabel_1.default, { value: "B", control: react_1.default.createElement(Radio_1.default, { disableRipple: true }), label: react_1.default.createElement(Typography_1.default, null, "B: " + Data7x7_1.data_B_0_en + "\n" + Data7x7_1.data_B_1_en) }),
-                react_1.default.createElement(FormControlLabel_1.default, { value: "C", control: react_1.default.createElement(Radio_1.default, { disableRipple: true }), label: react_1.default.createElement(Typography_1.default, null, "C: " + Data7x7_1.data_C_0_en + "\n" + Data7x7_1.data_C_1_en) }),
-                react_1.default.createElement(FormControlLabel_1.default, { value: "D", control: react_1.default.createElement(Radio_1.default, { disableRipple: true }), label: react_1.default.createElement(Typography_1.default, null, "D: " + Data7x7_1.data_D_0_en + "\n" + Data7x7_1.data_D_1_en) }),
-                react_1.default.createElement(FormControlLabel_1.default, { value: "E", control: react_1.default.createElement(Radio_1.default, { disableRipple: true }), label: react_1.default.createElement(Typography_1.default, null, "E: " + Data7x7_1.data_E_0_en + "\n" + Data7x7_1.data_E_1_en) }),
-                react_1.default.createElement(FormControlLabel_1.default, { value: "F", control: react_1.default.createElement(Radio_1.default, { disableRipple: true }), label: react_1.default.createElement(Typography_1.default, null, "F: " + Data7x7_1.data_F_0_en) }))),
+                react_1.default.createElement(FormControlLabel_1.default, { value: "N", control: react_1.default.createElement(Radio_1.default, { disableRipple: true }), label: react_1.default.createElement(Typography_1.default, { variant: "body2" }, "N: " + Data7x7_1.data_N_0_en) }),
+                react_1.default.createElement(Divider_1.default, { variant: "middle" }),
+                react_1.default.createElement(FormControlLabel_1.default, { value: "A", control: react_1.default.createElement(Radio_1.default, { disableRipple: true }), label: react_1.default.createElement(Typography_1.default, { variant: "body2" }, "A: " + Data7x7_1.data_A_0_en + "\n" + Data7x7_1.data_A_1_en) }),
+                react_1.default.createElement(Divider_1.default, { variant: "middle" }),
+                react_1.default.createElement(FormControlLabel_1.default, { value: "B", control: react_1.default.createElement(Radio_1.default, { disableRipple: true }), label: react_1.default.createElement(Typography_1.default, { variant: "body2" }, "B: " + Data7x7_1.data_B_0_en + "\n" + Data7x7_1.data_B_1_en) }),
+                react_1.default.createElement(Divider_1.default, { variant: "middle" }),
+                react_1.default.createElement(FormControlLabel_1.default, { value: "C", control: react_1.default.createElement(Radio_1.default, { disableRipple: true }), label: react_1.default.createElement(Typography_1.default, { variant: "body2" }, "C: " + Data7x7_1.data_C_0_en + "\n" + Data7x7_1.data_C_1_en) }),
+                react_1.default.createElement(Divider_1.default, { variant: "middle" }),
+                react_1.default.createElement(FormControlLabel_1.default, { value: "D", control: react_1.default.createElement(Radio_1.default, { disableRipple: true }), label: react_1.default.createElement(Typography_1.default, { variant: "body2" }, "D: " + Data7x7_1.data_D_0_en + "\n" + Data7x7_1.data_D_1_en) }),
+                react_1.default.createElement(Divider_1.default, { variant: "middle" }),
+                react_1.default.createElement(FormControlLabel_1.default, { value: "E", control: react_1.default.createElement(Radio_1.default, { disableRipple: true }), label: react_1.default.createElement(Typography_1.default, { variant: "body2" }, "E: " + Data7x7_1.data_E_0_en + "\n" + Data7x7_1.data_E_1_en) }),
+                react_1.default.createElement(Divider_1.default, { variant: "middle" }),
+                react_1.default.createElement(FormControlLabel_1.default, { value: "F", control: react_1.default.createElement(Radio_1.default, { disableRipple: true }), label: react_1.default.createElement(Typography_1.default, { variant: "body2" }, "F: " + Data7x7_1.data_F_0_en) }))),
         react_1.default.createElement(FormControl_1.default, { component: "fieldset" },
             react_1.default.createElement(FormLabel_1.default, { component: "label" },
                 react_1.default.createElement(Typography_1.default, null, "Info Rank")),
             react_1.default.createElement(RadioGroup_1.default, { value: props.evaluationArg.rank.infoRank.toString(), onChange: props.onChangeInfoRank },
-                react_1.default.createElement(FormControlLabel_1.default, { value: String(0), control: react_1.default.createElement(Radio_1.default, { disableRipple: true }), label: react_1.default.createElement(Typography_1.default, null, "0: " + Data7x7_2.data_0_0_en) }),
-                react_1.default.createElement(FormControlLabel_1.default, { value: String(1), control: react_1.default.createElement(Radio_1.default, { disableRipple: true }), label: react_1.default.createElement(Typography_1.default, null, "1: " + Data7x7_2.data_1_0_en + "\n" + Data7x7_2.data_1_1_en + "\n" + Data7x7_2.data_1_2_en) }),
-                react_1.default.createElement(FormControlLabel_1.default, { value: String(2), control: react_1.default.createElement(Radio_1.default, { disableRipple: true }), label: react_1.default.createElement(Typography_1.default, null, "2: " + Data7x7_2.data_2_0_en + "\n" + Data7x7_2.data_2_1_en + "\n" + Data7x7_2.data_2_2_en) }),
-                react_1.default.createElement(FormControlLabel_1.default, { value: String(3), control: react_1.default.createElement(Radio_1.default, { disableRipple: true }), label: react_1.default.createElement(Typography_1.default, null, "3: " + Data7x7_2.data_3_0_en + "\n" + Data7x7_2.data_3_1_en + "\n" + Data7x7_2.data_3_2_en) }),
-                react_1.default.createElement(FormControlLabel_1.default, { value: String(4), control: react_1.default.createElement(Radio_1.default, { disableRipple: true }), label: react_1.default.createElement(Typography_1.default, null, "4: " + Data7x7_2.data_4_0_en + "\n" + Data7x7_2.data_4_1_en + "\n" + Data7x7_2.data_4_2_en) }),
-                react_1.default.createElement(FormControlLabel_1.default, { value: String(5), control: react_1.default.createElement(Radio_1.default, { disableRipple: true }), label: react_1.default.createElement(Typography_1.default, null, "5: " + Data7x7_2.data_5_0_en + "\n" + Data7x7_2.data_5_1_en + "\n" + Data7x7_2.data_5_2_en) }),
-                react_1.default.createElement(FormControlLabel_1.default, { value: String(6), control: react_1.default.createElement(Radio_1.default, { disableRipple: true }), label: react_1.default.createElement(Typography_1.default, null, "6: " + Data7x7_2.data_6_0_en) })))));
+                react_1.default.createElement(FormControlLabel_1.default, { value: String(0), control: react_1.default.createElement(Radio_1.default, { disableRipple: true }), label: react_1.default.createElement(Typography_1.default, { variant: "body2" }, "0: " + Data7x7_2.data_0_0_en) }),
+                react_1.default.createElement(Divider_1.default, { variant: "middle" }),
+                react_1.default.createElement(FormControlLabel_1.default, { value: String(1), control: react_1.default.createElement(Radio_1.default, { disableRipple: true }), label: react_1.default.createElement(Typography_1.default, { variant: "body2" }, "1: " + Data7x7_2.data_1_0_en + "\n" + Data7x7_2.data_1_1_en + "\n" + Data7x7_2.data_1_2_en) }),
+                react_1.default.createElement(Divider_1.default, { variant: "middle" }),
+                react_1.default.createElement(FormControlLabel_1.default, { value: String(2), control: react_1.default.createElement(Radio_1.default, { disableRipple: true }), label: react_1.default.createElement(Typography_1.default, { variant: "body2" }, "2: " + Data7x7_2.data_2_0_en + "\n" + Data7x7_2.data_2_1_en + "\n" + Data7x7_2.data_2_2_en) }),
+                react_1.default.createElement(Divider_1.default, { variant: "middle" }),
+                react_1.default.createElement(FormControlLabel_1.default, { value: String(3), control: react_1.default.createElement(Radio_1.default, { disableRipple: true }), label: react_1.default.createElement(Typography_1.default, { variant: "body2" }, "3: " + Data7x7_2.data_3_0_en + "\n" + Data7x7_2.data_3_1_en + "\n" + Data7x7_2.data_3_2_en) }),
+                react_1.default.createElement(Divider_1.default, { variant: "middle" }),
+                react_1.default.createElement(FormControlLabel_1.default, { value: String(4), control: react_1.default.createElement(Radio_1.default, { disableRipple: true }), label: react_1.default.createElement(Typography_1.default, { variant: "body2" }, "4: " + Data7x7_2.data_4_0_en + "\n" + Data7x7_2.data_4_1_en + "\n" + Data7x7_2.data_4_2_en) }),
+                react_1.default.createElement(Divider_1.default, { variant: "middle" }),
+                react_1.default.createElement(FormControlLabel_1.default, { value: String(5), control: react_1.default.createElement(Radio_1.default, { disableRipple: true }), label: react_1.default.createElement(Typography_1.default, { variant: "body2" }, "5: " + Data7x7_2.data_5_0_en + "\n" + Data7x7_2.data_5_1_en + "\n" + Data7x7_2.data_5_2_en) }),
+                react_1.default.createElement(Divider_1.default, { variant: "middle" }),
+                react_1.default.createElement(FormControlLabel_1.default, { value: String(6), control: react_1.default.createElement(Radio_1.default, { disableRipple: true }), label: react_1.default.createElement(Typography_1.default, { variant: "body2" }, "6: " + Data7x7_2.data_6_0_en) })))));
 };
 
 
@@ -45254,11 +45428,12 @@ const props = {
 };
 ReactDom.render(React.createElement("div", null,
     React.createElement(TestEditor_1.TestEditor, null),
-    React.createElement(EvaluationChip_1.EvaluationChip, Object.assign({}, props)),
-    React.createElement(EvaluationChip_1.EvaluationChip, Object.assign({}, props)),
-    React.createElement(EvaluationChip_1.EvaluationChip, Object.assign({}, props)),
-    React.createElement(EvaluationChip_1.EvaluationChip, Object.assign({}, props)),
-    React.createElement(EvaluationChip_1.EvaluationChip, Object.assign({}, props))), document.getElementById("main"));
+    React.createElement("div", null,
+        React.createElement(EvaluationChip_1.EvaluationChip, Object.assign({}, props))),
+    React.createElement("div", null,
+        React.createElement(EvaluationChip_1.EvaluationChip, Object.assign({}, props))),
+    React.createElement("div", null,
+        React.createElement(EvaluationChip_1.EvaluationChip, Object.assign({}, props)))), document.getElementById("main"));
 
 
 /***/ }),

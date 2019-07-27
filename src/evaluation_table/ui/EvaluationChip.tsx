@@ -4,7 +4,9 @@ import Avatar from '@material-ui/core/Avatar';
 import { makeStyles } from '@material-ui/styles';
 import { EvaluationDialog } from './EvaluationDialog';
 import { EvaluationType } from '../table/EvaluationTableBase';
-import { EvaluationArg, makeEvaluationTable } from '../table/EvaluationTable'; export type EvaluationProps = { evaluationType: EvaluationType;
+import { EvaluationArg, makeEvaluationTable } from '../table/EvaluationTable'; 
+
+export type EvaluationProps = { evaluationType: EvaluationType;
   evaluationArg: EvaluationArg<EvaluationType>;
 }
 
@@ -32,6 +34,7 @@ export const EvaluationChip = (props: EvaluationProps) => {
   const onCommit = (evaluationType: EvaluationType, evaluationArg: EvaluationArg<typeof evaluationType>) => {
     setEvaluationTable(makeEvaluationTable(evaluationType, evaluationArg))
     setEvaluationType(evaluationType);
+    setEvaluationArg(evaluationArg);
     setOpen(false); 
   }
 

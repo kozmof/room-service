@@ -17,11 +17,15 @@ const props: EvaluationProps = {
 ReactDom.render(
   <div>
     <TestEditor />
-    <EvaluationChip {...props} />
-    <EvaluationChip {...props} />
-    <EvaluationChip {...props} />
-    <EvaluationChip {...props} />
-    <EvaluationChip {...props} />
+    <div>
+      <EvaluationChip {...props} />
+    </div>
+    <div>
+      <EvaluationChip {...props} />
+    </div>
+    <div>
+      <EvaluationChip {...props} />
+    </div>
   </div>,
   document.getElementById("main")
 );
