@@ -1,12 +1,10 @@
 import React, { useState } from 'react';
-import Button from '@material-ui/core/Button';
+import Chip from '@material-ui/core/Chip';
+import Avatar from '@material-ui/core/Avatar';
 import { makeStyles } from '@material-ui/styles';
 import { EvaluationDialog } from './EvaluationDialog';
 import { EvaluationType } from '../table/EvaluationTableBase';
-import { EvaluationArg, makeEvaluationTable } from '../table/EvaluationTable';
-
-export type EvaluationProps = {
-  evaluationType: EvaluationType;
+import { EvaluationArg, makeEvaluationTable } from '../table/EvaluationTable'; export type EvaluationProps = { evaluationType: EvaluationType;
   evaluationArg: EvaluationArg<EvaluationType>;
 }
 
@@ -20,6 +18,9 @@ export const EvaluationChip = (props: EvaluationProps) => {
     button: {
       borderRadius: '25px'
     },
+
+    chip: {
+    }
   });
 
   const classes = useStyles({});
@@ -30,6 +31,7 @@ export const EvaluationChip = (props: EvaluationProps) => {
 
   const onCommit = (evaluationType: EvaluationType, evaluationArg: EvaluationArg<typeof evaluationType>) => {
     setEvaluationTable(makeEvaluationTable(evaluationType, evaluationArg))
+    setEvaluationType(evaluationType);
     setOpen(false); 
   }
 
@@ -39,9 +41,7 @@ export const EvaluationChip = (props: EvaluationProps) => {
   
   return (
     <div>
-      <Button className={classes.button} variant="outlined" color="primary" size="small" onClick={handleOpen}>
-        {evaluationTable.rank.sourceRank} {evaluationTable.rank.infoRank}
-      </Button>
+      <Chip className={classes.chip} avatar={<Avatar>{evaluationType}</Avatar>} variant="default" size="small" color="default" label={evaluationTable.rank.sourceRank + " " + evaluationTable.rank.infoRank} onClick={handleOpen}/>
       { open && 
       <EvaluationDialog<typeof evaluationType> open={open} onCommit={onCommit} onCancel={onCancel} evaluationType={evaluationType} evaluationArg={evaluationArg}/>
       }

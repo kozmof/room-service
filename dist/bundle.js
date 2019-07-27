@@ -646,6 +646,187 @@ module.exports = _typeof;
 
 /***/ }),
 
+/***/ "./node_modules/@material-ui/core/esm/Avatar/Avatar.js":
+/*!*************************************************************!*\
+  !*** ./node_modules/@material-ui/core/esm/Avatar/Avatar.js ***!
+  \*************************************************************/
+/*! exports provided: styles, default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "styles", function() { return styles; });
+/* harmony import */ var _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/extends */ "./node_modules/@babel/runtime/helpers/extends.js");
+/* harmony import */ var _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _babel_runtime_helpers_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/objectWithoutProperties */ "./node_modules/@babel/runtime/helpers/objectWithoutProperties.js");
+/* harmony import */ var _babel_runtime_helpers_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var clsx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! clsx */ "./node_modules/clsx/dist/clsx.m.js");
+/* harmony import */ var _styles_withStyles__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../styles/withStyles */ "./node_modules/@material-ui/core/esm/styles/withStyles.js");
+
+
+
+
+
+
+var styles = function styles(theme) {
+  return {
+    /* Styles applied to the root element. */
+    root: {
+      position: 'relative',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      flexShrink: 0,
+      width: 40,
+      height: 40,
+      fontFamily: theme.typography.fontFamily,
+      fontSize: theme.typography.pxToRem(20),
+      borderRadius: '50%',
+      overflow: 'hidden',
+      userSelect: 'none'
+    },
+
+    /* Styles applied to the root element if there are children and not `src` or `srcSet`. */
+    colorDefault: {
+      color: theme.palette.background.default,
+      backgroundColor: theme.palette.type === 'light' ? theme.palette.grey[400] : theme.palette.grey[600]
+    },
+
+    /* Styles applied to the img element if either `src` or `srcSet` is defined. */
+    img: {
+      width: '100%',
+      height: '100%',
+      textAlign: 'center',
+      // Handle non-square image. The property isn't supported by IE 11.
+      objectFit: 'cover'
+    }
+  };
+};
+var Avatar = react__WEBPACK_IMPORTED_MODULE_2___default.a.forwardRef(function Avatar(props, ref) {
+  var alt = props.alt,
+      childrenProp = props.children,
+      childrenClassNameProp = props.childrenClassName,
+      classes = props.classes,
+      classNameProp = props.className,
+      _props$component = props.component,
+      Component = _props$component === void 0 ? 'div' : _props$component,
+      imgProps = props.imgProps,
+      sizes = props.sizes,
+      src = props.src,
+      srcSet = props.srcSet,
+      other = _babel_runtime_helpers_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_1___default()(props, ["alt", "children", "childrenClassName", "classes", "className", "component", "imgProps", "sizes", "src", "srcSet"]);
+
+  var children = null;
+  var img = src || srcSet;
+
+  if (img) {
+    children = react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("img", _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0___default()({
+      alt: alt,
+      src: src,
+      srcSet: srcSet,
+      sizes: sizes,
+      className: classes.img
+    }, imgProps));
+  } else if (childrenClassNameProp && react__WEBPACK_IMPORTED_MODULE_2___default.a.isValidElement(childrenProp)) {
+    children = react__WEBPACK_IMPORTED_MODULE_2___default.a.cloneElement(childrenProp, {
+      className: Object(clsx__WEBPACK_IMPORTED_MODULE_4__["default"])(childrenClassNameProp, childrenProp.props.className)
+    });
+  } else {
+    children = childrenProp;
+  }
+
+  return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(Component, _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0___default()({
+    className: Object(clsx__WEBPACK_IMPORTED_MODULE_4__["default"])(classes.root, classes.system, classNameProp, !img && classes.colorDefault),
+    ref: ref
+  }, other), children);
+});
+ true ? Avatar.propTypes = {
+  /**
+   * Used in combination with `src` or `srcSet` to
+   * provide an alt attribute for the rendered `img` element.
+   */
+  alt: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.string,
+
+  /**
+   * Used to render icon or text elements inside the Avatar.
+   * `src` and `alt` props will not be used and no `img` will
+   * be rendered by default.
+   *
+   * This can be an element, or just a string.
+   */
+  children: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.node,
+
+  /**
+   * @ignore
+   * The className of the child element.
+   * Used by Chip and ListItemIcon to style the Avatar icon.
+   */
+  childrenClassName: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.string,
+
+  /**
+   * Override or extend the styles applied to the component.
+   * See [CSS API](#css) below for more details.
+   */
+  classes: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.object.isRequired,
+
+  /**
+   * @ignore
+   */
+  className: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.string,
+
+  /**
+   * The component used for the root node.
+   * Either a string to use a DOM element or a component.
+   */
+  component: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.elementType,
+
+  /**
+   * Attributes applied to the `img` element if the component
+   * is used to display an image.
+   */
+  imgProps: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.object,
+
+  /**
+   * The `sizes` attribute for the `img` element.
+   */
+  sizes: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.string,
+
+  /**
+   * The `src` attribute for the `img` element.
+   */
+  src: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.string,
+
+  /**
+   * The `srcSet` attribute for the `img` element.
+   */
+  srcSet: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.string
+} : undefined;
+/* harmony default export */ __webpack_exports__["default"] = (Object(_styles_withStyles__WEBPACK_IMPORTED_MODULE_5__["default"])(styles, {
+  name: 'MuiAvatar'
+})(Avatar));
+
+/***/ }),
+
+/***/ "./node_modules/@material-ui/core/esm/Avatar/index.js":
+/*!************************************************************!*\
+  !*** ./node_modules/@material-ui/core/esm/Avatar/index.js ***!
+  \************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Avatar__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Avatar */ "./node_modules/@material-ui/core/esm/Avatar/Avatar.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _Avatar__WEBPACK_IMPORTED_MODULE_0__["default"]; });
+
+
+
+/***/ }),
+
 /***/ "./node_modules/@material-ui/core/esm/Backdrop/Backdrop.js":
 /*!*****************************************************************!*\
   !*** ./node_modules/@material-ui/core/esm/Backdrop/Backdrop.js ***!
@@ -2103,6 +2284,532 @@ function withMuiName(Component) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _ButtonBase__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ButtonBase */ "./node_modules/@material-ui/core/esm/ButtonBase/ButtonBase.js");
 /* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _ButtonBase__WEBPACK_IMPORTED_MODULE_0__["default"]; });
+
+
+
+/***/ }),
+
+/***/ "./node_modules/@material-ui/core/esm/Chip/Chip.js":
+/*!*********************************************************!*\
+  !*** ./node_modules/@material-ui/core/esm/Chip/Chip.js ***!
+  \*********************************************************/
+/*! exports provided: styles, default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "styles", function() { return styles; });
+/* harmony import */ var _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/extends */ "./node_modules/@babel/runtime/helpers/extends.js");
+/* harmony import */ var _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _babel_runtime_helpers_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/objectWithoutProperties */ "./node_modules/@babel/runtime/helpers/objectWithoutProperties.js");
+/* harmony import */ var _babel_runtime_helpers_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! prop-types */ "./node_modules/prop-types/index.js");
+/* harmony import */ var prop_types__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(prop_types__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var clsx__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! clsx */ "./node_modules/clsx/dist/clsx.m.js");
+/* harmony import */ var warning__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! warning */ "./node_modules/warning/warning.js");
+/* harmony import */ var warning__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(warning__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _internal_svg_icons_Cancel__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../internal/svg-icons/Cancel */ "./node_modules/@material-ui/core/esm/internal/svg-icons/Cancel.js");
+/* harmony import */ var _styles_withStyles__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../styles/withStyles */ "./node_modules/@material-ui/core/esm/styles/withStyles.js");
+/* harmony import */ var _styles_colorManipulator__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../styles/colorManipulator */ "./node_modules/@material-ui/core/esm/styles/colorManipulator.js");
+/* harmony import */ var _utils_reactHelpers__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../utils/reactHelpers */ "./node_modules/@material-ui/core/esm/utils/reactHelpers.js");
+/* harmony import */ var _utils_unsupportedProp__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../utils/unsupportedProp */ "./node_modules/@material-ui/core/esm/utils/unsupportedProp.js");
+/* harmony import */ var _utils_helpers__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../utils/helpers */ "./node_modules/@material-ui/core/esm/utils/helpers.js");
+/* harmony import */ var _Avatar_Avatar__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../Avatar/Avatar */ "./node_modules/@material-ui/core/esm/Avatar/Avatar.js");
+
+
+
+
+
+
+
+
+
+
+
+
+ // So we don't have any override priority issue.
+
+var styles = function styles(theme) {
+  var height = 32;
+  var smallHeight = 24;
+  var backgroundColor = theme.palette.type === 'light' ? theme.palette.grey[300] : theme.palette.grey[700];
+  var deleteIconColor = Object(_styles_colorManipulator__WEBPACK_IMPORTED_MODULE_8__["fade"])(theme.palette.text.primary, 0.26);
+  return {
+    /* Styles applied to the root element. */
+    root: {
+      fontFamily: theme.typography.fontFamily,
+      fontSize: theme.typography.pxToRem(13),
+      display: 'inline-flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      height: height,
+      color: theme.palette.getContrastText(backgroundColor),
+      backgroundColor: backgroundColor,
+      borderRadius: height / 2,
+      whiteSpace: 'nowrap',
+      transition: theme.transitions.create(['background-color', 'box-shadow']),
+      // label will inherit this from root, then `clickable` class overrides this for both
+      cursor: 'default',
+      // We disable the focus ring for mouse, touch and keyboard users.
+      outline: 'none',
+      textDecoration: 'none',
+      border: 'none',
+      // Remove `button` border
+      padding: 0,
+      // Remove `button` padding
+      verticalAlign: 'middle',
+      boxSizing: 'border-box'
+    },
+
+    /* Styles applied to the root element if `size="small"`. */
+    sizeSmall: {
+      height: smallHeight
+    },
+
+    /* Styles applied to the root element if `color="primary"`. */
+    colorPrimary: {
+      backgroundColor: theme.palette.primary.main,
+      color: theme.palette.primary.contrastText
+    },
+
+    /* Styles applied to the root element if `color="secondary"`. */
+    colorSecondary: {
+      backgroundColor: theme.palette.secondary.main,
+      color: theme.palette.secondary.contrastText
+    },
+
+    /* Styles applied to the root element if `onClick` is defined or `clickable={true}`. */
+    clickable: {
+      WebkitTapHighlightColor: 'transparent',
+      // Remove grey highlight
+      cursor: 'pointer',
+      '&:hover, &:focus': {
+        backgroundColor: Object(_styles_colorManipulator__WEBPACK_IMPORTED_MODULE_8__["emphasize"])(backgroundColor, 0.08)
+      },
+      '&:active': {
+        boxShadow: theme.shadows[1],
+        backgroundColor: Object(_styles_colorManipulator__WEBPACK_IMPORTED_MODULE_8__["emphasize"])(backgroundColor, 0.12)
+      }
+    },
+
+    /* Styles applied to the root element if `onClick` and `color="primary"` is defined or `clickable={true}`. */
+    clickableColorPrimary: {
+      '&:hover, &:focus': {
+        backgroundColor: Object(_styles_colorManipulator__WEBPACK_IMPORTED_MODULE_8__["emphasize"])(theme.palette.primary.main, 0.08)
+      },
+      '&:active': {
+        backgroundColor: Object(_styles_colorManipulator__WEBPACK_IMPORTED_MODULE_8__["emphasize"])(theme.palette.primary.main, 0.12)
+      }
+    },
+
+    /* Styles applied to the root element if `onClick` and `color="secondary"` is defined or `clickable={true}`. */
+    clickableColorSecondary: {
+      '&:hover, &:focus': {
+        backgroundColor: Object(_styles_colorManipulator__WEBPACK_IMPORTED_MODULE_8__["emphasize"])(theme.palette.secondary.main, 0.08)
+      },
+      '&:active': {
+        backgroundColor: Object(_styles_colorManipulator__WEBPACK_IMPORTED_MODULE_8__["emphasize"])(theme.palette.secondary.main, 0.12)
+      }
+    },
+
+    /* Styles applied to the root element if `onDelete` is defined. */
+    deletable: {
+      '&:focus': {
+        backgroundColor: Object(_styles_colorManipulator__WEBPACK_IMPORTED_MODULE_8__["emphasize"])(backgroundColor, 0.08)
+      }
+    },
+
+    /* Styles applied to the root element if `onDelete` and `color="primary"` is defined. */
+    deletableColorPrimary: {
+      '&:focus': {
+        backgroundColor: Object(_styles_colorManipulator__WEBPACK_IMPORTED_MODULE_8__["emphasize"])(theme.palette.primary.main, 0.2)
+      }
+    },
+
+    /* Styles applied to the root element if `onDelete` and `color="secondary"` is defined. */
+    deletableColorSecondary: {
+      '&:focus': {
+        backgroundColor: Object(_styles_colorManipulator__WEBPACK_IMPORTED_MODULE_8__["emphasize"])(theme.palette.secondary.main, 0.2)
+      }
+    },
+
+    /* Styles applied to the root element if `variant="outlined"`. */
+    outlined: {
+      backgroundColor: 'transparent',
+      border: "1px solid ".concat(theme.palette.type === 'light' ? 'rgba(0, 0, 0, 0.23)' : 'rgba(255, 255, 255, 0.23)'),
+      '$clickable&:hover, $clickable&:focus, $deletable&:focus': {
+        backgroundColor: Object(_styles_colorManipulator__WEBPACK_IMPORTED_MODULE_8__["fade"])(theme.palette.text.primary, theme.palette.action.hoverOpacity)
+      },
+      '& $avatar': {
+        marginLeft: -1
+      }
+    },
+
+    /* Styles applied to the root element if `variant="outlined"` and `color="primary"`. */
+    outlinedPrimary: {
+      color: theme.palette.primary.main,
+      border: "1px solid ".concat(theme.palette.primary.main),
+      '$clickable&:hover, $clickable&:focus, $deletable&:focus': {
+        backgroundColor: Object(_styles_colorManipulator__WEBPACK_IMPORTED_MODULE_8__["fade"])(theme.palette.primary.main, theme.palette.action.hoverOpacity)
+      }
+    },
+
+    /* Styles applied to the root element if `variant="outlined"` and `color="secondary"`. */
+    outlinedSecondary: {
+      color: theme.palette.secondary.main,
+      border: "1px solid ".concat(theme.palette.secondary.main),
+      '$clickable&:hover, $clickable&:focus, $deletable&:focus': {
+        backgroundColor: Object(_styles_colorManipulator__WEBPACK_IMPORTED_MODULE_8__["fade"])(theme.palette.secondary.main, theme.palette.action.hoverOpacity)
+      }
+    },
+
+    /* Styles applied to the `avatar` element. */
+    avatar: {
+      marginRight: -4,
+      width: height,
+      height: height,
+      color: theme.palette.type === 'light' ? theme.palette.grey[700] : theme.palette.grey[300],
+      fontSize: theme.typography.pxToRem(16)
+    },
+    avatarSmall: {
+      width: smallHeight,
+      height: smallHeight,
+      fontSize: theme.typography.pxToRem(12)
+    },
+
+    /* Styles applied to the `avatar` element if `color="primary"`. */
+    avatarColorPrimary: {
+      color: theme.palette.primary.contrastText,
+      backgroundColor: theme.palette.primary.dark
+    },
+
+    /* Styles applied to the `avatar` element if `color="secondary"`. */
+    avatarColorSecondary: {
+      color: theme.palette.secondary.contrastText,
+      backgroundColor: theme.palette.secondary.dark
+    },
+
+    /* Styles applied to the `avatar` elements children. */
+    avatarChildren: {
+      height: 18
+    },
+
+    /* Styles applied to the `icon` element. */
+    icon: {
+      color: theme.palette.type === 'light' ? theme.palette.grey[700] : theme.palette.grey[300],
+      marginLeft: 5,
+      marginRight: -8
+    },
+    iconSmall: {
+      width: 16,
+      marginRight: -5
+    },
+
+    /* Styles applied to the `icon` element if `color="primary"`. */
+    iconColorPrimary: {
+      color: 'inherit'
+    },
+
+    /* Styles applied to the `icon` element if `color="secondary"`. */
+    iconColorSecondary: {
+      color: 'inherit'
+    },
+
+    /* Styles applied to the label `span` element`. */
+    label: {
+      display: 'flex',
+      alignItems: 'center',
+      paddingLeft: 12,
+      paddingRight: 12,
+      userSelect: 'none',
+      whiteSpace: 'nowrap',
+      cursor: 'inherit'
+    },
+    labelSmall: {
+      paddingLeft: 8,
+      paddingRight: 8
+    },
+
+    /* Styles applied to the `deleteIcon` element. */
+    deleteIcon: {
+      // Remove grey highlight
+      WebkitTapHighlightColor: 'transparent',
+      color: deleteIconColor,
+      cursor: 'pointer',
+      height: 'auto',
+      margin: '0 5px 0 -8px',
+      '&:hover': {
+        color: Object(_styles_colorManipulator__WEBPACK_IMPORTED_MODULE_8__["fade"])(deleteIconColor, 0.4)
+      }
+    },
+    deleteIconSmall: {
+      height: 16,
+      margin: '0 1px 0 -9px'
+    },
+
+    /* Styles applied to the deleteIcon element if `color="primary"` and `variant="default"`. */
+    deleteIconColorPrimary: {
+      color: Object(_styles_colorManipulator__WEBPACK_IMPORTED_MODULE_8__["fade"])(theme.palette.primary.contrastText, 0.7),
+      '&:hover, &:active': {
+        color: theme.palette.primary.contrastText
+      }
+    },
+
+    /* Styles applied to the deleteIcon element if `color="secondary"` and `variant="default"`. */
+    deleteIconColorSecondary: {
+      color: Object(_styles_colorManipulator__WEBPACK_IMPORTED_MODULE_8__["fade"])(theme.palette.secondary.contrastText, 0.7),
+      '&:hover, &:active': {
+        color: theme.palette.secondary.contrastText
+      }
+    },
+
+    /* Styles applied to the deleteIcon element if `color="primary"` and `variant="outlined"`. */
+    deleteIconOutlinedColorPrimary: {
+      color: Object(_styles_colorManipulator__WEBPACK_IMPORTED_MODULE_8__["fade"])(theme.palette.primary.main, 0.7),
+      '&:hover, &:active': {
+        color: theme.palette.primary.main
+      }
+    },
+
+    /* Styles applied to the deleteIcon element if `color="secondary"` and `variant="outlined"`. */
+    deleteIconOutlinedColorSecondary: {
+      color: Object(_styles_colorManipulator__WEBPACK_IMPORTED_MODULE_8__["fade"])(theme.palette.secondary.main, 0.7),
+      '&:hover, &:active': {
+        color: theme.palette.secondary.main
+      }
+    }
+  };
+};
+/**
+ * Chips represent complex entities in small blocks, such as a contact.
+ */
+
+var Chip = react__WEBPACK_IMPORTED_MODULE_2___default.a.forwardRef(function Chip(props, ref) {
+  var avatarProp = props.avatar,
+      classes = props.classes,
+      classNameProp = props.className,
+      clickableProp = props.clickable,
+      _props$color = props.color,
+      color = _props$color === void 0 ? 'default' : _props$color,
+      _props$component = props.component,
+      Component = _props$component === void 0 ? 'div' : _props$component,
+      deleteIconProp = props.deleteIcon,
+      iconProp = props.icon,
+      label = props.label,
+      onClick = props.onClick,
+      onDelete = props.onDelete,
+      onKeyDown = props.onKeyDown,
+      onKeyUp = props.onKeyUp,
+      _props$size = props.size,
+      size = _props$size === void 0 ? 'medium' : _props$size,
+      _props$variant = props.variant,
+      variant = _props$variant === void 0 ? 'default' : _props$variant,
+      other = _babel_runtime_helpers_objectWithoutProperties__WEBPACK_IMPORTED_MODULE_1___default()(props, ["avatar", "classes", "className", "clickable", "color", "component", "deleteIcon", "icon", "label", "onClick", "onDelete", "onKeyDown", "onKeyUp", "size", "variant"]);
+
+  var chipRef = react__WEBPACK_IMPORTED_MODULE_2___default.a.useRef(null);
+
+  var handleDeleteIconClick = function handleDeleteIconClick(event) {
+    // Stop the event from bubbling up to the `Chip`
+    event.stopPropagation();
+
+    if (onDelete) {
+      onDelete(event);
+    }
+  };
+
+  var handleKeyDown = function handleKeyDown(event) {
+    if (onKeyDown) {
+      onKeyDown(event);
+    } // Ignore events from children of `Chip`.
+
+
+    if (event.currentTarget !== event.target) {
+      return;
+    }
+
+    var key = event.key;
+
+    if (key === ' ' || key === 'Enter' || key === 'Backspace' || key === 'Delete' || key === 'Escape') {
+      event.preventDefault();
+    }
+  };
+
+  var handleKeyUp = function handleKeyUp(event) {
+    if (onKeyUp) {
+      onKeyUp(event);
+    } // Ignore events from children of `Chip`.
+
+
+    if (event.currentTarget !== event.target) {
+      return;
+    }
+
+    var key = event.key;
+
+    if (onClick && (key === ' ' || key === 'Enter')) {
+      onClick(event);
+    } else if (onDelete && (key === 'Backspace' || key === 'Delete')) {
+      onDelete(event);
+    } else if (key === 'Escape' && chipRef.current) {
+      chipRef.current.blur();
+    }
+  };
+
+  var clickable = clickableProp !== false && onClick ? true : clickableProp;
+  var small = size === 'small';
+  var className = Object(clsx__WEBPACK_IMPORTED_MODULE_4__["default"])(classes.root, classNameProp, color !== 'default' && [classes["color".concat(Object(_utils_helpers__WEBPACK_IMPORTED_MODULE_11__["capitalize"])(color))], clickable && classes["clickableColor".concat(Object(_utils_helpers__WEBPACK_IMPORTED_MODULE_11__["capitalize"])(color))], onDelete && classes["deletableColor".concat(Object(_utils_helpers__WEBPACK_IMPORTED_MODULE_11__["capitalize"])(color))]], variant !== "default" && [classes.outlined, color === 'primary' && classes.outlinedPrimary, color === 'secondary' && classes.outlinedSecondary], small && classes.sizeSmall, clickable && classes.clickable, onDelete && classes.deletable);
+  var deleteIcon = null;
+
+  if (onDelete) {
+    var customClasses = Object(clsx__WEBPACK_IMPORTED_MODULE_4__["default"])(color !== 'default' && (variant === "default" ? classes["deleteIconColor".concat(Object(_utils_helpers__WEBPACK_IMPORTED_MODULE_11__["capitalize"])(color))] : classes["deleteIconOutlinedColor".concat(Object(_utils_helpers__WEBPACK_IMPORTED_MODULE_11__["capitalize"])(color))]), small && classes.deleteIconSmall);
+    deleteIcon = deleteIconProp && react__WEBPACK_IMPORTED_MODULE_2___default.a.isValidElement(deleteIconProp) ? react__WEBPACK_IMPORTED_MODULE_2___default.a.cloneElement(deleteIconProp, {
+      className: Object(clsx__WEBPACK_IMPORTED_MODULE_4__["default"])(deleteIconProp.props.className, classes.deleteIcon, customClasses),
+      onClick: handleDeleteIconClick
+    }) : react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(_internal_svg_icons_Cancel__WEBPACK_IMPORTED_MODULE_6__["default"], {
+      className: Object(clsx__WEBPACK_IMPORTED_MODULE_4__["default"])(classes.deleteIcon, customClasses),
+      onClick: handleDeleteIconClick
+    });
+  }
+
+  var avatar = null;
+
+  if (avatarProp && react__WEBPACK_IMPORTED_MODULE_2___default.a.isValidElement(avatarProp)) {
+    avatar = react__WEBPACK_IMPORTED_MODULE_2___default.a.cloneElement(avatarProp, {
+      className: Object(clsx__WEBPACK_IMPORTED_MODULE_4__["default"])(classes.avatar, avatarProp.props.className, small && classes.avatarSmall, color !== 'default' && classes["avatarColor".concat(Object(_utils_helpers__WEBPACK_IMPORTED_MODULE_11__["capitalize"])(color))]),
+      childrenClassName: Object(clsx__WEBPACK_IMPORTED_MODULE_4__["default"])(classes.avatarChildren, avatarProp.props.childrenClassName)
+    });
+  }
+
+  var icon = null;
+
+  if (iconProp && react__WEBPACK_IMPORTED_MODULE_2___default.a.isValidElement(iconProp)) {
+    icon = react__WEBPACK_IMPORTED_MODULE_2___default.a.cloneElement(iconProp, {
+      className: Object(clsx__WEBPACK_IMPORTED_MODULE_4__["default"])(classes.icon, iconProp.props.className, small && classes.iconSmall, color !== 'default' && classes["iconColor".concat(Object(_utils_helpers__WEBPACK_IMPORTED_MODULE_11__["capitalize"])(color))])
+    });
+  }
+
+   true ? warning__WEBPACK_IMPORTED_MODULE_5___default()(!avatar || !icon, 'Material-UI: the Chip component can not handle the avatar ' + 'and the icon property at the same time. Pick one.') : undefined;
+  var handleRef = Object(_utils_reactHelpers__WEBPACK_IMPORTED_MODULE_9__["useForkRef"])(chipRef, ref);
+  return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(Component, _babel_runtime_helpers_extends__WEBPACK_IMPORTED_MODULE_0___default()({
+    role: clickable || onDelete ? 'button' : undefined,
+    className: className,
+    tabIndex: clickable || onDelete ? 0 : undefined,
+    onClick: onClick,
+    onKeyDown: handleKeyDown,
+    onKeyUp: handleKeyUp,
+    ref: handleRef
+  }, other), avatar || icon, react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("span", {
+    className: Object(clsx__WEBPACK_IMPORTED_MODULE_4__["default"])(classes.label, small && classes.labelSmall)
+  }, label), deleteIcon);
+});
+ true ? Chip.propTypes = {
+  /**
+   * Avatar element.
+   */
+  avatar: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.element,
+
+  /**
+   * This property isn't supported.
+   * Use the `component` property if you need to change the children structure.
+   */
+  children: _utils_unsupportedProp__WEBPACK_IMPORTED_MODULE_10__["default"],
+
+  /**
+   * Override or extend the styles applied to the component.
+   * See [CSS API](#css) below for more details.
+   */
+  classes: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.object.isRequired,
+
+  /**
+   * @ignore
+   */
+  className: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.string,
+
+  /**
+   * If true, the chip will appear clickable, and will raise when pressed,
+   * even if the onClick property is not defined.
+   * If false, the chip will not be clickable, even if onClick property is defined.
+   * This can be used, for example,
+   * along with the component property to indicate an anchor Chip is clickable.
+   */
+  clickable: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.bool,
+
+  /**
+   * The color of the component. It supports those theme colors that make sense for this component.
+   */
+  color: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.oneOf(['default', 'primary', 'secondary']),
+
+  /**
+   * The component used for the root node.
+   * Either a string to use a DOM element or a component.
+   */
+  component: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.elementType,
+
+  /**
+   * Override the default delete icon element. Shown only if `onDelete` is set.
+   */
+  deleteIcon: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.element,
+
+  /**
+   * Icon element.
+   */
+  icon: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.element,
+
+  /**
+   * The content of the label.
+   */
+  label: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.node,
+
+  /**
+   * @ignore
+   */
+  onClick: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.func,
+
+  /**
+   * Callback function fired when the delete icon is clicked.
+   * If set, the delete icon will be shown.
+   */
+  onDelete: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.func,
+
+  /**
+   * @ignore
+   */
+  onKeyDown: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.func,
+
+  /**
+   * @ignore
+   */
+  onKeyUp: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.func,
+
+  /**
+   * The size of the chip.
+   */
+  size: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.oneOf(['small', 'medium']),
+
+  /**
+   * The variant to use.
+   */
+  variant: prop_types__WEBPACK_IMPORTED_MODULE_3___default.a.oneOf(['default', 'outlined'])
+} : undefined;
+/* harmony default export */ __webpack_exports__["default"] = (Object(_styles_withStyles__WEBPACK_IMPORTED_MODULE_7__["default"])(styles, {
+  name: 'MuiChip'
+})(Chip));
+
+/***/ }),
+
+/***/ "./node_modules/@material-ui/core/esm/Chip/index.js":
+/*!**********************************************************!*\
+  !*** ./node_modules/@material-ui/core/esm/Chip/index.js ***!
+  \**********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _Chip__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./Chip */ "./node_modules/@material-ui/core/esm/Chip/Chip.js");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "default", function() { return _Chip__WEBPACK_IMPORTED_MODULE_0__["default"]; });
 
 
 
@@ -11051,6 +11758,30 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/@material-ui/core/esm/internal/svg-icons/Cancel.js":
+/*!*************************************************************************!*\
+  !*** ./node_modules/@material-ui/core/esm/internal/svg-icons/Cancel.js ***!
+  \*************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _createSvgIcon__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./createSvgIcon */ "./node_modules/@material-ui/core/esm/internal/svg-icons/createSvgIcon.js");
+
+
+/**
+ * @ignore - internal component.
+ */
+
+/* harmony default export */ __webpack_exports__["default"] = (Object(_createSvgIcon__WEBPACK_IMPORTED_MODULE_1__["default"])(react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement("path", {
+  d: "M12 2C6.47 2 2 6.47 2 12s4.47 10 10 10 10-4.47 10-10S17.53 2 12 2zm5 13.59L15.59 17 12 13.41 8.41 17 7 15.59 10.59 12 7 8.41 8.41 7 12 10.59 15.59 7 17 8.41 13.41 12 17 15.59z"
+}), 'Cancel'));
+
+/***/ }),
+
 /***/ "./node_modules/@material-ui/core/esm/internal/svg-icons/RadioButtonChecked.js":
 /*!*************************************************************************************!*\
   !*** ./node_modules/@material-ui/core/esm/internal/svg-icons/RadioButtonChecked.js ***!
@@ -12722,6 +13453,31 @@ function useForkRef(refA, refB) {
     };
   }, [refA, refB]);
 }
+
+/***/ }),
+
+/***/ "./node_modules/@material-ui/core/esm/utils/unsupportedProp.js":
+/*!*********************************************************************!*\
+  !*** ./node_modules/@material-ui/core/esm/utils/unsupportedProp.js ***!
+  \*********************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+function unsupportedProp(props, propName, componentName, location, propFullName) {
+  if (false) {}
+
+  var propFullNameSafe = propFullName || propName;
+
+  if (typeof props[propName] !== 'undefined') {
+    return new Error("The property `".concat(propFullNameSafe, "` is not supported. Please remove it."));
+  }
+
+  return null;
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (unsupportedProp);
 
 /***/ }),
 
@@ -44143,7 +44899,8 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const react_1 = __importStar(__webpack_require__(/*! react */ "react"));
-const Button_1 = __importDefault(__webpack_require__(/*! @material-ui/core/Button */ "./node_modules/@material-ui/core/esm/Button/index.js"));
+const Chip_1 = __importDefault(__webpack_require__(/*! @material-ui/core/Chip */ "./node_modules/@material-ui/core/esm/Chip/index.js"));
+const Avatar_1 = __importDefault(__webpack_require__(/*! @material-ui/core/Avatar */ "./node_modules/@material-ui/core/esm/Avatar/index.js"));
 const styles_1 = __webpack_require__(/*! @material-ui/styles */ "./node_modules/@material-ui/styles/esm/index.js");
 const EvaluationDialog_1 = __webpack_require__(/*! ./EvaluationDialog */ "./src/evaluation_table/ui/EvaluationDialog.tsx");
 const EvaluationTable_1 = __webpack_require__(/*! ../table/EvaluationTable */ "./src/evaluation_table/table/EvaluationTable.ts");
@@ -44156,6 +44913,7 @@ exports.EvaluationChip = (props) => {
         button: {
             borderRadius: '25px'
         },
+        chip: {}
     });
     const classes = useStyles({});
     const handleOpen = () => {
@@ -44163,16 +44921,14 @@ exports.EvaluationChip = (props) => {
     };
     const onCommit = (evaluationType, evaluationArg) => {
         setEvaluationTable(EvaluationTable_1.makeEvaluationTable(evaluationType, evaluationArg));
+        setEvaluationType(evaluationType);
         setOpen(false);
     };
     const onCancel = () => {
         setOpen(false);
     };
     return (react_1.default.createElement("div", null,
-        react_1.default.createElement(Button_1.default, { className: classes.button, variant: "outlined", color: "primary", size: "small", onClick: handleOpen },
-            evaluationTable.rank.sourceRank,
-            " ",
-            evaluationTable.rank.infoRank),
+        react_1.default.createElement(Chip_1.default, { className: classes.chip, avatar: react_1.default.createElement(Avatar_1.default, null, evaluationType), variant: "default", size: "small", color: "default", label: evaluationTable.rank.sourceRank + " " + evaluationTable.rank.infoRank, onClick: handleOpen }),
         open &&
             react_1.default.createElement(EvaluationDialog_1.EvaluationDialog, { open: open, onCommit: onCommit, onCancel: onCancel, evaluationType: evaluationType, evaluationArg: evaluationArg })));
 };
@@ -44223,7 +44979,6 @@ exports.EvaluationDialog = (props) => {
     const [selectedEvaluationType, setSelectedEvaluationType] = react_1.useState(evaluationType);
     const [evaluationStatus, setEvaluationStatus] = react_1.useState(evaluationArg);
     const commit = (evaluationType, evaluationArg) => {
-        console.log(evaluationArg);
         onCommit(evaluationType, evaluationArg);
     };
     const cancel = () => {
