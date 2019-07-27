@@ -16,10 +16,15 @@ import { Arg7x7 } from '../table/EvaluationTable7x7';
 import { Language } from '../table/Language';
 import { EvaluationRadio, HandleChange } from './EvaluationRadio';
 
-export const SelectMatrix = () => {
+type SelectMatrixProps = {
+  evaluationType: EvaluationType;
+  onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
+}
+
+export const SelectMatrix = (props: SelectMatrixProps) => {
   return (
     <DialogActions>
-      <Select value="3x3">
+      <Select value={props.evaluationType} onChange={props.onChange}>
         <MenuItem value="3x3">
           <Typography>
             3x3
@@ -30,9 +35,9 @@ export const SelectMatrix = () => {
             5x5
           </Typography>
         </MenuItem>
-        <MenuItem value="7x7">
+        <MenuItem value="7x7"> 
           <Typography>
-            7x7
+            7x7 
           </Typography>
         </MenuItem>
       </Select>
@@ -60,8 +65,7 @@ export const EvaluationDialog = <T extends EvaluationType> (props: EvaluationDia
 
   const cancel = () => {
     onCancel();
-  }
-
+  } 
   const onChangeSourceRank = (event: React.ChangeEvent<HTMLInputElement>) => {
     const sourceRank = event.currentTarget.value;
     setEvaluationStatus(Object.assign({}, evaluationStatus, { sourceRank: sourceRank }));
@@ -75,6 +79,11 @@ export const EvaluationDialog = <T extends EvaluationType> (props: EvaluationDia
 
   const onChangeMalformtype = (event: React.ChangeEvent<HTMLInputElement>) => {
   
+  }
+
+  const onChangeMatrix = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const evaluationType = event.target.value as EvaluationType;
+    setSelectedEvaluationType(evaluationType)
   }
 
   const changeHandlersFactory = <T extends EvaluationType> (evaluationType: EvaluationType) => {
@@ -109,10 +118,10 @@ export const EvaluationDialog = <T extends EvaluationType> (props: EvaluationDia
 
   return (
     <Dialog onClose={()=>cancel()} open={open} aria-labelledby="evaluation-dialog" transitionDuration={0}> 
-      <SelectMatrix />
-      <EvaluationRadio evaluationType={evaluationType} changeHandlers={changeHandlers}/>
+      <SelectMatrix evaluationType={selectedEvaluationType} onChange={onChangeMatrix}/>
+      <EvaluationRadio evaluationType={selectedEvaluationType} changeHandlers={changeHandlers}/>
       <DialogActions>
-        <Button onClick={()=>commit(evaluationType, evaluationStatus)} color="primary" autoFocus>
+        <Button onClick={()=>commit(selectedEvaluationType, evaluationStatus)} color="primary" autoFocus>
           Commit
         </Button>
         <Button onClick={()=>cancel()} color="primary" >

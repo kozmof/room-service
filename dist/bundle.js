@@ -44173,7 +44173,8 @@ exports.EvaluationChip = (props) => {
             evaluationTable.rank.sourceRank,
             " ",
             evaluationTable.rank.infoRank),
-        react_1.default.createElement(EvaluationDialog_1.EvaluationDialog, { open: open, onCommit: onCommit, onCancel: onCancel, evaluationType: evaluationType, evaluationArg: evaluationArg })));
+        open &&
+            react_1.default.createElement(EvaluationDialog_1.EvaluationDialog, { open: open, onCommit: onCommit, onCancel: onCancel, evaluationType: evaluationType, evaluationArg: evaluationArg })));
 };
 
 
@@ -44207,9 +44208,9 @@ const Select_1 = __importDefault(__webpack_require__(/*! @material-ui/core/Selec
 const MenuItem_1 = __importDefault(__webpack_require__(/*! @material-ui/core/MenuItem */ "./node_modules/@material-ui/core/esm/MenuItem/index.js"));
 const Typography_1 = __importDefault(__webpack_require__(/*! @material-ui/core/Typography */ "./node_modules/@material-ui/core/esm/Typography/index.js"));
 const EvaluationRadio_1 = __webpack_require__(/*! ./EvaluationRadio */ "./src/evaluation_table/ui/EvaluationRadio.tsx");
-exports.SelectMatrix = () => {
+exports.SelectMatrix = (props) => {
     return (react_1.default.createElement(DialogActions_1.default, null,
-        react_1.default.createElement(Select_1.default, { value: "3x3" },
+        react_1.default.createElement(Select_1.default, { value: props.evaluationType, onChange: props.onChange },
             react_1.default.createElement(MenuItem_1.default, { value: "3x3" },
                 react_1.default.createElement(Typography_1.default, null, "3x3")),
             react_1.default.createElement(MenuItem_1.default, { value: "5x5" },
@@ -44239,6 +44240,10 @@ exports.EvaluationDialog = (props) => {
     // setEvaluationStatus();
     const onChangeMalformtype = (event) => {
     };
+    const onChangeMatrix = (event) => {
+        const evaluationType = event.target.value;
+        setSelectedEvaluationType(evaluationType);
+    };
     const changeHandlersFactory = (evaluationType) => {
         switch (evaluationType) {
             case "3x3": {
@@ -44267,10 +44272,10 @@ exports.EvaluationDialog = (props) => {
     };
     const changeHandlers = changeHandlersFactory(evaluationType);
     return (react_1.default.createElement(Dialog_1.default, { onClose: () => cancel(), open: open, "aria-labelledby": "evaluation-dialog", transitionDuration: 0 },
-        react_1.default.createElement(exports.SelectMatrix, null),
-        react_1.default.createElement(EvaluationRadio_1.EvaluationRadio, { evaluationType: evaluationType, changeHandlers: changeHandlers }),
+        react_1.default.createElement(exports.SelectMatrix, { evaluationType: selectedEvaluationType, onChange: onChangeMatrix }),
+        react_1.default.createElement(EvaluationRadio_1.EvaluationRadio, { evaluationType: selectedEvaluationType, changeHandlers: changeHandlers }),
         react_1.default.createElement(DialogActions_1.default, null,
-            react_1.default.createElement(Button_1.default, { onClick: () => commit(evaluationType, evaluationStatus), color: "primary", autoFocus: true }, "Commit"),
+            react_1.default.createElement(Button_1.default, { onClick: () => commit(selectedEvaluationType, evaluationStatus), color: "primary", autoFocus: true }, "Commit"),
             react_1.default.createElement(Button_1.default, { onClick: () => cancel(), color: "primary" }, "Cancel"))));
 };
 

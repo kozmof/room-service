@@ -42,7 +42,9 @@ export const EvaluationChip = (props: EvaluationProps) => {
       <Button className={classes.button} variant="outlined" color="primary" size="small" onClick={handleOpen}>
         {evaluationTable.rank.sourceRank} {evaluationTable.rank.infoRank}
       </Button>
+      { open && 
       <EvaluationDialog<typeof evaluationType> open={open} onCommit={onCommit} onCancel={onCancel} evaluationType={evaluationType} evaluationArg={evaluationArg}/>
+      }
     </div>
   );
 }
