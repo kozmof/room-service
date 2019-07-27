@@ -18,6 +18,10 @@ ReactDom.render(
   <div>
     <TestEditor />
     <EvaluationChip {...props} />
+    <EvaluationChip {...props} />
+    <EvaluationChip {...props} />
+    <EvaluationChip {...props} />
+    <EvaluationChip {...props} />
   </div>,
   document.getElementById("main")
 );

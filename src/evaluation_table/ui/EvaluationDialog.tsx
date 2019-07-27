@@ -106,6 +106,19 @@ export const EvaluationDialog = <T extends EvaluationType> (props: EvaluationDia
   const onChangeMatrix = (event: React.ChangeEvent<HTMLInputElement>) => {
     const evaluationType = event.target.value as EvaluationType;
     setSelectedEvaluationType(evaluationType)
+    setEvaluationStatus(
+      Object.assign(
+        {},
+        evaluationStatus,
+        {
+          ...evaluationStatus, 
+          rank: {
+            sourceRank: "N", 
+            infoRank: 0, 
+          }
+        }
+      )
+    );
   }
 
   const changeHandlersFactory = <T extends EvaluationType> (evaluationType: EvaluationType) => {
@@ -114,21 +127,21 @@ export const EvaluationDialog = <T extends EvaluationType> (props: EvaluationDia
         const changeHandlers: HandleChange<"3x3"> = {
           onChangeSourceRank: onChangeSourceRank,
           onChangeInfoRank: onChangeInfoRank,
-          onChangeMalformtype: onChangeMalformtype 
+          onChangeMalformtype: onChangeMalformtype,
         }
         return changeHandlers;
       }
       case "5x5": {
         const changeHandlers: HandleChange<"5x5"> = {
           onChangeSourceRank: onChangeSourceRank,
-          onChangeInfoRank: onChangeInfoRank
+          onChangeInfoRank: onChangeInfoRank,
         }
         return changeHandlers;
       }
       case "7x7": {
         const changeHandlers: HandleChange<"7x7"> = {
           onChangeSourceRank: onChangeSourceRank,
-          onChangeInfoRank: onChangeInfoRank
+          onChangeInfoRank: onChangeInfoRank,
         }
         return changeHandlers;
       }
@@ -140,7 +153,7 @@ export const EvaluationDialog = <T extends EvaluationType> (props: EvaluationDia
   return (
     <Dialog onClose={()=>cancel()} open={open} aria-labelledby="evaluation-dialog" transitionDuration={0}> 
       <SelectMatrix evaluationType={selectedEvaluationType} onChange={onChangeMatrix}/>
-      <EvaluationRadio evaluationType={selectedEvaluationType} changeHandlers={changeHandlers}/>
+      <EvaluationRadio<typeof selectedEvaluationType> evaluationType={selectedEvaluationType} evaluationArg={evaluationStatus} changeHandlers={changeHandlers}/>
       <DialogActions>
         <Button onClick={()=>commit(selectedEvaluationType, evaluationStatus)} color="primary" autoFocus>
           Commit

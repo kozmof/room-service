@@ -6,6 +6,7 @@ import FormControl from '@material-ui/core/FormControl';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormLabel from '@material-ui/core/FormLabel';
 import Typography from '@material-ui/core/Typography';
+import { EvaluationArg } from '../table/EvaluationTable';
 
 import {
   data_N_0_en,
@@ -28,7 +29,11 @@ export type HandleChange5x5 = {
   onChangeInfoRank: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-export const EvaluationRadio5x5= (props: HandleChange5x5) => {
+type EvaluationRadio5x5props = {
+  evaluationArg: EvaluationArg<"5x5">;
+} & HandleChange5x5
+
+export const EvaluationRadio5x5= (props: EvaluationRadio5x5props) => {
   return (
     <DialogContent>
       <FormControl component="fieldset">
@@ -37,12 +42,12 @@ export const EvaluationRadio5x5= (props: HandleChange5x5) => {
             Source Rank 
           </Typography>
         </FormLabel>
-        <RadioGroup>
-          <FormControlLabel value="N" control={<Radio disableRipple={true} onChange={props.onChangeSourceRank}/>} label={<Typography>{"N: " + data_N_0_en}</Typography>}/>
-          <FormControlLabel value="A" control={<Radio disableRipple={true} onChange={props.onChangeSourceRank}/>} label={<Typography>{"A: " + data_A_0_en + "\n" + data_A_1_en}</Typography>}/>
-          <FormControlLabel value="B" control={<Radio disableRipple={true} onChange={props.onChangeSourceRank}/>} label={<Typography>{"B: " + data_B_0_en}</Typography>}/>
-          <FormControlLabel value="C" control={<Radio disableRipple={true} onChange={props.onChangeSourceRank}/>} label={<Typography>{"C: " + data_C_0_en}</Typography>}/>
-          <FormControlLabel value="X" control={<Radio disableRipple={true} onChange={props.onChangeSourceRank}/>} label={<Typography>{"X: " + data_X_0_en}</Typography>}/>
+        <RadioGroup value={props.evaluationArg.rank.sourceRank} onChange={props.onChangeSourceRank}>
+          <FormControlLabel value="N" control={<Radio disableRipple={true} />} label={<Typography>{"N: " + data_N_0_en}</Typography>}/>
+          <FormControlLabel value="A" control={<Radio disableRipple={true} />} label={<Typography>{"A: " + data_A_0_en + "\n" + data_A_1_en}</Typography>}/>
+          <FormControlLabel value="B" control={<Radio disableRipple={true} />} label={<Typography>{"B: " + data_B_0_en}</Typography>}/>
+          <FormControlLabel value="C" control={<Radio disableRipple={true} />} label={<Typography>{"C: " + data_C_0_en}</Typography>}/>
+          <FormControlLabel value="X" control={<Radio disableRipple={true} />} label={<Typography>{"X: " + data_X_0_en}</Typography>}/>
         </RadioGroup>
       </FormControl>
       <FormControl component="fieldset">
@@ -51,12 +56,12 @@ export const EvaluationRadio5x5= (props: HandleChange5x5) => {
             Info Rank
           </Typography>
         </FormLabel>
-        <RadioGroup>
-          <FormControlLabel value="0" control={<Radio disableRipple={true} onChange={props.onChangeInfoRank}/>} label={<Typography>{"0: " + data_0_0_en}</Typography>}/>
-          <FormControlLabel value="1" control={<Radio disableRipple={true} onChange={props.onChangeInfoRank}/>} label={<Typography>{"1: " + data_1_0_en}</Typography>}/>
-          <FormControlLabel value="2" control={<Radio disableRipple={true} onChange={props.onChangeInfoRank}/>} label={<Typography>{"2: " + data_2_0_en + "\n" + data_2_1_en + "\n" + data_2_2_en}</Typography>}/>
-          <FormControlLabel value="3" control={<Radio disableRipple={true} onChange={props.onChangeInfoRank}/>} label={<Typography>{"3: " + data_3_0_en}</Typography>}/>
-          <FormControlLabel value="4" control={<Radio disableRipple={true} onChange={props.onChangeInfoRank}/>} label={<Typography>{"4: " + data_4_0_en}</Typography>}/>
+        <RadioGroup value={props.evaluationArg.rank.infoRank.toString()} onChange={props.onChangeInfoRank}>
+          <FormControlLabel value={String(0)} control={<Radio disableRipple={true} />} label={<Typography>{"0: " + data_0_0_en}</Typography>}/>
+          <FormControlLabel value={String(1)} control={<Radio disableRipple={true} />} label={<Typography>{"1: " + data_1_0_en}</Typography>}/>
+          <FormControlLabel value={String(2)} control={<Radio disableRipple={true} />} label={<Typography>{"2: " + data_2_0_en + "\n" + data_2_1_en + "\n" + data_2_2_en}</Typography>}/>
+          <FormControlLabel value={String(3)} control={<Radio disableRipple={true} />} label={<Typography>{"3: " + data_3_0_en}</Typography>}/>
+          <FormControlLabel value={String(4)} control={<Radio disableRipple={true} />} label={<Typography>{"4: " + data_4_0_en}</Typography>}/>
         </RadioGroup>
       </FormControl>
     </DialogContent>
