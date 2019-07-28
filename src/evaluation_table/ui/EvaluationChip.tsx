@@ -44,7 +44,7 @@ export const EvaluationChip = (props: EvaluationProps) => {
   
   return (
     <div>
-      <Chip className={classes.chip} avatar={<Avatar>{evaluationType}</Avatar>} variant="default" size="small" color="default" label={evaluationTable.rank.sourceRank + " " + evaluationTable.rank.infoRank} onClick={handleOpen}/>
+      <Chip className={classes.chip} avatar={<Avatar>{evaluationType}</Avatar>} variant="default" size="small" color="primary" label={evaluationTable.rank.sourceRank + " " + evaluationTable.rank.infoRank} onClick={handleOpen}/>
       { open && 
       <EvaluationDialog<typeof evaluationType> open={open} onCommit={onCommit} onCancel={onCancel} evaluationType={evaluationType} evaluationArg={evaluationArg}/>
       }

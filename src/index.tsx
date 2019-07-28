@@ -20,9 +20,11 @@ ReactDom.render(
     <div>
       <EvaluationChip {...props} />
     </div>
+    <br/>
     <div>
       <EvaluationChip {...props} />
     </div>
+    <br/>
     <div>
       <EvaluationChip {...props} />
     </div>
