@@ -1,10 +1,10 @@
-export const data_N_0_en: string = "Not evaluated yet.";
+export const data_N_0_en: string = "Not evaluated.";
 export const data_A_0_en: string = "Source has a valid author.";
 export const data_B_0_en: string = "No valid author."; 
 
 
-export const data_0_0_en: string = "Not evaluated yet.";
-export const data_1_0_en: string = "Valid Information.";
+export const data_0_0_en: string = "Not evaluated.";
+export const data_1_0_en: string = "Valid information.";
 export const data_2_0_en: string = "Invalid information.";
 
 

@@ -82,7 +82,7 @@ export const EvaluationRadio7x7 = React.memo((props: EvaluationRadio7x7props) =>
           <Divider variant="middle" />
           <FormControlLabel value="E" control={<Radio disableRipple={true} />} label={provideContent("E", [data_E_digest_en, data_E_0_en, data_E_1_en])}/>
           <Divider variant="middle" />
-          <FormControlLabel value="F" control={<Radio disableRipple={true} />} label={provideContent("F", [data_F_digest_en, data_F_0_en])}/>
+          <FormControlLabel value="F" control={<Radio disableRipple={true} />} label={provideContent("F", [data_F_0_en])}/>
         </RadioGroup>
       </FormControl>
       <FormControl component="fieldset">
@@ -104,7 +104,7 @@ export const EvaluationRadio7x7 = React.memo((props: EvaluationRadio7x7props) =>
           <Divider variant="middle" />
           <FormControlLabel value={String(5)} control={<Radio disableRipple={true} />} label={provideContent(String(5), [data_5_digest_en, data_5_0_en, data_5_1_en, data_5_2_en])}/>
           <Divider variant="middle" />
-          <FormControlLabel value={String(6)} control={<Radio disableRipple={true} />} label={provideContent(String(6), [data_6_digest_en, data_6_0_en])}/>
+          <FormControlLabel value={String(6)} control={<Radio disableRipple={true} />} label={provideContent(String(6), [data_6_0_en])}/>
         </RadioGroup>
       </FormControl>
     </DialogContent>
