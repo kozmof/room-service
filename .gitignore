@@ -19,3 +19,4 @@
 /src/ui/*.js
 /src/clip/*.js
 /src/filing/*.js
+/dist/
