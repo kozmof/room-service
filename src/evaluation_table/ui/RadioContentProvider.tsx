@@ -14,6 +14,10 @@ export const provideContent = (signature: string, descriptionList: Array<string>
 
     sig: {
       width: '8px' 
+    },
+
+    ul: {
+      listStyleType: 'disc' 
     }
   })
 
@@ -22,11 +26,11 @@ export const provideContent = (signature: string, descriptionList: Array<string>
   const description = descriptionList.map(
     (item: string) => {
       return(
-        <ListItem>
-          <Typography variant="body2">
+        <Typography variant="body2">
+          <li>
             {item}
-          </Typography>
-        </ListItem>
+          </li>
+        </Typography>
       )
     }
   )
@@ -35,13 +39,13 @@ export const provideContent = (signature: string, descriptionList: Array<string>
     <List className={classes.root}> 
       <ListItem className={classes.sig}>
         <Typography variant="body1">
-          {signature + ": "}
+          {signature}
         </Typography>
       </ListItem>
       <ListItem>
-        <List>
+        <ul className={classes.ul}>
           {description}
-        </List>
+        </ul>
       </ListItem>
     </List>
   )
