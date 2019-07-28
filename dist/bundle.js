@@ -44596,11 +44596,11 @@ exports.TestEditor = TestEditor;
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.data_N_0_en = "Not evaluated yet.";
+exports.data_N_0_en = "Not evaluated.";
 exports.data_A_0_en = "Source has a valid author.";
 exports.data_B_0_en = "No valid author.";
-exports.data_0_0_en = "Not evaluated yet.";
-exports.data_1_0_en = "Valid Information.";
+exports.data_0_0_en = "Not evaluated.";
+exports.data_1_0_en = "Valid information.";
 exports.data_2_0_en = "Invalid information.";
 exports.data_3_0_mal_en = "NOT EVALUATED YET";
 exports.data_3_1_mal_en = "";
@@ -44632,13 +44632,13 @@ exports.data_21_1_mal_en = "When genuine information or imagery is manipulated t
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.data_N_0_en = "Not evaluated yet.";
+exports.data_N_0_en = "Not evaluated.";
 exports.data_A_0_en = "No doubt regarding authenticity, trustworthiness, integrity, competence.";
 exports.data_A_1_en = "History of complete reliability.";
 exports.data_B_0_en = "Source from whom information received has in most instances proved to be reliable.";
 exports.data_C_0_en = "Source from whom information received has in most instances proved to be unreliable.";
 exports.data_X_0_en = "Reliability cannot be judged.";
-exports.data_0_0_en = "Not evaluated yet.";
+exports.data_0_0_en = "Not evaluated.";
 exports.data_1_0_en = "No doubt about accurency.";
 exports.data_2_0_en = "Information known personally to the source but not known personally to the official who is passing it on.";
 exports.data_2_1_en = "Logical in itself.";
@@ -44659,7 +44659,7 @@ exports.data_4_0_en = "Information which is not known personally to the source a
 "use strict";
 
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.data_N_0_en = "Not evaluated yet.";
+exports.data_N_0_en = "Not evaluated.";
 exports.data_A_0_en = "No doubt regarding authenticity, trustworthiness, integrity, competence.";
 exports.data_A_1_en = "History of complete reliability.";
 exports.data_B_0_en = "Some doubt regarding authenticity or trustworthiness or integrity or competence (one count).";
@@ -44671,14 +44671,14 @@ exports.data_D_1_en = "History of occasional reliability.";
 exports.data_E_0_en = "Certainty about lack of authenticity, trustworthiness, integrity, competence.";
 exports.data_E_1_en = "History of unreliability.";
 exports.data_F_0_en = "Cannot be judged.";
-exports.data_N_digest_en = "NOT EVALUATED YET";
+exports.data_N_digest_en = "NOT EVALUATED";
 exports.data_A_digest_en = "COMPLETELY RELIABLE";
 exports.data_B_digest_en = "USUALY RELIABLE";
 exports.data_C_digest_en = "FAIRLY RELIABLE";
 exports.data_D_digest_en = "USUALY NOT RELIABLE";
 exports.data_E_digest_en = "UNRELIABLE";
-exports.data_F_digest_en = "";
-exports.data_0_0_en = "Not evaluated yet.";
+exports.data_F_digest_en = "CAN NOT BE JUDGED";
+exports.data_0_0_en = "Not evaluated.";
 exports.data_1_0_en = "Confirmed by other independent sources.";
 exports.data_1_1_en = "Logical in itself.";
 exports.data_1_2_en = "Agrees with other information on the subject.";
@@ -44701,7 +44701,7 @@ exports.data_2_digest_en = "PROBABLY TRUE";
 exports.data_3_digest_en = "POSSIBLY TRUE";
 exports.data_4_digest_en = "DOUBTFULLY TRUE";
 exports.data_5_digest_en = "IMPROBABLE";
-exports.data_6_digest_en = "";
+exports.data_6_digest_en = "CAN NOT BE JUDGED";
 
 
 /***/ }),
@@ -45365,36 +45365,36 @@ exports.EvaluationRadio7x7 = react_1.default.memo((props) => {
             react_1.default.createElement(FormLabel_1.default, { component: "label" },
                 react_1.default.createElement(Typography_1.default, null, "Source Rank")),
             react_1.default.createElement(RadioGroup_1.default, { value: props.evaluationArg.rank.sourceRank, onChange: props.onChangeSourceRank },
-                react_1.default.createElement(FormControlLabel_1.default, { value: "N", control: react_1.default.createElement(Radio_1.default, { disableRipple: true }), label: RadioContentProvider_1.provideContent("N", [Data7x7_1.data_N_0_en]) }),
+                react_1.default.createElement(FormControlLabel_1.default, { value: "N", control: react_1.default.createElement(Radio_1.default, { disableRipple: true }), label: RadioContentProvider_1.provideContent("N", [Data7x7_1.data_N_0_en], Data7x7_2.data_N_digest_en) }),
                 react_1.default.createElement(Divider_1.default, { variant: "middle" }),
-                react_1.default.createElement(FormControlLabel_1.default, { value: "A", control: react_1.default.createElement(Radio_1.default, { disableRipple: true }), label: RadioContentProvider_1.provideContent("A", [Data7x7_2.data_A_digest_en, Data7x7_1.data_A_0_en, Data7x7_1.data_A_1_en]) }),
+                react_1.default.createElement(FormControlLabel_1.default, { value: "A", control: react_1.default.createElement(Radio_1.default, { disableRipple: true }), label: RadioContentProvider_1.provideContent("A", [Data7x7_1.data_A_0_en, Data7x7_1.data_A_1_en], Data7x7_2.data_A_digest_en) }),
                 react_1.default.createElement(Divider_1.default, { variant: "middle" }),
-                react_1.default.createElement(FormControlLabel_1.default, { value: "B", control: react_1.default.createElement(Radio_1.default, { disableRipple: true }), label: RadioContentProvider_1.provideContent("B", [Data7x7_2.data_B_digest_en, Data7x7_1.data_B_0_en, Data7x7_1.data_B_1_en]) }),
+                react_1.default.createElement(FormControlLabel_1.default, { value: "B", control: react_1.default.createElement(Radio_1.default, { disableRipple: true }), label: RadioContentProvider_1.provideContent("B", [Data7x7_1.data_B_0_en, Data7x7_1.data_B_1_en], Data7x7_2.data_B_digest_en) }),
                 react_1.default.createElement(Divider_1.default, { variant: "middle" }),
-                react_1.default.createElement(FormControlLabel_1.default, { value: "C", control: react_1.default.createElement(Radio_1.default, { disableRipple: true }), label: RadioContentProvider_1.provideContent("C", [Data7x7_2.data_C_digest_en, Data7x7_1.data_C_0_en, Data7x7_1.data_C_1_en]) }),
+                react_1.default.createElement(FormControlLabel_1.default, { value: "C", control: react_1.default.createElement(Radio_1.default, { disableRipple: true }), label: RadioContentProvider_1.provideContent("C", [Data7x7_1.data_C_0_en, Data7x7_1.data_C_1_en], Data7x7_2.data_C_digest_en) }),
                 react_1.default.createElement(Divider_1.default, { variant: "middle" }),
-                react_1.default.createElement(FormControlLabel_1.default, { value: "D", control: react_1.default.createElement(Radio_1.default, { disableRipple: true }), label: RadioContentProvider_1.provideContent("D", [Data7x7_2.data_D_digest_en, Data7x7_1.data_D_0_en, Data7x7_1.data_D_1_en]) }),
+                react_1.default.createElement(FormControlLabel_1.default, { value: "D", control: react_1.default.createElement(Radio_1.default, { disableRipple: true }), label: RadioContentProvider_1.provideContent("D", [Data7x7_1.data_D_0_en, Data7x7_1.data_D_1_en], Data7x7_2.data_D_digest_en) }),
                 react_1.default.createElement(Divider_1.default, { variant: "middle" }),
-                react_1.default.createElement(FormControlLabel_1.default, { value: "E", control: react_1.default.createElement(Radio_1.default, { disableRipple: true }), label: RadioContentProvider_1.provideContent("E", [Data7x7_2.data_E_digest_en, Data7x7_1.data_E_0_en, Data7x7_1.data_E_1_en]) }),
+                react_1.default.createElement(FormControlLabel_1.default, { value: "E", control: react_1.default.createElement(Radio_1.default, { disableRipple: true }), label: RadioContentProvider_1.provideContent("E", [Data7x7_1.data_E_0_en, Data7x7_1.data_E_1_en], Data7x7_2.data_E_digest_en) }),
                 react_1.default.createElement(Divider_1.default, { variant: "middle" }),
-                react_1.default.createElement(FormControlLabel_1.default, { value: "F", control: react_1.default.createElement(Radio_1.default, { disableRipple: true }), label: RadioContentProvider_1.provideContent("F", [Data7x7_2.data_F_digest_en, Data7x7_1.data_F_0_en]) }))),
+                react_1.default.createElement(FormControlLabel_1.default, { value: "F", control: react_1.default.createElement(Radio_1.default, { disableRipple: true }), label: RadioContentProvider_1.provideContent("F", [Data7x7_1.data_F_0_en], Data7x7_2.data_F_digest_en) }))),
         react_1.default.createElement(FormControl_1.default, { component: "fieldset" },
             react_1.default.createElement(FormLabel_1.default, { component: "label" },
                 react_1.default.createElement(Typography_1.default, null, "Info Rank")),
             react_1.default.createElement(RadioGroup_1.default, { value: props.evaluationArg.rank.infoRank.toString(), onChange: props.onChangeInfoRank },
-                react_1.default.createElement(FormControlLabel_1.default, { value: String(0), control: react_1.default.createElement(Radio_1.default, { disableRipple: true }), label: RadioContentProvider_1.provideContent(String(0), [Data7x7_3.data_0_0_en]) }),
+                react_1.default.createElement(FormControlLabel_1.default, { value: String(0), control: react_1.default.createElement(Radio_1.default, { disableRipple: true }), label: RadioContentProvider_1.provideContent(String(0), [Data7x7_3.data_0_0_en], Data7x7_4.data_0_digest_en) }),
                 react_1.default.createElement(Divider_1.default, { variant: "middle" }),
-                react_1.default.createElement(FormControlLabel_1.default, { value: String(1), control: react_1.default.createElement(Radio_1.default, { disableRipple: true }), label: RadioContentProvider_1.provideContent(String(1), [Data7x7_4.data_1_digest_en, Data7x7_3.data_1_0_en, Data7x7_3.data_1_1_en, Data7x7_3.data_1_2_en]) }),
+                react_1.default.createElement(FormControlLabel_1.default, { value: String(1), control: react_1.default.createElement(Radio_1.default, { disableRipple: true }), label: RadioContentProvider_1.provideContent(String(1), [Data7x7_3.data_1_0_en, Data7x7_3.data_1_1_en, Data7x7_3.data_1_2_en], Data7x7_4.data_0_digest_en) }),
                 react_1.default.createElement(Divider_1.default, { variant: "middle" }),
-                react_1.default.createElement(FormControlLabel_1.default, { value: String(2), control: react_1.default.createElement(Radio_1.default, { disableRipple: true }), label: RadioContentProvider_1.provideContent(String(2), [Data7x7_4.data_2_digest_en, Data7x7_3.data_2_0_en, Data7x7_3.data_2_1_en, Data7x7_3.data_2_2_en]) }),
+                react_1.default.createElement(FormControlLabel_1.default, { value: String(2), control: react_1.default.createElement(Radio_1.default, { disableRipple: true }), label: RadioContentProvider_1.provideContent(String(2), [Data7x7_3.data_2_0_en, Data7x7_3.data_2_1_en, Data7x7_3.data_2_2_en], Data7x7_4.data_1_digest_en) }),
                 react_1.default.createElement(Divider_1.default, { variant: "middle" }),
-                react_1.default.createElement(FormControlLabel_1.default, { value: String(3), control: react_1.default.createElement(Radio_1.default, { disableRipple: true }), label: RadioContentProvider_1.provideContent(String(3), [Data7x7_4.data_3_digest_en, Data7x7_3.data_3_0_en, Data7x7_3.data_3_1_en, Data7x7_3.data_3_2_en]) }),
+                react_1.default.createElement(FormControlLabel_1.default, { value: String(3), control: react_1.default.createElement(Radio_1.default, { disableRipple: true }), label: RadioContentProvider_1.provideContent(String(3), [Data7x7_3.data_3_0_en, Data7x7_3.data_3_1_en, Data7x7_3.data_3_2_en], Data7x7_4.data_2_digest_en) }),
                 react_1.default.createElement(Divider_1.default, { variant: "middle" }),
-                react_1.default.createElement(FormControlLabel_1.default, { value: String(4), control: react_1.default.createElement(Radio_1.default, { disableRipple: true }), label: RadioContentProvider_1.provideContent(String(4), [Data7x7_4.data_4_digest_en, Data7x7_3.data_4_0_en, Data7x7_3.data_4_1_en, Data7x7_3.data_4_2_en]) }),
+                react_1.default.createElement(FormControlLabel_1.default, { value: String(4), control: react_1.default.createElement(Radio_1.default, { disableRipple: true }), label: RadioContentProvider_1.provideContent(String(4), [Data7x7_3.data_4_0_en, Data7x7_3.data_4_1_en, Data7x7_3.data_4_2_en], Data7x7_4.data_3_digest_en) }),
                 react_1.default.createElement(Divider_1.default, { variant: "middle" }),
-                react_1.default.createElement(FormControlLabel_1.default, { value: String(5), control: react_1.default.createElement(Radio_1.default, { disableRipple: true }), label: RadioContentProvider_1.provideContent(String(5), [Data7x7_4.data_5_digest_en, Data7x7_3.data_5_0_en, Data7x7_3.data_5_1_en, Data7x7_3.data_5_2_en]) }),
+                react_1.default.createElement(FormControlLabel_1.default, { value: String(5), control: react_1.default.createElement(Radio_1.default, { disableRipple: true }), label: RadioContentProvider_1.provideContent(String(5), [Data7x7_3.data_5_0_en, Data7x7_3.data_5_1_en, Data7x7_3.data_5_2_en], Data7x7_4.data_4_digest_en) }),
                 react_1.default.createElement(Divider_1.default, { variant: "middle" }),
-                react_1.default.createElement(FormControlLabel_1.default, { value: String(6), control: react_1.default.createElement(Radio_1.default, { disableRipple: true }), label: RadioContentProvider_1.provideContent(String(6), [Data7x7_4.data_6_digest_en, Data7x7_3.data_6_0_en]) })))));
+                react_1.default.createElement(FormControlLabel_1.default, { value: String(6), control: react_1.default.createElement(Radio_1.default, { disableRipple: true }), label: RadioContentProvider_1.provideContent(String(6), [Data7x7_3.data_6_0_en], Data7x7_4.data_6_digest_en) })))));
 });
 
 
@@ -45418,7 +45418,7 @@ const List_1 = __importDefault(__webpack_require__(/*! @material-ui/core/List */
 const ListItem_1 = __importDefault(__webpack_require__(/*! @material-ui/core/ListItem */ "./node_modules/@material-ui/core/esm/ListItem/index.js"));
 const Typography_1 = __importDefault(__webpack_require__(/*! @material-ui/core/Typography */ "./node_modules/@material-ui/core/esm/Typography/index.js"));
 const styles_1 = __webpack_require__(/*! @material-ui/styles */ "./node_modules/@material-ui/styles/esm/index.js");
-exports.provideContent = (signature, descriptionList) => {
+exports.provideContent = (signature, descriptionList, digest) => {
     const useStyles = styles_1.makeStyles({
         root: {
             display: 'flex',
@@ -45427,18 +45427,37 @@ exports.provideContent = (signature, descriptionList) => {
         },
         sig: {
             width: '8px'
+        },
+        digest: {
+            marginLeft: "20px"
+        },
+        ul: {
+            listStyleType: 'disc'
         }
     });
     const classes = useStyles({});
     const description = descriptionList.map((item) => {
-        return (react_1.default.createElement(ListItem_1.default, null,
-            react_1.default.createElement(Typography_1.default, { variant: "body2" }, item)));
+        return (react_1.default.createElement(Typography_1.default, { variant: "body2" },
+            react_1.default.createElement("li", null, item)));
     });
-    return (react_1.default.createElement(List_1.default, { className: classes.root },
-        react_1.default.createElement(ListItem_1.default, { className: classes.sig },
-            react_1.default.createElement(Typography_1.default, { variant: "body1" }, signature + ": ")),
-        react_1.default.createElement(ListItem_1.default, null,
-            react_1.default.createElement(List_1.default, null, description))));
+    if (digest) {
+        return (react_1.default.createElement(List_1.default, { className: classes.root },
+            react_1.default.createElement(ListItem_1.default, { className: classes.sig },
+                react_1.default.createElement(Typography_1.default, { variant: "body1" }, signature)),
+            react_1.default.createElement(ListItem_1.default, null,
+                react_1.default.createElement(List_1.default, null,
+                    react_1.default.createElement(ListItem_1.default, { className: classes.digest },
+                        react_1.default.createElement(Typography_1.default, { color: "primary", variant: "body2" }, digest)),
+                    react_1.default.createElement(ListItem_1.default, null,
+                        react_1.default.createElement("ul", { className: classes.ul }, description))))));
+    }
+    else {
+        return (react_1.default.createElement(List_1.default, { className: classes.root },
+            react_1.default.createElement(ListItem_1.default, { className: classes.sig },
+                react_1.default.createElement(Typography_1.default, { variant: "body1" }, signature)),
+            react_1.default.createElement(ListItem_1.default, null,
+                react_1.default.createElement("ul", { className: classes.ul }, description))));
+    }
 };
 
 
