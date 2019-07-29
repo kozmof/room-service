@@ -7,7 +7,6 @@ import DialogContent from '@material-ui/core/DialogContent';
 import Select from "@material-ui/core/Select";
 import MenuItem from "@material-ui/core/MenuItem";
 import Typography from '@material-ui/core/Typography';
-import { makeStyles } from '@material-ui/styles';
 import { EvaluationType } from '../table/EvaluationTableBase';
 import { EvaluationArg } from '../table/EvaluationTable';
 import { Arg3x3 } from '../table/EvaluationTable3x3';
