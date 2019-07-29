@@ -1,7 +1,7 @@
 import * as React from "react";
 import * as ReactDom from "react-dom";
 import { TestEditor } from "./editor/TestEditor";
-import { EvaluationChip, EvaluationProps } from "./evaluation_table/ui/EvaluationChip";
+import { EvaluationChip, EvaluationProps } from "./evaluation_chip/ui/EvaluationChip";
 
 const props: EvaluationProps = {
   evaluationType: "7x7",
@@ -16,15 +16,9 @@ const props: EvaluationProps = {
 
 ReactDom.render(
   <div>
-    <TestEditor />
-    <div>
-      <EvaluationChip {...props} />
-    </div>
-    <br/>
-    <div>
-      <EvaluationChip {...props} />
-    </div>
-    <br/>
+    <h1>
+      Evaluation Chip
+    </h1>
     <div>
       <EvaluationChip {...props} />
     </div>

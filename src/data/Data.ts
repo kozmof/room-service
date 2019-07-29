@@ -1,5 +1,5 @@
-import { EvaluationType } from "../evaluation_table/table/EvaluationTableBase"
-import { EvaluationTable } from "../evaluation_table/table/EvaluationTable"
+import { EvaluationType } from "../evaluation_chip/table/EvaluationTableBase"
+import { EvaluationTable } from "../evaluation_chip/table/EvaluationTable"
 import { PersonID, DataID, DataType, UserAction } from "../common/CommonType"
 
 
