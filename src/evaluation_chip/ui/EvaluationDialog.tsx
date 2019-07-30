@@ -67,34 +67,26 @@ export const EvaluationDialog = <T extends EvaluationType> (props: EvaluationDia
   const onChangeSourceRank = (event: React.ChangeEvent<HTMLInputElement>) => {
     const sourceRank = event.currentTarget.value;
     setEvaluationStatus(
-      Object.assign(
-        {},
-        evaluationStatus,
-        {
-          ...evaluationStatus, 
-          rank: {
-            ...evaluationStatus.rank,
-            sourceRank: sourceRank
-          }
+      {
+        ...evaluationStatus, 
+        rank: {
+          ...evaluationStatus.rank,
+          sourceRank: sourceRank
         }
-      )
+      }
     );
   }
 
   const onChangeInfoRank = (event: React.ChangeEvent<HTMLInputElement>) => {
     const infoRank = event.currentTarget.value;
     setEvaluationStatus(
-      Object.assign(
-        {},
-        evaluationStatus,
-        {
-          ...evaluationStatus, 
-          rank: {
-            ...evaluationStatus.rank,
-            infoRank: infoRank 
-          }
+      {
+        ...evaluationStatus, 
+        rank: {
+          ...evaluationStatus.rank,
+          infoRank: infoRank 
         }
-      )
+      }
     );
   }
 
