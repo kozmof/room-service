@@ -4,7 +4,14 @@ import ListItem from '@material-ui/core/ListItem';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/styles';
 
-export const provideContent = (signature: string, descriptionList: Array<string>, digest?: string) => {
+interface ProvideContentProps {
+  signature: string;
+  descriptionList: Array<string>;
+  digest?: string;
+}
+
+export const ProvideContent = React.memo((props: ProvideContentProps) => {
+  const { signature, descriptionList, digest } = props;
   const useStyles = makeStyles({
     root: {
       display: 'flex',
@@ -79,4 +86,4 @@ export const provideContent = (signature: string, descriptionList: Array<string>
       </List>
     )
   }
-}
+}, () => true)

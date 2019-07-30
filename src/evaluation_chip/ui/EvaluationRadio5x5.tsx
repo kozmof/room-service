@@ -8,7 +8,7 @@ import FormLabel from '@material-ui/core/FormLabel';
 import Divider from '@material-ui/core/Divider';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
-import { provideContent } from './RadioContentProvider';
+import { ProvideContent } from './RadioContentProvider';
 import { EvaluationArg } from '../table/EvaluationTable';
 
 import {
@@ -46,15 +46,15 @@ export const EvaluationRadio5x5 = React.memo((props: EvaluationRadio5x5props) =>
           </Typography>
         </FormLabel>
         <RadioGroup value={props.evaluationArg.rank.sourceRank} onChange={props.onChangeSourceRank}>
-          <FormControlLabel value="N" control={<Radio color="primary" disableRipple={true} />} label={provideContent("N", [data_N_0_en])}/>
+          <FormControlLabel value="N" control={<Radio color="primary" disableRipple={true} />} label={<ProvideContent signature="N" descriptionList={[data_N_0_en]}/>}/>
           <Divider variant="middle" />
-          <FormControlLabel value="A" control={<Radio color="primary" disableRipple={true} />} label={provideContent("A", [data_A_0_en, data_A_1_en])}/>
+          <FormControlLabel value="A" control={<Radio color="primary" disableRipple={true} />} label={<ProvideContent signature="A" descriptionList={[data_A_0_en, data_A_1_en]}/>}/>
           <Divider variant="middle" />
-          <FormControlLabel value="B" control={<Radio color="primary" disableRipple={true} />} label={provideContent("B", [data_B_0_en])}/>
+          <FormControlLabel value="B" control={<Radio color="primary" disableRipple={true} />} label={<ProvideContent signature="B" descriptionList={[data_B_0_en]}/>}/>
           <Divider variant="middle" />
-          <FormControlLabel value="C" control={<Radio color="primary" disableRipple={true} />} label={provideContent("C", [data_C_0_en])}/>
+          <FormControlLabel value="C" control={<Radio color="primary" disableRipple={true} />} label={<ProvideContent signature="C" descriptionList={[data_C_0_en]}/>}/>
           <Divider variant="middle" />
-          <FormControlLabel value="X" control={<Radio color="primary" disableRipple={true} />} label={provideContent("X", [data_X_0_en])}/>
+          <FormControlLabel value="X" control={<Radio color="primary" disableRipple={true} />} label={<ProvideContent signature="X" descriptionList={[data_X_0_en]}/>}/>
         </RadioGroup>
       </FormControl>
       <FormControl component="fieldset">
@@ -64,15 +64,15 @@ export const EvaluationRadio5x5 = React.memo((props: EvaluationRadio5x5props) =>
           </Typography>
         </FormLabel>
         <RadioGroup value={props.evaluationArg.rank.infoRank.toString()} onChange={props.onChangeInfoRank}>
-          <FormControlLabel value={String(0)} control={<Radio color="primary" disableRipple={true} />} label={provideContent(String(0), [data_0_0_en])}/>
+          <FormControlLabel value="0" control={<Radio color="primary" disableRipple={true} />} label={<ProvideContent signature="0" descriptionList={[data_0_0_en]}/>}/>
           <Divider variant="middle" />
-          <FormControlLabel value={String(1)} control={<Radio color="primary" disableRipple={true} />} label={provideContent(String(1), [data_1_0_en])}/>
+          <FormControlLabel value="1" control={<Radio color="primary" disableRipple={true} />} label={<ProvideContent signature="1" descriptionList={[data_1_0_en]}/>}/>
           <Divider variant="middle" />
-          <FormControlLabel value={String(2)} control={<Radio color="primary" disableRipple={true} />} label={provideContent(String(2), [data_2_0_en, data_2_1_en, data_2_2_en])}/>
+          <FormControlLabel value="2" control={<Radio color="primary" disableRipple={true} />} label={<ProvideContent signature="2" descriptionList={[data_2_0_en, data_2_1_en, data_2_2_en]}/>}/>
           <Divider variant="middle" />
-          <FormControlLabel value={String(3)} control={<Radio color="primary" disableRipple={true} />} label={provideContent(String(3), [data_3_0_en])}/>
+          <FormControlLabel value="3" control={<Radio color="primary" disableRipple={true} />} label={<ProvideContent signature="3" descriptionList={[data_3_0_en]}/>}/>
           <Divider variant="middle" />
-          <FormControlLabel value={String(4)} control={<Radio color="primary" disableRipple={true} />} label={provideContent(String(4), [data_4_0_en])}/>
+          <FormControlLabel value="4" control={<Radio color="primary" disableRipple={true} />} label={<ProvideContent signature="4" descriptionList={[data_4_0_en]}/>}/>
         </RadioGroup>
       </FormControl>
     </DialogContent>
