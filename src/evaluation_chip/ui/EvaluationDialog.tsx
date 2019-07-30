@@ -20,7 +20,7 @@ type SelectMatrixProps = {
   onChange: (event: React.ChangeEvent<HTMLInputElement>) => void;
 }
 
-export const SelectMatrix = (props: SelectMatrixProps) => {
+export const SelectMatrix = React.memo((props: SelectMatrixProps) => {
   return (
     <DialogActions>
       <Select value={props.evaluationType} onChange={props.onChange}>
@@ -42,7 +42,7 @@ export const SelectMatrix = (props: SelectMatrixProps) => {
       </Select>
     </DialogActions>
   )
-}
+})
 
 type EvaluationDialogProps<T extends EvaluationType> = {
   open: boolean;
