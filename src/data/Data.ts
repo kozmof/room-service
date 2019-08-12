@@ -15,10 +15,10 @@ export type MetaDataEvaluation <E extends EvaluationType> = {
 }
 
 export type MetaDataPerson = {
-  readonly authorName: string;
-  readonly authorID: PersonID;
-  readonly editorName: string;
-  readonly editorID: PersonID;
+  readonly authors: Array<string>;
+  readonly authorIDs: Array<PersonID>;
+  readonly editors: Array<string>;
+  readonly editorIDs: Array<PersonID>;
 }
 
 type ModifiedDataType = "text";
