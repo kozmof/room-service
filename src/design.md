@@ -1,11 +1,15 @@
 ## Concepts
 - Clear conditions
 - Accessible after forgetting
-- Record all actions
+- Record all manipulations 
+- One-plate UX
 - Collaborative
 
 ## Data 
 - Data has its ID
+- Data has authors
+- Data has editors
+- Data is a set structure
 
 ### Types
 
@@ -28,37 +32,33 @@
 #### General Type
 - File
 
-#### Structure
+## Data Formatter
 
-##### Corset
-Data Formatter
-
-###### EvaluationTable
+### EvaluationTable
 A 3x3 evaluation scheme based on `Fake news. It’s complicated.`
 5x5 and 7x7 evaluation schemes based on `Criminal Intelligence Manual for Analysts, 2011`.
-###### Topic
+### Topic
 A data pattern of subject and details. One of a text data combined with other data types.
-###### Clip
+### Clip
 A data pattern of combination of raw data and its clips. Clips also have markers.
 
-##### Lens
-Data Viewer
+## Data Viewer
 
-###### Tag
+### Tag
 Named set. It has AND and OR operators.
-###### MediumArrow
+### MediumArrow
 A data pattern of A do B. e.g. Tom phoned Jerry.
-###### Filing
+### Filing
 File System. 
-###### Box
+### Box
 Temporary-filing System
-###### Timeline
+### Timeline
 History viewer
 
-# Action
+## Action
 Triggered by specific events
 
-## Action Types
+### Action Types
 - predicator
 
 ## References
