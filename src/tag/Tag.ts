@@ -17,8 +17,8 @@ class Tag {
   and = (tag : Tag) : Array<DataID> => {
     const result : Array<DataID> = []
 
-    for (let id1 of this.entityIDs) {
-      for (let id2 of tag.entityIDs) {
+    for (const id1 of this.entityIDs) {
+      for (id2 of tag.entityIDs) {
         if (id1 === id2) {
           result.push(id1);
         } 
