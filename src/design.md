@@ -10,7 +10,6 @@
 - Data has its ID
 - Data has authors
 - Data has editors
-- Data is a set structure
 
 ### Specific Types
 - People
