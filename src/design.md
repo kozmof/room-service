@@ -3,6 +3,7 @@
 - Accessible after forgetting
 - Record all manipulations 
 - One-plate UX
+- Parse-able
 - Collaborative
 
 ## Data 
@@ -44,7 +45,7 @@ A data pattern of combination of raw data and its clips. Clips also have markers
 ## Data Viewer (Not modify data)
 
 ### Tag
-Named set. It has AND and OR operators.
+Named set. It has `AND` and `OR` operators.
 ### MediumArrow
 A data pattern of A do B. e.g. Tom phoned Jerry.
 ### Filing
