@@ -2,19 +2,24 @@ import { EvaluationType } from "../evaluation_chip/table/EvaluationTableBase"
 import { EvaluationTable } from "../evaluation_chip/table/EvaluationTable"
 import { PersonID, DataID, DataType, UserAction } from "../common/CommonType"
 
+export type Data<T extends DataType> = {
+  readonly content: T
+} & AbstractData<T> & MetaDataPerson & MetaDataLog 
 
-export type Data = {
+type EmptyData = {}
+
+type AbstractData<T extends DataType> = {
   readonly id: DataID;
-  readonly dataType: DataType;
-  readonly MD5: string;
+  readonly dataType: T;
+  readonly sha256: string;
 }
 
-export type MetaDataEvaluation <E extends EvaluationType> = {
-  readonly evaluationType: E;
-  readonly evaluationTable: EvaluationTable<E>;
+type MetaDataEvaluation <T extends EvaluationType> = {
+  readonly evaluationType: T;
+  readonly evaluationTable: EvaluationTable<T>;
 }
 
-export type MetaDataPerson = {
+type MetaDataPerson = {
   readonly authors: Array<string>;
   readonly authorIDs: Array<PersonID>;
   readonly editors: Array<string>;
@@ -23,24 +28,24 @@ export type MetaDataPerson = {
 
 type ModifiedDataType = "text";
 
-export type MetaDataLog = {
+type MetaDataLog = {
   readonly userAction: UserAction;
   readonly modifiedDataType: ModifiedDataType;
   readonly time: Date;
 }
 
 // TODO
-export type MetaDataSource = {
+type MetaDataSource = {
   readonly source: Array<string>;
 }
 
 // TODO
-export type MetaDataCategory = {
+type MetaDataCategory = {
   readonly category: Array<string>;
 }
 
 // TODO
-export type MetaDataTag = {
+type MetaDataTag = {
   readonly tag: Array<string>;
 }
 
