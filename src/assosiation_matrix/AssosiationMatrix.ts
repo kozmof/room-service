@@ -35,31 +35,31 @@ export class AssosiationMatrix {
     this.assosiationItems = [];
     this.assosiationCondition = [];
 
-    for (const [x_index, x_name] of this.assosiationName.entries()) {
-      const y_array: Array<Check> = [];
+    for (const [xIndex, xName] of this.assosiationName.entries()) {
+      const yArray: Array<Check> = [];
 
-      for (const [y_index, y_name] of this.assosiationName.slice(x_index + 1).reverse().entries()) {
+      for (const [yIndex, yName] of this.assosiationName.slice(xIndex + 1).reverse().entries()) {
         const check: Check = {
           checkType: checkType,
           isChecked: false,
-          x: x_index,
-          y: y_index
+          x: xIndex,
+          y: yIndex 
         } 
 
         const condition: Check & PairName = Object.assign(
           { 
-            nameX: x_name,
-            nameY: y_name
+            nameX: xName,
+            nameY: yName 
           },
           check
         )
 
-        y_array.push(check);
+        yArray.push(check);
         this.assosiationCondition.push(condition);
 
       }
 
-      this.assosiationItems.push(y_array);
+      this.assosiationItems.push(yArray);
     }
   }
 
