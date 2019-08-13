@@ -22,21 +22,20 @@ class MediumArrow {
   ) {}
 }
 
-type LinkSurface = {
-  readonly subjectData: Data;
-  readonly objectData: Data;
+type LinkSurface<T extends DataType, U extends DataType> = {
+  readonly subjectData: Data<T>;
+  readonly objectData: Data<U>;
   readonly arrowData: MediumArrow;
 }
 
-class Link implements Data, LinkSurface {
+class Link<T extends DataType, U extends DataType> implements LinkSurface<T, U> {
   readonly dataType: DataType = "link";
-
   constructor (
     public readonly id: DataID,
-    public readonly subjectData: Data,
-    public readonly objectData: Data,
+    public readonly subjectData: Data<T>,
+    public readonly objectData: Data<U>,
     public readonly arrowData: MediumArrow, 
-    public readonly MD5: string
+    public readonly sha256: string
   ) {}
 }
 

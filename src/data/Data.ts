@@ -6,8 +6,6 @@ export type Data<T extends DataType> = {
   readonly content: T
 } & AbstractData<T> & MetaDataPerson & MetaDataLog 
 
-type EmptyData = {}
-
 type AbstractData<T extends DataType> = {
   readonly id: DataID;
   readonly dataType: T;
