@@ -11,3 +11,9 @@ type DateContent = {
     readonly title?: string;
     readonly detail: string;
 }
+
+class TimeLine<T extends DateContent> {
+    constructor(
+        public timeline: Array<TimeData<T>>
+    ) {}
+}
