@@ -1,18 +1,12 @@
 import React, { useState } from 'react';
 import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
-import DialogTitle from '@material-ui/core/DialogTitle';
 import DialogActions from '@material-ui/core/DialogActions';
-import DialogContent from '@material-ui/core/DialogContent';
-import Select from "@material-ui/core/Select";
-import MenuItem from "@material-ui/core/MenuItem";
+import Select from '@material-ui/core/Select';
+import MenuItem from '@material-ui/core/MenuItem';
 import Typography from '@material-ui/core/Typography';
 import { EvaluationType } from '../table/EvaluationTableBase';
 import { EvaluationArg } from '../table/EvaluationTable';
-import { Arg3x3 } from '../table/EvaluationTable3x3';
-import { Arg5x5 }  from '../table/EvaluationTable5x5';
-import { Arg7x7 } from '../table/EvaluationTable7x7';
-import { Language } from '../table/Language';
 import { EvaluationRadio, HandleChange } from './EvaluationRadio';
 
 type SelectMatrixProps = {
