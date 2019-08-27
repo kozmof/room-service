@@ -16,4 +16,6 @@ class TimeLine<T extends DateContent> {
     constructor(
         public timeline: Array<TimeData<T>>
     ) {}
+
+    // Sort, Add, Remove methods
 }
