@@ -12,7 +12,7 @@ export const TimeLineViewer = <T extends TimeContent>(props: TimeLineVierProps<T
       return (
         <li>
           <div>
-             { item.content.detail }
+             { item.date.toDateString() }: { item.content.detail }
           </div>
         </li>
       );
