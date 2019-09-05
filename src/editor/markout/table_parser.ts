@@ -29,11 +29,8 @@ const table_parser = (text: string): Array<Array<string>> => {
   for (const line of lines) {
     if (line.match(tableStartPattern) && !pc.tableStart) {
       pc.tableStart = true;
-     
- continue;
-    } 
-    
-    if (line.match(itemPattern) && pc.tableStart) {
+      continue;
+    } else if (line.match(itemPattern) && pc.tableStart) {
       row.push(line.slice(2))
       pc.seqCount += 1;
       pc.headerStart = true;
