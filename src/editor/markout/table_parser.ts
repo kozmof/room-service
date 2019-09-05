@@ -1,5 +1,5 @@
 type TableParseCondition = {
-  tableStart: boolean,
+  tableStart: boolean;
   headerStart: boolean;
   headerEnd: boolean;
   rowEnd: boolean;
