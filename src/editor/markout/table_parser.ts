@@ -7,7 +7,7 @@ type TableParseCondition = {
   tableWidth: number;
 }
 
-const table_parser = (text: string) => {
+const table_parser = (text: string): Array<Array<string>> => {
   const table: Array<Array<string>> = [];
   const lines: Array<string> = text.split("\n");
   const pc: TableParseCondition = {
