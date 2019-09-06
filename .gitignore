@@ -8,7 +8,7 @@
 /src/common/*.js
 /src/data/*.js
 /src/editor/*.js
-/src/editor/marker/*.js
+/src/editor/marker/table/*.js
 /src/editor/markout/*.js
 /src/evaluation_table/*.js
 /src/evaluation_table/data/*.js
