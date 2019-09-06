@@ -7,7 +7,7 @@ type TableParseCondition = {
   tableWidth: number;
 }
 
-const tableParser = (lines: Array<string>): Array<Array<string>> => {
+export const tableParser = (lines: Array<string>): Array<Array<string>> => {
   const table: Array<Array<string>> = [];
   let row: Array<string> = [];
 
