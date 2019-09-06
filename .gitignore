@@ -9,6 +9,7 @@
 /src/data/*.js
 /src/editor/*.js
 /src/editor/marker/*.js
+/src/editor/markout/*.js
 /src/evaluation_table/*.js
 /src/evaluation_table/data/*.js
 /src/evaluation_table/ui/*.js
