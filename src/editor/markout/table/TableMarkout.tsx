@@ -5,9 +5,13 @@ import TableCell from '@material-ui/core/TableCell';
 import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 
-export const TableMarkout = (table: Array<Array<string>>) => {
-  const header: Array<string> = table[0];
-  const body: Array<Array<string>> = table.slice(1);
+interface TableMarkoutProps {
+  table: Array<Array<string>>;
+}
+
+export const TableMarkout = (props: TableMarkoutProps) => {
+  const header: Array<string> = props.table[0];
+  const body: Array<Array<string>> = props.table.slice(1);
   const header_jsx = header.map(
     (item) => {
       return (

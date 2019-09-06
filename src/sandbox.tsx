@@ -3,7 +3,8 @@ import { TestEditor } from './editor/TestEditor';
 import { EvaluationChip, EvaluationProps } from './evaluation_chip/ui/EvaluationChip';
 import { TimeLine, TimeData, TimeContent } from './timeline/timeline';
 import { TimeLineViewer } from './timeline/ui/viewer';
-
+import { tableParser } from './editor/markout/table/TableParser';
+import { TableMarkout } from './editor/markout/table/TableMarkout';
 
 export const Sandbox = () => {
   // --------------------------------------------
@@ -53,6 +54,12 @@ export const Sandbox = () => {
   const timeline: TimeLine<TimeContent> = new TimeLine([time_data1, time_data2, time_data3]);
 
   // --------------------------------------------
+  // TableMarkout
+
+  const text: string = "=\n: name\n: location\n=\n: Satoshi\n: Masara\n-\n: Shigeru\n: Masara\n-\n: Kasumi\n: Hanada\n-\n"
+  const table: Array<Array<string>> = tableParser(text.split("\n"));
+
+  // --------------------------------------------
 
   return(
     <div>
@@ -66,6 +73,10 @@ export const Sandbox = () => {
         <TestEditor />
         <p> Time Line </p>
         <TimeLineViewer<TimeContent> timeline={timeline} />
+        <p> Table </p>
+        <div> raw text </div>
+        <pre>{ text }</pre>
+        <TableMarkout table={table} />
       </div>
     </div>
   )
