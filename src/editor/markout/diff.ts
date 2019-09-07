@@ -50,7 +50,7 @@ const componentSearch = (pos: number, componentInfo: ComponentInfo) : SearchResu
     }
   } else if (componentInfo[pos].order.start < pos) {
     //forward search
-    for (let i = pos; i < componentInfo.length; i++{
+    for (let i = pos; i < componentInfo.length; i++) {
       if (componentInfo[i].order.start <= pos && pos < componentInfo[i].order.bound_end) {
         const result: SearchResult = {
           index: i,
