@@ -62,7 +62,7 @@ const componentSearch = (pos: number, componentInfo: ComponentInfo) : SearchResu
   }
 }
 
-const diff = (text: string, prev_text: string, pos: number, componentInfo: ComponentInfo) => {
+const diffComponent = (text: string, prev_text: string, pos: number, componentInfo: ComponentInfo) => {
   const lines = text.split("\n");
   const prev_lines = prev_text.split("\n");
 
