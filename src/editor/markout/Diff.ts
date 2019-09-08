@@ -20,10 +20,10 @@ type SearchResult = {
 
 type ComponentInfo = Array<componentOrder>;
 
-const componentSearch = (pos: number, componentInfo: ComponentInfo) : SearchResult => {
-  if (componentInfo.length <= pos) {
+const componentSearch = (linePos: number, componentInfo: ComponentInfo) : SearchResult => {
+  if (componentInfo.length <= linePos) {
     for (let i = componentInfo.length - 1; 0 <= i; i--) {
-      if (componentInfo[i].order.start <= pos && pos < componentInfo[i].order.bound_end) {
+      if (componentInfo[i].order.start <= linePos && linePos < componentInfo[i].order.bound_end) {
 
         const result: SearchResult = {
           index: i,
@@ -32,16 +32,16 @@ const componentSearch = (pos: number, componentInfo: ComponentInfo) : SearchResu
         return result;
       }
     }
-  } else if (pos === componentInfo[pos].order.start) {
+  } else if (linePos === componentInfo[linePos].order.start) {
     const result: SearchResult = {
-      index: pos,
-      componentType: componentInfo[pos].componentType
+      index: linePos,
+      componentType: componentInfo[linePos].componentType
     };
     return result;
-  } else if (pos < componentInfo[pos].order.start) {
+  } else if (linePos < componentInfo[linePos].order.start) {
     // back search
-    for (let i = pos; 0 <= i; i--) {
-      if (componentInfo[i].order.start <= pos && pos < componentInfo[i].order.bound_end) {
+    for (let i = linePos; 0 <= i; i--) {
+      if (componentInfo[i].order.start <= linePos && linePos < componentInfo[i].order.bound_end) {
         const result: SearchResult = {
           index: i,
           componentType: componentInfo[i].componentType
@@ -49,10 +49,10 @@ const componentSearch = (pos: number, componentInfo: ComponentInfo) : SearchResu
         return result;
       }
     }
-  } else if (componentInfo[pos].order.start < pos) {
+  } else if (componentInfo[linePos].order.start < linePos) {
     //forward search
-    for (let i = pos; i < componentInfo.length; i++) {
-      if (componentInfo[i].order.start <= pos && pos < componentInfo[i].order.bound_end) {
+    for (let i = linePos; i < componentInfo.length; i++) {
+      if (componentInfo[i].order.start <= linePos && linePos < componentInfo[i].order.bound_end) {
         const result: SearchResult = {
           index: i,
           componentType: componentInfo[i].componentType
@@ -63,11 +63,11 @@ const componentSearch = (pos: number, componentInfo: ComponentInfo) : SearchResu
   }
 }
 
-const diffComponent = (text: string, prev_text: string, pos: number, componentInfo: ComponentInfo) => {
+const diffComponent = (text: string, prev_text: string, linePos: number, componentInfo: ComponentInfo) => {
   const lines = text.split("\n");
   const prev_lines = prev_text.split("\n");
 
-  if (lines[pos] !== prev_lines[pos]) {
-    const searchResult: SearchResult = componentSearch(pos, componentInfo);
+  if (lines[linePos] !== prev_lines[linePos]) {
+    const searchResult: SearchResult = componentSearch(linePos, componentInfo);
   } 
 }
