@@ -1,6 +1,3 @@
-import { Component } from "react";
-import { Modifier } from "draft-js";
-
 type ComponentType = "table";
 type ModifyType = "erase" | "insert" | "update" | "no-change";
 
