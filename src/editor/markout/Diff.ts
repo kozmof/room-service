@@ -19,7 +19,7 @@ type SearchResult = {
 type ComponentInfo = Array<componentOrder>;
 
 const modifyType = (linePos: number, lines: Array<string>, prevLines: Array<string>): ModifyType => {
-  if (lines[linePos] === prevLines[linePos]) {
+  if (lines[linePos] === prevLines[linePos] && lines.length == prevLines.length) {
     return "no-change";
   } else if (prevLines.length <= linePos) {
     return "insert";
