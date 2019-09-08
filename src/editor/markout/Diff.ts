@@ -87,7 +87,7 @@ export const diffComponent = (text: string, prevText: string, linePos: number, c
     const searchResult: SearchResult = componentSearch(linePos, componentInfo);
     const m: ModifyType = modifyType(linePos, lines, prevLines);
 
-    const res: SearchResult & {modifyType: ModifyType}= {
+    const res: SearchResult & {modifyType: ModifyType} = {
       ...searchResult,
       modifyType: m
     }
