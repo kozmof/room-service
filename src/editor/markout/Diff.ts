@@ -1,6 +1,7 @@
 import { Component } from "react";
 
-type ComponentType = "table"
+type ComponentType = "table";
+type ModifyType = "erase" | "inserd" | "update";
 
 type Order = {
   start: number;
