@@ -3,7 +3,7 @@ type ModifyType = "erase" | "insert" | "update" | "no-change";
 
 type Order = {
   start: number;
-  bound_end: number;
+  boundEnd: number;
 }
 
 type componentOrder = {
@@ -39,7 +39,7 @@ const modifyType = (linePos: number, lines: Array<string>, prevLines: Array<stri
 const componentSearch = (linePos: number, componentInfo: ComponentInfo) : SearchResult => {
   if (componentInfo.length <= linePos) {
     for (let i = componentInfo.length - 1; 0 <= i; i--) {
-      if (componentInfo[i].order.start <= linePos && linePos < componentInfo[i].order.bound_end) {
+      if (componentInfo[i].order.start <= linePos && linePos < componentInfo[i].order.boundEnd) {
 
         const result: SearchResult = {
           index: i,
@@ -57,7 +57,7 @@ const componentSearch = (linePos: number, componentInfo: ComponentInfo) : Search
   } else if (linePos < componentInfo[linePos].order.start) {
     // back search
     for (let i = linePos; 0 <= i; i--) {
-      if (componentInfo[i].order.start <= linePos && linePos < componentInfo[i].order.bound_end) {
+      if (componentInfo[i].order.start <= linePos && linePos < componentInfo[i].order.boundEnd) {
         const result: SearchResult = {
           index: i,
           componentType: componentInfo[i].componentType
@@ -68,7 +68,7 @@ const componentSearch = (linePos: number, componentInfo: ComponentInfo) : Search
   } else if (componentInfo[linePos].order.start < linePos) {
     //forward search
     for (let i = linePos; i < componentInfo.length; i++) {
-      if (componentInfo[i].order.start <= linePos && linePos < componentInfo[i].order.bound_end) {
+      if (componentInfo[i].order.start <= linePos && linePos < componentInfo[i].order.boundEnd) {
         const result: SearchResult = {
           index: i,
           componentType: componentInfo[i].componentType
