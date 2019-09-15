@@ -21,18 +21,65 @@ type ComponentInfo = Array<componentOrder>;
 const modifyType = (linePos: number, lines: Array<string>, prevLines: Array<string>): ModifyType => {
   if (lines[linePos] === prevLines[linePos] && lines.length == prevLines.length) {
     return "no-change";
-  } else if (prevLines.length <= linePos) {
+  } else if (prevLines.length < lines.length) {
     return "insert";
-  } else if (lines.length === prevLines.length -1 && lines[lines.length - 1] == prevLines[prevLines.length - 2]) {
+  } else if (lines.length > lines.length) {
     return "erase";
   } else {
-    if (lines.length - 1 < linePos && lines[linePos + 1] === prevLines[linePos]) {
-      return "insert";
-    } else if (prevLines.length - 1 < linePos && lines[linePos] === prevLines[linePos + 1]) {
-      return "erase";
-    } else {
-      return "update";
-    }
+    return "update";
+  }
+}
+
+const diffSearch = (modifyType: ModifyType, linePos: number, prevLinePos: number, lines: Array<string>, prevLines: Array<string>): Array<string> => {
+  if (modifyType === "no-change") {
+    return []
+  } else if (modifyType === "insert") {
+    const changed_num: number = lines.length - prevLines.length;
+    let search_count: number = 0;
+    let searched_pos: Array<number> = []
+    let head_hit: boolean = false;
+    let tail_hit: boolean = false;
+    let up: boolean = false;
+    for (let pos = prevLinePos; search_count < lines.length; search_count++) {
+      if (pos !== 0 || pos !== lines.length - 1) {
+        let e: number = ((-1) ** (search_count + 1)); // e == 1 || -1
+        if (e >= 0) {
+          up = false;
+        } else {
+          up = true;
+        };
+        pos = search_count * e;
+        searched_pos.push(pos); // 1
+        if (pos === 0) {
+          head_hit = true;
+        } else if (pos == lines.length - 1) {
+          tail_hit = true;
+        }
+      } else {
+        if (head_hit) {
+          up = false;
+          pos = (-1) * pos + 1;
+          searched_pos.push(pos); // 2
+          for (let rest_pos = pos + 1; pos < lines.length; rest_pos++) {
+            searched_pos.push(pos); // 3
+          }
+          break;
+        } else if (tail_hit) {
+          up = true;
+          pos = (-1) * pos - 1;
+          searched_pos.push(pos); // 4
+          for (let rest_pos = pos - 1; 0 <= pos; rest_pos--) {
+            searched_pos.push(pos); // 5
+          }
+          break;
+        }
+      }
+  }
+
+  } else if (modifyType === "erase") {
+
+  } else if (modifyType === "update") {
+
   }
 }
 
