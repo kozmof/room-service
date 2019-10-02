@@ -1,6 +1,6 @@
-import { EvaluationType } from "../evaluation_chip/table/EvaluationTableBase"
-import { EvaluationTable } from "../evaluation_chip/table/EvaluationTable"
-import { PersonID, DataID, DataType, UserAction } from "../common/CommonType"
+import { EvaluationType } from '../evaluation_chip/table/EvaluationTableBase';
+import { EvaluationTable } from '../evaluation_chip/table/EvaluationTable';
+import { PersonID, DataID, DataType, UserAction } from '../common/CommonType';
 
 export type Data<T extends DataType> = {
   readonly content: T

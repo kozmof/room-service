@@ -1,5 +1,5 @@
-import * as React from "react"; 
-import { Omit } from "../common/CommonType";
+import * as React from 'react'; 
+import { Omit } from '../common/CommonType';
 
 export type FlipState<R> = {
   isMutable: boolean;

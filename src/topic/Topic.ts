@@ -1,4 +1,4 @@
-import { DataID } from "../common/CommonType"
+import { DataID } from '../common/CommonType';
 
 export type Topic = "memo";
 export type NumberTopic = "money";

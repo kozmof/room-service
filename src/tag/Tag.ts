@@ -1,5 +1,5 @@
-import { DataID } from "../common/CommonType"
-import { ActionType, Action } from "../action/Action"
+import { DataID } from '../common/CommonType';
+import { ActionType, Action } from '../action/Action';
 
 class TagAction implements Action {
   readonly actionType: ActionType = "tag";

@@ -1,4 +1,4 @@
-import { DataID } from "../common/CommonType";
+import { DataID } from '../common/CommonType';
 
 const uuid = require("uuid/v4");
 

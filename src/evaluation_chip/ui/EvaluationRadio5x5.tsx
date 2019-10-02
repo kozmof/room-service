@@ -6,7 +6,6 @@ import FormControl from '@material-ui/core/FormControl';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import FormLabel from '@material-ui/core/FormLabel';
 import Divider from '@material-ui/core/Divider';
-import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 import { ProvideContent } from './RadioContentProvider';
 import { EvaluationArg } from '../table/EvaluationTable';

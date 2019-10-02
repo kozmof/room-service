@@ -1,5 +1,5 @@
-import { Language } from "./Language"
-import { Detail, Mat } from "./EvaluationTableBase"
+import { Language } from './Language';
+import { Detail, Mat } from './EvaluationTableBase';
 
 import {
   data_N_0_en, data_A_0_en, data_B_0_en,

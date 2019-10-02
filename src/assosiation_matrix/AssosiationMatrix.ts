@@ -1,5 +1,3 @@
-import { DataID, DataType } from "../common/CommonType";
-
 type Pos = {
   readonly x: number;
   readonly y: number;

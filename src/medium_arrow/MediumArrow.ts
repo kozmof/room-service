@@ -1,6 +1,6 @@
-import { ActionType, Action } from "../action/Action"
-import { DataID, DataType } from "../common/CommonType"
-import { Data } from "../data/Data"
+import { ActionType, Action } from '../action/Action';
+import { DataID, DataType } from '../common/CommonType';
+import { Data } from '../data/Data';
 
 // Ex: A => B (A phoned B)
 

@@ -1,5 +1,5 @@
-import { DataID } from "../common/CommonType"
-import { Marker } from "../editor/marker/Marker"
+import { DataID } from '../common/CommonType';
+import { Marker } from '../editor/marker/Marker';
 
 // Block level clipping 
 export class ClipData {
