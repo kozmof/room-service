@@ -10,10 +10,10 @@
 /src/editor/*.js
 /src/editor/marker/*.js
 /src/editor/markout/table*.js
-/src/evaluation_table/*.js
-/src/evaluation_table/data/*.js
-/src/evaluation_table/ui/*.js
-/src/evaluation_table/table/*.js
+/src/evaluation_chip/*.js
+/src/evaluation_chip/data/*.js
+/src/evaluation_chip/ui/*.js
+/src/evaluation_chip/table/*.js
 /src/timeline/*.js
 /src/topic/*.js
 /src/medium_arrow/*.js
