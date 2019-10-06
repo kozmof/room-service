@@ -5,6 +5,7 @@ import { TimeLine, TimeData, TimeContent } from './timeline/timeline';
 import { TimeLineViewer } from './timeline/ui/viewer';
 import { tableParser } from './editor/markout/table/TableParser';
 import { TableMarkout } from './editor/markout/table/TableMarkout';
+import { MainFrame } from './main_frame/MainFrame';
 
 export const Sandbox = () => {
   // --------------------------------------------
@@ -63,6 +64,7 @@ export const Sandbox = () => {
 
   return(
     <div>
+      <MainFrame />
       <h1>
         Sandbox
       </h1>
