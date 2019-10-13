@@ -17,11 +17,19 @@ type MetaDataEvaluation <T extends EvaluationType> = {
   readonly evaluationTable: EvaluationTable<T>;
 }
 
+type Author = {
+  name: string,
+  id: PersonID
+}
+
+type Editor = {
+  name: string,
+  id: PersonID
+}
+
 type MetaDataPerson = {
-  readonly authors: Array<string>;
-  readonly authorIDs: Array<PersonID>;
-  readonly editors: Array<string>;
-  readonly editorIDs: Array<PersonID>;
+  readonly authors: Array<Author>;
+  readonly editors: Array<Editor>;
 }
 
 type ModifiedDataType = "text";
