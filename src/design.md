@@ -1,15 +1,22 @@
 ## Concepts
 - Clear conditions
 - Accessible after forgetting
-- Record all manipulations 
+- Record all manipulations (restrict personal use)
 - One-plate UX
 - Parse-able
-- Collaborative
+- Local tool but Collaborative 
 
 ## Data 
-- Data has its ID
+- Data has its ID as SHA1
 - Data has authors
-- Data has editors
+- Data has editors who have RSA keys
+- Data itself can not be signed by an editor
+- Assembled data can be signed by an editor
+- Disassembled data doesn't have a value of signed
+- Disassemble is not prohibited.
+- Data can be exportedd
+- Data can be imported
+- Data is assembled as a report
 
 ### Specific Types
 - People

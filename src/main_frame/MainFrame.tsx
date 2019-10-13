@@ -13,7 +13,7 @@ export const MainFrame = () => {
 
       'appBar': {
         'flexGrow': 1,
-        'background': '#263238'
+        'background': 'white'
       }
     }
   )
