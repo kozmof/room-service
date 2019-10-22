@@ -1,7 +1,7 @@
 ## Concepts
 - Clear conditions
 - Accessible after forgetting
-- Record all manipulations (restrict personal use)
+- Record all manipulations (restrict to personal use)
 - One-plate UX
 - Parse-able
 - Local tool but Collaborative 
