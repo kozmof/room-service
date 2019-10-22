@@ -6,7 +6,7 @@ export type Data<T extends DataType> = {
   readonly id: DataID;
   readonly content: T
   readonly sha256: string;
-} & MetaDataPerson
+} & HolderData
 
 type Person = {
   name: string,
@@ -16,7 +16,7 @@ type Person = {
 type Author = Person;
 type Editor = Person;
 
-type MetaDataPerson = {
+type HolderData = {
   readonly authors: Array<Author>;
   readonly editors: Array<Editor>;
 }
