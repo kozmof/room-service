@@ -37,7 +37,7 @@
 ### General Types
 - File
 
-## Data Formatter (Modify data)
+## Data Formatter (Content Related)
 
 ### EvaluationTable
 A 3x3 evaluation scheme based on `Fake news. It’s complicated.`
@@ -46,11 +46,10 @@ A 3x3 evaluation scheme based on `Fake news. It’s complicated.`
 A data pattern of subject and details. One of a text data combined with other data types.
 ### Clip
 A data pattern of combination of raw data and its clips. Clips also have markers.
-
-## Data Viewer (Not modify data itself)
-
 ### Comment
 Comment
+
+## Data Viewer (Data ID related)
 ### Tag
 Named set. It has `AND` and `OR` operators.
 ### MediumArrow
