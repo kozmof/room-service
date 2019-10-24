@@ -67,6 +67,19 @@ Triggered by specific events
 ### Action Types
 - predicator
 
+## Structure
+
+```
++----------------------------------+
+|            Assembly              |
++-------------+----------------+---+
+| Data Viewer | Data Formatter |   |
++-------------+----------------+   |
+|              Data                |
++----------------------------------+
+```
+
+
 ## References
 - Criminal Intelligence Manual for Analysts, 2011 https://www.unodc.org/unodc/en/drug-trafficking/crimjust/tools-and-publications.html 
 - Fake news. It’s complicated. https://firstdraftnews.org/fake-news-complicated/
