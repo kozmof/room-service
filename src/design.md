@@ -37,7 +37,7 @@
 ### General Types
 - File
 
-## Data Formatter (Data Processing)
+## Data Processing
 
 ### EvaluationTable
 A 3x3 evaluation scheme based on `Fake news. It’s complicated.`
@@ -49,7 +49,7 @@ A data pattern of combination of raw data and its clips. Clips also have markers
 ### Comment
 Comment
 
-## Data Viewer (Data Deployment)
+## Data Deployment
 ### Tag
 Named set. It has `AND` and `OR` operators.
 ### MediumArrow
@@ -68,13 +68,13 @@ Triggered by specific events
 ## Structure
 
 ```
-+----------------------------------+
-|            Assembly              | 
-+-------------+----------------+---+
-| Data Viewer | Data Formatter |   |
-+-------------+----------------+   |
-|      Data (Specific/General)     |
-+----------------------------------+
++---------------------------------------+
+|                Assembly               | 
++-----------------+-----------------+---+
+| Data Processing | Data Deployment |   |
++-----------------+-----------------+   |
+|      Data (Specific/General)          |
++---------------------------------------+
 ```
 
 
