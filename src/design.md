@@ -14,7 +14,7 @@
 - Assembled data can be signed by an editor
 - Disassembled data doesn't have a value of signed
 - Disassemble is not prohibited.
-- Data can be exportedd
+- Data can be exported
 - Data can be imported
 - Data is assembled as a report
 
