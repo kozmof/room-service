@@ -9,8 +9,6 @@ export type SpecificDataType = "people" | "place" | "text" |
 
 export type GeneralDataType = "file";
 
-export type PatternDataType = "clip" | "topic" | "link";
-
-export type DataType = SpecificDataType | GeneralDataType | PatternDataType;
+export type DataType = SpecificDataType | GeneralDataType;
 
 export type Omit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>;
