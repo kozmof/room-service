@@ -55,9 +55,7 @@ Named set. It has `AND` and `OR` operators.
 ### MediumArrow
 A data pattern of A do B. e.g. Tom phoned Jerry.
 ### Filing
-File System. 
-### Box
-Temporary-filing System
+Filing System. 
 ### Timeline
 History viewer
 
