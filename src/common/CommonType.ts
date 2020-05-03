@@ -5,7 +5,7 @@ export type PersonID = string;
 export type SpecificDataType = "people" | "place" | "text" |
                                "photo" | "voice" | "event" |
                                "incident" | "account" | "map" |
-                               "product" | "organization" | "history"; 
+                               "product" | "organization" | "history" | "link"; 
 
 export type GeneralDataType = "file";
 
