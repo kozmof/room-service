@@ -26,9 +26,9 @@ export type Rank3x3 = {
   infoRank: InfoValidity;
 }
 
-interface MalformTable {
-  malform(malformTypes: Array<MalformType>): Array<string>
-}
+// interface MalformTable {
+//   malform(malformTypes: Array<MalformType>): Array<string>
+// }
 
 class Explanation {
   constructor (
@@ -60,7 +60,11 @@ export class EvaluationTable3x3 implements Mat<SourceTransparency, InfoValidity>
             return [data_A_0_en];
           case "B":
             return [data_B_0_en];
+          default:
+            return [];
         }
+      default: 
+        return []
     } 
   }
 
@@ -74,7 +78,11 @@ export class EvaluationTable3x3 implements Mat<SourceTransparency, InfoValidity>
             return [data_1_0_en];
           case 2:
             return [data_2_0_en];
+          default:
+            return [];
         }
+      default:
+        return []
     } 
   }
 
@@ -103,8 +111,9 @@ export class EvaluationTable3x3 implements Mat<SourceTransparency, InfoValidity>
               result.push(new Explanation(data_21_0_mal_en, data_21_1_mal_en));
           }
         }
-
         return result
+    default:
+      return [];
     } 
   }
 

@@ -82,7 +82,11 @@ export class EvaluationTable7x7 implements Mat<SourceReliability, DataValidity>,
             return [data_E_0_en, data_E_1_en];
           case "F":
             return [data_F_0_en];
+          default:
+            return [];
         }
+      default:
+        return [];
     } 
   }
 
@@ -104,7 +108,11 @@ export class EvaluationTable7x7 implements Mat<SourceReliability, DataValidity>,
             return data_E_digest_en;
           case "F":
             return data_F_digest_en;
+          default:
+            return "";
         } 
+      default:
+        return "";
     } 
   }
 
@@ -126,7 +134,11 @@ export class EvaluationTable7x7 implements Mat<SourceReliability, DataValidity>,
             return [data_5_0_en, data_5_1_en, data_5_2_en];
           case 6:
             return [data_6_0_en];
+          default:
+            return [];
         }
+      default:
+        return []
     } 
   }
 
@@ -148,7 +160,11 @@ export class EvaluationTable7x7 implements Mat<SourceReliability, DataValidity>,
             return data_5_digest_en;
           case 6:
             return data_6_digest_en;
+          default:
+            return ""
         }
+      default:
+        return ""
     }
   }
 

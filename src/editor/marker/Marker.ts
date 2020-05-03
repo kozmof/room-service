@@ -3,10 +3,10 @@ type ColorPalette = "#2BDBFE" | "#FE2B2B" | "#778899";
 
 export class Marker {
   constructor (
-    private anchorKey: string, 
-    private start: number,
-    private end: number,
-    private text: string,
+    // private anchorKey: string, 
+    // private start: number,
+    // private end: number,
+    // private text: string,
     private condition: JudgeCondition
   ) {}
 

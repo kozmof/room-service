@@ -1,6 +1,6 @@
 import { DataID } from '../common/CommonType';
 
-const uuid = require("uuid/v4");
+// const uuid = require("uuid/v4");
 
 type FilingDataType = "entity" | "branch" | "root";
 
@@ -54,25 +54,25 @@ class ContentManager {
   }
 }
 
-class RootData extends ContentManager implements RootFilingSurface {
-  private dataType: FilingDataType = "root";
-
-  constructor(
-    private entityID: DataID,
-    entities: Array<EntityData>,
-    branches: Array<BranchData>
-  ) {
-    super(entities, branches);
-  }
-
-  id = () : DataID => {
-    return this.entityID
-  }
-
-  dtype = () : FilingDataType => {
-    return this.dataType
-  }
-}
+// class RootData extends ContentManager implements RootFilingSurface {
+//   private dataType: FilingDataType = "root";
+// 
+//   constructor(
+//     private entityID: DataID,
+//     entities: Array<EntityData>,
+//     branches: Array<BranchData>
+//   ) {
+//     super(entities, branches);
+//   }
+// 
+//   id = () : DataID => {
+//     return this.entityID
+//   }
+// 
+//   dtype = () : FilingDataType => {
+//     return this.dataType
+//   }
+// }
 
 class EntityData implements EntityFilingSurface {
   private dataType: FilingDataType = "entity";
@@ -121,9 +121,9 @@ class BranchData extends ContentManager implements BranchFilingSurface {
 
 }
 
-class FilingController {
-  genID = () : DataID => {
-    return uuid()
-  }
-}
+// class FilingController {
+//   genID = () : DataID => {
+//     return uuid()
+//   }
+// }
 

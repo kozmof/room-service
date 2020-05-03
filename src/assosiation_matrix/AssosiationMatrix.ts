@@ -16,7 +16,7 @@ type PairName = {
 type AssosiationNames = Array<string>;
 type AssosiationItems = Array<Array<Check>>;
 type AssosiationConditions = Array<Check & PairName>;
-type Overview = Readonly<Array<Readonly<Array<Readonly<Check & PairName>>>>>
+// type Overview = Readonly<Array<Readonly<Array<Readonly<Check & PairName>>>>>
 
 export class AssosiationMatrix {
   private assosiationItems: AssosiationItems = [];
@@ -24,9 +24,9 @@ export class AssosiationMatrix {
 
   constructor(
     private assosiationName: AssosiationNames,
-    private defaultCheckType: string = "default"
+    // private defaultCheckType: string = "default"
   ) {
-      this.initTable(defaultCheckType);
+      // this.initTable(defaultCheckType);
     }
 
   initTable = (checkType: string) => {

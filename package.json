@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
-    "build": "webpack --config webpack.config.js --progress --profile --colors"
+    "build": "webpack --config webpack.config.js --progress --profile --colors",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "author": "",
   "license": "MIT",
@@ -27,9 +29,17 @@
     "webpack": "^4.35.3"
   },
   "devDependencies": {
+    "@babel/core": "^7.9.6",
+    "@storybook/addon-actions": "^5.3.18",
+    "@storybook/addon-info": "^5.3.18",
+    "@storybook/addon-links": "^5.3.18",
+    "@storybook/addons": "^5.3.18",
+    "@storybook/react": "^5.3.18",
     "@types/jest": "^24.0.15",
     "@types/node": "^11.13.17",
+    "babel-loader": "^8.1.0",
     "jest": "^24.8.0",
+    "react-docgen-typescript-loader": "^3.7.2",
     "source-map-loader": "^0.2.4",
     "ts-jest": "^25.4.0",
     "ts-loader": "^5.4.5",

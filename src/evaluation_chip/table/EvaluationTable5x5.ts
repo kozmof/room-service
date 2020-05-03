@@ -50,7 +50,11 @@ export class EvaluationTable5x5 implements Mat<SourceEvaluation, InfoEvaluation>
             return [data_C_0_en];
           case "X":
             return [data_X_0_en];
+          default:
+            return [];
         }
+    default:
+      return [];
     }
   }
 
@@ -68,7 +72,11 @@ export class EvaluationTable5x5 implements Mat<SourceEvaluation, InfoEvaluation>
             return [data_3_0_en];
           case 4:
             return [data_4_0_en];
+          default:
+            return [];
         }
+      default:
+        return [];
     }
   }
 
